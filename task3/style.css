@@ -3,21 +3,21 @@
     margin: 0;
 }
 .main{
-    height:100vmax;
+    min-height:100vh;
     background-color:#68cdd5 ;}
 .box1 {
     width:100%;
     text-align: center;
     margin:0 auto;
-    padding-top:18%;
+    padding-top:190px;
 }
 
 .box2 {
     width:100%;
     text-align:center;
     margin:0 auto;
-    margin-bottom: 16%;
-    margin-top: 10%;
+    padding-bottom:120px;
+    padding-top:100px;
 
 }
 .p1{
@@ -42,18 +42,17 @@
     width:100%;
     overflow: hidden;
     margin:0 auto;
-    margin-top: 1.7%;
 }
 .box7{
     font-size: 24px;
-    padding-top:2%;
+    padding-top:15px;
     color:white;
     padding-left:17.5%;
     float:left;
       }
 .box8{
-    padding-top:1%;
+    padding-top:10px;
     font-size: 24px;
     color:white;
-    padding-right:17.5%;
+    padding-right:17%;
     float:right;}
