@@ -11,15 +11,16 @@ p{
     font-size:2.4rem;
   }
 .back{
-    float: left;
     padding-left: 1%;
     padding-top: 1%;
 
 }
+.head{overflow: hidden;}
 .logo {
+    display: block;
     text-align: center;
     margin: 0 auto;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 .content {
@@ -28,22 +29,27 @@ p{
     padding-bottom:18%;
     padding-top:17%;
 }
-.content .p{
-    font-size: 5rem;
+.content p{
+    font-size: 3rem;
     text-align:center;
     color:white;
 }
 
 
 .men {
-    font-size: 8.4rem;
     text-align: center;
     float:left;
     padding-left:20%;
 }
 
-.tag {font-size: 8.8rem;
+.tag {
     text-align: center;
     float:right;
     padding-right:20%;
 }
+.human{
+    padding-bottom: 1rem;
+    width:8.4rem;}
+.grape{
+    padding-bottom: 1rem;
+    width:8.8rem;}
