@@ -12,8 +12,8 @@ p{
   }
 .back{
     width:3rem;
-    padding-left: 3%;
-    padding-top: 3%;
+    padding-left: 1rem;
+    padding-top: 1rem;
 
 }
 .head{overflow: hidden;}
@@ -21,14 +21,14 @@ p{
     display: block;
     text-align: center;
     margin: 0 auto;
-    padding-top: 96px;
+    padding-top:10rem;
 }
 
 .content {
     margin:0 auto;
     width:70%;
-    padding-bottom:120px;
-    padding-top:110px;
+    padding-bottom:12rem;
+    padding-top:11rem;
 }
 .content p{
     font-size: 3rem;
