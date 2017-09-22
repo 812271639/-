@@ -8,7 +8,9 @@
 html{background-color: #eff0f4;
     font-size: 62.5%;
 }
-
+input{
+    outline: none;
+}
 .header{
     background-color: #68cdd5;
     height:6rem;
@@ -59,7 +61,7 @@ img{
 .middle{
     width:90%;
     padding:0;
-    margin: 0;
+    margin-top:-.3rem;
     float: left;
 }
 .name{
@@ -67,7 +69,7 @@ img{
     font-size: 2.2rem;
     background:white ;
     margin: 1rem 0 1rem 0;
-    height:4rem;
+    line-height:4rem;
     width: 100%;
     padding-left: 1rem;
 }
@@ -76,7 +78,7 @@ img{
     border: 0;
     font-size: 2.2rem;
     background:white ;
-    height:4rem;
+    line-height:4rem;
     width: 100%;
     margin-top:1rem;
     padding-left: 1rem;
@@ -93,6 +95,7 @@ img{
     color: white;
     text-align: center;
     font-size: 2.6rem;
+    cursor: pointer;
 }
 p{
     text-align: right;
