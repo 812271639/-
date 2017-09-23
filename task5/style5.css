@@ -39,6 +39,10 @@ html{
 .main .photo{
     width:1.4rem;
 }
+.main .map{
+    width:.2rem;
+    margin-right: 1rem;
+}
 .main .name{
     color:white;
     position: relative;
@@ -71,6 +75,10 @@ html{
     margin-left: 0.3rem;
     padding-left: 0.1rem;
     border-bottom: solid 1px #999999;
+}
+.middle img{
+    width:.2rem;
+    margin-right: .1rem;
 }
 .content .style {
     padding-left: 0.3rem;
