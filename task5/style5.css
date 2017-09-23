@@ -8,7 +8,8 @@
 html{
     font-size: 625%;
 }
-.header{text-align: center;
+.header{
+    text-align: center;
     color: white;
     background-color: #68cdd5;
     max-width:100%;
@@ -16,11 +17,9 @@ html{
 }
  .header h2{
      font-size: 0.31rem;
-     display: inline-block;
 }
 .header p{
     float: left;
-    display: inline-block;
     font-size: 0.31rem;
     margin-left: 0.32rem;
 }
@@ -41,7 +40,7 @@ html{
 }
 .main .map{
     width:.2rem;
-    margin-right: 1rem;
+    margin-right: .1rem;
 }
 .main .name{
     color:white;
@@ -95,24 +94,29 @@ p strong{
 }
 
 .last{
-    display:flex;
-    align-items: center;
     max-width:100%;
     overflow: hidden;
     font-size: 0.22rem;
     padding-left: 0.4rem;
     border-bottom: solid 1px #999999;
 }
-.last span{
+.last .i span{
     color: #999999;
     padding-right: 0.2rem;
-    margin: 0 0.2rem 0 0.2rem;
+    margin-left: 0.2rem;
     border: 0;
     border-right: solid 1px #999999;
     line-height:0.8rem;
 }
+.i{
+    display: inline-block;
+}
+
 .last .value{
-    padding-left: 0.2rem;
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+    width: calc(80% - 53px);
 
 }
 
