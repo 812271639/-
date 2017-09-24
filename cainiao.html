@@ -1,34 +1,27 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 <head>
-    <meta charset="utf-8"> 
-    <title>菜鸟</title> 
-    <style type="text/css">
-        #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            background: #ddd;
+            display: flex;
+          align-items: center;
+            justify-content: center;
+        }
+        #child {
+            width: 100px;
+            height: 100px;
+            background: #08BC67;
+            line-height: 100px;
+        }
     </style>
-    <script>
-        function allowDrop(ev)
-        {
-            ev.preventDefault();
-        }
-        function drag(ev)
-        {
-            ev.dataTransfer.setData("text",ev.target.id);
-        }
-        function drop(ev)
-        {
-            ev.preventDefault();
-            var data=ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-        }
-    </script>
 </head>
 <body>
-<p>拖动runoob.com</p>
-<div id=""div1 ondrop="drop(event)" ondragover="allowDrop(event)">
-    <img src="img_w3slogo.if" draggable="true" ondragstart="drag(event)" id="drag1"width="88"height="31">
+
+<div id="box">
+    <div id="child">今天写了第一篇博客，希望可以坚持写下去！</div>
 </div>
-<div id=""div1 ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 </body>
 </html>
-
