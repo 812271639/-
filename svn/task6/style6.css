@@ -23,12 +23,26 @@ body { padding-top: 12rem;
     border-radius: 1rem;
     padding:1rem 0 1rem 1rem;
 }
+.header .boss .in{
+    background-color: #55a8b3;
+    color:white;
+    border: none;
+    font-size: 2rem;
+    outline: none;
+}
 .header .nurse{
-    margin-left: 1rem;
     background-color: white;
     color: #5fc0cd;
     border-radius: 1rem;
     padding:1rem;
+}
+.header .nurse .in{
+    background-color: white;
+    color:#55a8b3;
+    border: none;
+    font-size: 2rem;
+    outline: none;
+
 }
 .localt{
     display: inline-block;
@@ -80,7 +94,7 @@ body { padding-top: 12rem;
 
 }
 .photo{
-    line-height: 5rem;
+    line-height: 7rem;
 
 }
 .house{
