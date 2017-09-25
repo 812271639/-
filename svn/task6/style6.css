@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    margin:0;
+
+}
+body { padding-top: 12rem;
+    padding-bottom: 7rem;
+}
+.header{
+    text-align: center;
+    background-color: #5fc0cd;
+    line-height: 5rem;
+    padding:1rem 0 1rem 0;
+    font-size: 3rem;
+}
+.header .boss{
+    background-color: #55a8b3;
+    color:white;
+    border-radius: 1rem;
+    padding:1rem 0 1rem 1rem;
+}
+.header .nurse{
+    margin-left: 1rem;
+    background-color: white;
+    color: #5fc0cd;
+    border-radius: 1rem;
+    padding:1rem;
+}
+.localt{
+    display: inline-block;
+    vertical-align: middle;
+    width: 4.2rem; height: 4.4rem;
+    background: url('css_sprites.png') -.8rem -.8rem;
+}
+.button .dropdown{margin:0;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    background-color: white;
+    border: none;
+    padding:0;
+}
+.dropdown-toggle {
+    width:100%;
+   background-color: white;
+    border:0;
+}
+.box{
+    border-bottom:#afbac0 solid 1px;
+    line-height: 5rem;
+}
+.box .container .row .date{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 24px; height: 24px;
+    background: url('css_sprites.png') -72px -74px;
+}
+.container .row .map{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+    width: 19px; height: 23px;
+    background: url('css_sprites.png') -138px -10px;
+}
+.box .container .row .col-xs-5 {
+    text-align: right;
+    color:red ;
+    padding-right: 2rem;
+}
+.box .container .row .col-xs-5 strong{
+    color: #5fc0cd ;
+    margin-left: 1rem;
+}
+.footer{
+    text-align:center;
+
+}
+.photo{
+    line-height: 5rem;
+
+}
+.house{
+     margin-top:1rem;
+     display: inline-block;
+     width: 46px; height: 40px;
+     background: url('css_sprites.png') -72px -10px;
+ }
+ .man{
+     margin-top:1rem;
+     display: inline-block;
+    width: 42px; height: 41px;
+    background: url('css_sprites.png') -10px -74px;
+}
+ img{
+     width:6rem;
+     vertical-align: middle;
+
+ }
