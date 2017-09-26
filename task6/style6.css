@@ -90,25 +90,28 @@ body { padding-top: 1.2rem;
 }
 .footer{
     text-align:center;
-    height:.7rem;
+    line-height:.7rem;
 
 }
 .photo{
       line-height: .7rem;
   }
 .photo img{
-    width:1rem;
-    padding:0.08rem;
+    width:.7rem;
+    padding:0.05rem;
     vertical-align: middle;}
+.footer .col-xs-4 .home{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: .2rem;
+}
 
 .house{
-     margin-top:.2rem;
      display: inline-block;
      width: 46px; height: 40px;
      background: url('css_sprites.png') -72px -10px;
  }
  .man{
-     margin-top:.2rem;
      display: inline-block;
     width: 42px; height: 41px;
     background: url('css_sprites.png') -10px -74px;
@@ -118,7 +121,7 @@ body { padding-top: 1.2rem;
         font-size: 470%;
     }
     .photo img{
-        width:1.2rem;
+        width:.9rem;
     }
 
 }
