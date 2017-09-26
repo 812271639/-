@@ -43,7 +43,7 @@ body { padding-top: 1.2rem;
 .localt{
     display: inline-block;
     vertical-align: middle;
-    width: .42rem; height: .44rem;
+    width: 42px; height: 44px;
     background: url('css_sprites.png') -10px -10px;
 }
 .button .dropdown{margin:0;
@@ -97,7 +97,7 @@ body { padding-top: 1.2rem;
       line-height: .7rem;
   }
 .photo img{
-    width:.9rem;
+    width:1rem;
     padding:0.08rem;
     vertical-align: middle;}
 
@@ -113,6 +113,12 @@ body { padding-top: 1.2rem;
     width: 42px; height: 41px;
     background: url('css_sprites.png') -10px -74px;
 }
+@media screen and (min-width: 319px) and (max-width:415px){
+    html{
+        font-size: 470%;
+    }
+    .photo img{
+        width:1.2rem;
+    }
 
-@media screen and (max-width: 360px) {
-    html {width: 500px} }
+}
