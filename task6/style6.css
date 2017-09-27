@@ -107,6 +107,7 @@ body { padding-top: 1.3rem;
     display: inline-block;
     vertical-align: middle;
     line-height: .2rem;
+    margin-top: .1rem;
 }
 
 .house{
@@ -127,4 +128,12 @@ body { padding-top: 1.3rem;
         width:.9rem;
     }
 
+}
+@media screen and (max-width: 320px){
+    html{
+        font-size: 370%;
+    }
+    .photo img{
+        width:1rem;
+    }
 }
