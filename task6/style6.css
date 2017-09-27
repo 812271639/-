@@ -7,8 +7,8 @@ html{
     margin:0;
 
 }
-body { padding-top: 1.2rem;
-    padding-bottom: .7rem;
+body { padding-top: 1.3rem;
+    padding-bottom: .9rem;
 }
 .header{
     text-align: center;
@@ -78,6 +78,9 @@ body { padding-top: 1.2rem;
 }
 .box .container .row .col-xs-7{
     padding-left: .5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .box .container .row .col-xs-5 {
     text-align: right;
