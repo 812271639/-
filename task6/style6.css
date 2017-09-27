@@ -61,6 +61,7 @@ body { padding-top: 1.3rem;
 .box{
     border-bottom:#afbac0 solid 1px;
     line-height: .5rem;
+    font-size: .2rem;
 }
 .box .container .row .date{
     display: inline-block;
@@ -127,6 +128,13 @@ body { padding-top: 1.3rem;
     .photo img{
         width:.9rem;
     }
+    .box .container .row .col-xs-7{
+        padding-left: .6rem;
+    }
+    body { padding-top: 1.6rem;
+        padding-bottom: 1rem;
+    }
+
 
 }
 @media screen and (max-width: 320px){
@@ -135,5 +143,11 @@ body { padding-top: 1.3rem;
     }
     .photo img{
         width:1rem;
+    }
+    .box .container .row .col-xs-7{
+        padding-left: .75rem;
+    }
+    body { padding-top: 1.6rem;
+        padding-bottom: 1rem;
     }
 }
