@@ -4,38 +4,29 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>css 垂直居中对齐的demo</title>
-    <style type="text/css">
+    <style>
 
-        #box {  width:700px;  height:500px;  background: #ddd;  vertical-align: middle;
+        .son{
+            background-color: olivedrab;
+            line-height:150px;
+            border:1px dashed #cccccc;
+            padding-left:5px;
         }
-        #one {  vertical-align: middle;  display: inline-block;  width: 200px;  background: #A1CCFE;
-        }
-        .two{  width:150px;  height:150px;
-            background-color: yellow;  display: inline-block;  vertical-align: middle;
-        }
-        .three{  height:300px;  height:100%;
-            width:100px;  background-color: #2b542c;
-            vertical-align: middle;  display: inline-block;
-        }
-        .four{ width:150px;  height:150px;  background-color: blue;
-            display: inline-block;  vertical-align: middle;
-        }
+        span{
+            text-align: center;
+            background-color: #68cdd5;
+            display:inline-block;
+            line-height:1.4em;
+            font-size:12px;
+            vertical-align:middle;}
+
     </style>
 </head>
 <body>
-<div id="box">
-    <div id="one">我是测试DIV</div>
-
-
-<div class="two" >
-    我是测试文字  我是测试文字  我是测试文字
+<div class="son">
+<span>这里是高度为150像素的标签内的多行文字，文字大小为12像素。
+    <br />这里是第二行，用来测试多行的显示效果。</span>
 </div>
-    <div class="three" >
-        我我是测试DIV我是测是测试DIV我我是测试DIV我是测是测试DIV我我是测试DIV
-        我是测是测试DI我我是测试DIV我是测是测试DIV我我是测试DIV我是测是测试DIV
-    </div>
-    <div class="four"> </div>
-   </div>
 </body>
 </html>
 
