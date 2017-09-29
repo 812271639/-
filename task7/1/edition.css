@@ -10,9 +10,9 @@ body{
     width: 100%;
 }
 .header{
-    max-width: 100%;
+    max-width:6.4rem;
 }
-.header .navbr-fixed-top {
+.header .navbar-fixed-top {
     background-color: #29bde0;
     max-width: 6.4rem;
     height:.8rem;

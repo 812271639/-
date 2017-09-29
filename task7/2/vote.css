@@ -49,8 +49,17 @@ html{font-size: 625%;}
     color:#464646;
 }
 .music{
+    position: relative;
     float: right;
     margin-right: .1rem;
+}
+audio{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: -2.6rem;
+    opacity: 0;
 }
 .triangle{
     width: 0;
