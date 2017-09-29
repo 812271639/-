@@ -15,6 +15,7 @@ body{
 .header .navbr-fixed-top {
     background-color: #29bde0;
     max-width: 6.4rem;
+    height:.8rem;
     margin: 0 auto;
 }
 .out {
