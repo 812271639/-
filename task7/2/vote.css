@@ -1,0 +1,137 @@
+
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-size: 16px;
+}
+html{font-size: 625%;}
+
+.header{
+    height: .8rem;
+    max-width: 100%;}
+.container{
+    max-width: 6.4rem;
+}
+.navbar-fixed-top{
+    text-align: center;
+    margin:0 auto;
+    line-height: .8rem;
+    max-width: 6.4rem;
+    background-color: #29bde0;
+}
+.head{
+    font-size: .3rem;
+}
+
+.list{
+    float: left;
+    margin-left:.1rem;
+}
+.close1{
+    float: right;
+    margin-right:.1rem;
+}
+
+.content{
+    max-width:100%;
+}
+.container{
+    max-width: 6.4rem;
+    background-color: #29bde0;
+}
+.top{
+    font-size: .3rem;
+    line-height: .8rem;
+    background-color: #b9e9f5;
+    padding-left: .2rem;
+    color:#464646;
+}
+.music{
+    float: right;
+    margin-right: .1rem;
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: solid transparent 7px;
+    border-right: solid transparent 7px;
+    border-top:  #b9e9f5 solid 13px;
+}
+.middle{
+    height: .9rem;
+    margin-left: .4rem;
+    font-size: .2rem;
+    color: rgba(225,225,225,0.5);
+}
+
+.card{
+    width:1.36rem;
+    height: 1.36rem;
+    margin:.2rem auto;
+    border: white solid 5px;
+    background-color: #f5c97b;
+}
+.farmer{
+    text-align: center;
+    width:1.26rem;
+    line-height:1rem;
+    font-size: .3rem;
+}
+.number{
+    text-align: center;
+    width:1.26rem;
+    line-height:.26rem;
+    font-size: .22rem;
+    background: rgba(131,176,154,.5);
+}
+.box{overflow: hidden;
+}
+.col-xs-12{text-align: center;
+}
+.sprite     { opacity:0;}
+.main:hover .sprite { opacity: 1; }
+.knife{
+
+    display: inline-block;
+    padding-left: .2rem;
+    height:.3rem;
+    width:.3rem;
+    background: url("../picture/img.png") 0 0;
+}
+
+.glass{
+    display: inline-block;
+    height:30px;
+    width:30px;
+    background:url("../picture/img.png") -68px 0;
+}
+.turn{
+    display: inline-block;
+    height:30px;
+    width:30px;
+    background: url("../picture/img.png") -34px 0;
+}
+.help {
+    display: inline-block;
+    height:30px;
+    width:30px;
+    background:url("../picture/img.png") -104px 0;
+}
+.navbar-fixed-bottom{
+    padding:.25rem 0 .6rem 0;
+    text-align: center;
+    margin:0 auto;
+    max-width: 6.4rem;
+    background-color: #29bde0;
+}
+.foot{
+    text-align: center;
+    margin:0 auto;
+    line-height:.87rem;
+    width:4.89rem;
+    background-color:#fbb435;
+    color:white;
+    font-size: .36rem;
+}
