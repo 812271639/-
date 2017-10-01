@@ -85,13 +85,17 @@ body{
     border-bottom: #c7c7c7 solid 1px;
     font-size: .26rem;
 }
+
 .again{
     line-height: .6rem;
     padding: 0 9%;
      display: inline-block;
+    color: white;
      background-color: #f66f6f;
     border-radius: 5px;
  }
+a:hover{
+}
 .share{
     line-height: .6rem;
     padding: 0 3.7%;
