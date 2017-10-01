@@ -15,10 +15,10 @@ body{
     width: 100%;
 }
 img{  width:.2rem;}
-.header{
+header{
     max-width:6.4rem;
 }
-.header .navbar-fixed-top {
+.navbar-fixed-top {
     background-color: #29bde0;
     max-width: 6.4rem;
     height:.8rem;
@@ -41,17 +41,17 @@ img{  width:.2rem;}
     border-top: white solid .04rem;
     margin-top: .075rem;
  }
- .content{
+ main{
      margin: 0 auto;
      background-color: #f0f0f0;
      max-width: 6.4rem;
      padding-bottom: .6rem;
  }
-.content .container{
+main .container{
     max-width: 5.7rem;
 
 }
-.content .top{
+.top{
     text-align: center;
     font-size: .34rem;
     line-height:1.15rem;
