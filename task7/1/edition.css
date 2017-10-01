@@ -60,10 +60,7 @@ main .container{
     color: #787878;
     background-color: white;
 }
-.top span{  float: right;  }
-.main{
-    position: relative;
-    background-color: white;
+.top span{  float: right;
  }
 .middle{
     text-align: center;
@@ -72,6 +69,14 @@ main .container{
     color: #fbb435;
     font-size: .4rem;
     border-bottom: #fbb435 solid 1px;
+}
+.position{
+    position: relative;
+}
+.left{
+    position: absolute;
+    top:47%;
+    right:.1rem;
 }
 .type{
     margin: 0 auto;
@@ -106,16 +111,11 @@ main .container{
     border-radius: 50%;
     background-color:#f0f0f0;
 }
-.foot{
-    position: absolute;
-    top:47%;
-    right:.2rem;
-}
+
 @media screen and (min-width: 320px) and (max-width: 375px){
     html {  font-size: 380%; }
-    .foot {
-        position: absolute;
-        top: 47%;
-        right: .28rem;
-    }
+
 }
+@media screen and (max-width: 320px) {
+    html {  font-size: 300%; }
+    }

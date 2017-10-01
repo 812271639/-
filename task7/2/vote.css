@@ -34,7 +34,8 @@ header{
 main{
     margin: 0 auto;
     max-width:6.4rem;
-    padding-bottom: .8rem;
+    padding-bottom: 1rem;
+    background-color: #29bde0;
 }
 .container{
     max-width: 6.4rem;
@@ -51,17 +52,18 @@ main{
 .music{
     position: relative;
     float: right;
-    margin-right: .1rem;
+    margin-right: .3rem;
 }
 .music img{width:.3rem;}
 audio{
     position: absolute;
     margin: auto;
-    top: 0;
+    top: .1rem;
     bottom: 0;
-    right: -.33rem;
+    right: -.01rem;
     opacity: 0;
-    width:.64rem;
+    width:1.8rem;
+    transform:rotate(180deg);
 }
 .triangle{
     width: 0;
@@ -102,39 +104,39 @@ audio{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 64%;
+    width: 75%;
     margin: 0 auto;
 
 }
 .main:hover .sprite { opacity: 1;  opacity:0;}
 .knife{
     display: inline-block;
-    height: 0;
-    padding-bottom: .3rem;
+    height:.3rem;
     width: .312rem;
     background: url("../picture/img.png") 0 0;
+    background-size: 1.34rem;
 }
 
 .glass{
     display: inline-block;
-    height: 0;
-    padding-bottom: .3rem;
+    height:.3rem;
     width: .312rem;
-    background:url("../picture/img.png") -68px 0;
+    background:url("../picture/img.png") -.68rem 0;
+    background-size: 1.34rem;
 }
 .turn{
     display: inline-block;
-    height: 0;
-    padding-bottom: .3rem;
+    height: .3rem;
     width: .312rem;
-    background: url("../picture/img.png") -34px 0;
+    background: url("../picture/img.png") -.34rem 0;
+    background-size: 1.34rem;
 }
 .help {
     display: inline-block;
-    height: 0;
-    padding-bottom: .3rem;
-    width: .312rem;
-    background:url("../picture/img.png") -104px 0;
+    height:.3rem;
+    width: .3rem;
+    background:url("../picture/img.png") -1.04rem 0;
+    background-size: 1.34rem;
 }
 
 footer{
@@ -159,4 +161,34 @@ footer{
 }
 a:hover{
     text-decoration:none;
+}
+@media screen and (min-width: 320px) and (max-width: 375px){
+    html{font-size: 300%;}
+    .sprite{width:90%;}
+    audio{
+        position: absolute;
+        margin: auto;
+        top: .1rem;
+        bottom: 0;
+        right: -.15rem;
+        opacity: 0;
+        width:1.8rem;
+        transform:rotate(180deg);
+    }
+
+}
+@media screen and (min-width: 376px) and (max-width: 414px){
+    html{font-size: 380%;}
+    .sprite{width:85%;}
+    audio{
+        position: absolute;
+        margin: auto;
+        top: .1rem;
+        bottom: 0;
+        right: -.15rem;
+        opacity: 0;
+        width:1.8rem;
+        transform:rotate(180deg);
+    }
+
 }
