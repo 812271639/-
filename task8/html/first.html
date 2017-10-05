@@ -20,28 +20,51 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <img src="../picture/logo.png">
+                <img class="logo" src="../picture/logo.png">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-            <ul class="nav navbar-nav navbar-right abc">
-                <li><a class="work" href="">首页</a></li>
-                <li><a class="work" href="">职业</a></li>
-                <li><a class="work" href="">推荐</a></li>
-                <li><a class="work" href="">关于</a></li>
-            </ul>
+            <div class="collapse navbar-collapse navbar-right is-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="work" href="">首页</a></li>
+                    <li><a class="work" href="">职业</a></li>
+                    <li><a class="work" href="">推荐</a></li>
+                    <li><a class="work" href="">关于</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <div class="image">
-        <div class="circle2">
-        <div class="circle1"></div>
-        <div class="circle1"></div>
-        <div class="circle1"></div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img class="image" src="../picture/image.png"/>
+            </div>
+            <div class="item">
+                <img class="image" src="../../5.jpg"/>
+            </div>
+            <div class="item">
+                <img class="image" src="../../6.jpg"/>
+            </div>
         </div>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </header>
 <main>
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-sm-12 col-md-9">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="row">
@@ -66,7 +89,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 line">
+            <div class=" col-sm-6  col-md-3 line">
                 <div class="row">
                     <div class="number"><span class="man"></span>
                         12400
@@ -81,113 +104,127 @@
         </div>
 
         <div class="row middle3">如何学习</div>
-        <div class="row step">
-            <div class="col-md-3">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">1</div>
                     </div>
-                    <div class="col-md-8">
-                        匹配你现在的个人情况，寻找合适自己的岗位
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            匹配你现在的个人情况，寻找合适自己的岗位
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+
+
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">2</div>
                     </div>
-                    <div class="col-md-8">
-                        了解职业前景薪资待遇、竞争压力等
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            了解职业前景薪资待遇、竞争压力等
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">3</div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-xs-6 col-sm-7 col-md-8">
                         <div class="world">
                             掌握行业内顶级技能
                         </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2 ">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">4</div>
                     </div>
-                    <div class="col-md-8 ">
+                    <div class="col-xs-6 col-sm-7 col-md-8">
                         <div class="world">
                             查看职业目标任务
                         </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row step">
-            <div class="col-md-3">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">5</div>
                     </div>
-                    <div class="col-md-8">
-                        参考学习资源，掌握技能点，逐个完成任务
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            参考学习资源，掌握技能点，逐个完成任务
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">6</div>
                     </div>
-                    <div class="col-md-8">
-                        加入班级，和小伙伴们互帮互助，一块学习
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            加入班级，和小伙伴们互帮互助，一块学习
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">7</div>
                     </div>
-                    <div class="col-md-8">
-                        选择导师，一路引导，加速自己成长
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            选择导师，一路引导，加速自己成长
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 step">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3 col-sm-2 col-md-2 circle1">
                         <div class="circle">8</div>
                     </div>
-                    <div class="col-md-8 world">
-                        完成职业技能，升级业界大牛
+                    <div class="col-xs-6 col-sm-7 col-md-8">
+                        <div class="world">
+                            完成职业技能，升级业界大牛
+                        </div>
                     </div>
-                    <div class="col-md-2 point1">
+                    <div class="col-xs-3 col-sm-3 col-md-2 point1">
                         <span class="point"></span>
                     </div>
                 </div>
@@ -195,7 +232,7 @@
         </div>
         <div class="row middle3">优秀学员展示</div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="card">
                     <div class="row">
                         <div class="girl1"></div>
@@ -206,7 +243,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="card">
                     <div class="row">
                         <div class="girl2"></div>
@@ -217,7 +254,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="card">
                     <div class="row">
                         <div class="girl3"></div>
@@ -228,7 +265,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-md-3">
                 <div class="card">
                     <div class="row">
                         <div class="girl4"></div>
@@ -298,26 +335,26 @@
     </div>
     <div class="row foot">
         <div class="container">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="row foot1">技能树 —— 改变你我</div>
                 <div class="row foot2">关于我们 <span></span> 联系我们 <span></span>合作企业</div>
             </div>
-            <div class="col-md-4">
-                <div class="row foot1">
-                    <div class="col-md-12">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-12  foot1">
                         旗下网站
                     </div>
                 </div>
-                <div class="row foot1">
-                    <div class="col-md-6 "><span>草船云孵化器</span></div>
-                    <div class="col-md-6 ">最强IT特训营</div>
+                <div class="row">
+                    <div class="col-md-6  foot1">草船云孵化器</div>
+                    <div class="col-md-6  foot1">最强IT特训营</div>
                 </div>
-                <div class="row foot1">
-                    <div class="col-md-6 ">葡萄藤轻游戏</div>
-                    <div class="col-md-6 ">桌游精灵</div>
+                <div class="row ">
+                    <div class="col-md-6 foot1 ">葡萄藤轻游戏</div>
+                    <div class="col-md-6 foot1">桌游精灵</div>
                 </div>
             </div>
-            <div class="col-md-4 code">
+            <div class="col-md-2 code">
                 <div>
                     <p>微信公众平台</p>
                     <img src="../picture/erweima.jpg"></div>
@@ -327,7 +364,5 @@
     <div class="row foot3">Copyright © 2015 北京葡萄藤信息技术有限公司 All Rights Reserved | 京ICP备15035574号-1</div>
 
 </footer>
-
-
 </body>
 </html>
