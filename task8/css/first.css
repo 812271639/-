@@ -137,7 +137,10 @@ main{
 .number2 {
     margin: .3rem 0 0 .3rem;
 }
-
+.number3{
+    width:1.8rem;
+    margin:0 auto;
+}
 .line {
     height: 2.5rem;
     border-left: #999999 dashed 1px;
@@ -232,16 +235,17 @@ main{
      border: 1px solid #eee7e7;
 }
 .company{
-
-}
-.company{
     width: 100%;
     margin-bottom: .5rem;
     background-color: white;
 }
-main img{
+.company img{
     width:1.9rem;
     margin:0;
+    border: rgba(245,245,245,0) solid 2px;
+}
+.company img:hover{
+    border: rgba(245,245,245,1) solid 2px;
 }
 footer{
     background-color: #26a26f;
@@ -255,25 +259,36 @@ ul{
     overflow: hidden;
 }
 .links ul>li{
+    color: #a1a1a1;
     float: left;
     font-size: .14rem;
-    margin:.15rem .25rem;
+    margin:.07rem .3rem;
 }
 .links{
     background-color: white;
     width: 100%;
 }
+.links a{
+    color: #a1a1a1;
+}
+
+.foot a{
+    text-decoration: none;
+    padding-bottom: .05rem;
+    border-bottom: rgba(225,225,225,0) solid 2px;
+    color: white;
+}
+.foot a:hover{
+    border-bottom: rgba(225,225,225,1) solid 2px;
+}
 .foot1{
     color: white;
     margin-top: .2rem ;
 }
-.foot2{
-    color: white;
-   margin-top:.2rem ;
-}
-.foot1 span{
-    border-bottom: white solid 1px;
-    margin-bottom: .05rem;
+
+.foot .foot1 span{
+    border-left: white solid 2px;
+    margin: .05rem;
 }
 .foot img{
     width: .9rem;
