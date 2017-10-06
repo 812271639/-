@@ -90,6 +90,10 @@ strong{
     padding:.2rem 0;
     border-bottom: #edf1f2 solid 1px; /*线条样式*/
 }
+.line2 a{
+    text-decoration: none;
+    color: #333333;
+}
 .word1{
     color: #999999;
 }
@@ -109,22 +113,54 @@ strong{
     border-bottom: #d0d6d9 solid 1px; /* 线条样式 前端开发  后端开发 。。。*/
 }
 .massage{
-    width:3.84rem;
-    padding:.2rem .1rem 0 .1rem;          /*职业信息介绍部分*/
+    position: relative;              /*职业信息介绍部分*/
     margin: 0 auto;
     margin-top: .5rem;
     border: #d0d6d9 solid 1px ;
     border-radius: 5px;
-    overflow: hidden;
+
 }
+
+.my{                                 /*隐藏层*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding:.8rem .4rem;
+    background-color: #3d3d3d;
+    border-radius: 5px;
+    transition: transform 1s;
+    opacity: 0;
+    z-index: 1;
+    word-break: break-all;
+    text-align: center;
+}
+.my p{
+    text-align: left;
+    text-indent: 2em;
+    font-size: .16rem;
+}
+
+.massage:hover .my{                    /*隐藏的hover效果*/
+    z-index: 1;
+    opacity: 1;
+    color: white;
+    background-color: rgba(61,61,61,0.9);
+    transform: rotate(360deg);
+}
+
+
+
 .image{
-   float: left;
-    width: 1.39rem;             /*图片*/
-    margin:0 .1rem .17rem 0;
+    float: left;
+    width: 1.38rem;             /*图片*/
+    margin:.2rem .1rem .17rem 0;
 }
 .introduce{
+    margin-top: .2rem;
    float: left;                 /*图片文字描述*/
-    width: 2.1rem;
+    width: 1.8rem;
 }
 .line4{
     overflow: hidden;
@@ -133,8 +169,12 @@ strong{
 .word4{
     line-height: .4rem;
     border-bottom: #d0d6d9 solid 1px ;                /*表格*/
-    border-left: #d0d6d9 solid 1px;
     color: #999999;
+}
+.word41{
+    border-left: #d0d6d9 solid 1px;
+    border-bottom: #d0d6d9 solid 1px ;
+    line-height: .4rem;
 }
 .word4 img{
     vertical-align: sub;
@@ -142,7 +182,6 @@ strong{
 }
 .word4 span{
     color: red;                                      /*红色字体*/
-    margin-left: .1rem;
 }
 
 .word5{
@@ -154,7 +193,6 @@ strong{
 .word6{
     line-height: .34rem;
     border-bottom: #d0d6d9 solid 1px ;
-    border-right: #d0d6d9 solid 1px;
 }
 .right{
     float: right;                                   /*文字居右*/
@@ -170,9 +208,9 @@ strong{
     color: red;
 }
 .word8{
-    line-height: .4rem;
+    padding:.12rem 0;
+    padding-left: .1rem;
     font-size: .12rem;                           /*卡片底部字体样式*/
-    border-bottom: #d0d6d9 solid 1px;
 }
 
 footer{
