@@ -118,9 +118,9 @@ strong{
 .left{
     float: left;
     width:30%;                            /*布局*/
-    margin-left: -100%;
     text-align: center;
     background-color: #ffffff;
+    z-index: 1;
 }
 .left-top{
     text-align: center;
@@ -129,8 +129,7 @@ strong{
     border-bottom: solid #e8e8e8 1px;
 }
 .right{
-    float: left;
-    width:100%;                         /*布局*/
+    width:100%;         /*布局*/
 }
 .introduce{
     margin-left: 32%;                    /*布局*/
@@ -138,6 +137,24 @@ strong{
     padding-bottom: 1rem;
     margin-bottom: .2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .right{
+        float: left;
+        width:100%;         /*布局*/
+    }
+
+    .introduce{
+        margin-left: 0;  }
+    .left{
+        float: left;
+        width:100%;}
+    .left > ul > li{float: left;}
+    .left a{
+        margin-left: .1rem;
+    }
+}
+
 .left ul{
      list-style-type:none;
     display: inline-block;
