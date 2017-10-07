@@ -66,9 +66,14 @@ body{
     font-size: .18rem;
     color: white;
 }
+.navbar-nav{margin:0;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+    background-color: transparent;                                               /*隐藏按钮背景色*/
+}
+
 .navbar-default .navbar-nav > li{
-    padding-left: 0;
-    margin-left: .1rem;
+    text-align: center;
+    padding:0 .2rem;
     border-bottom: rgba(225,225,225,0) solid 2px;
 }
 .navbar-default .navbar-nav > li:hover {
@@ -80,15 +85,23 @@ body{
 }
 
 main .hello{
+    text-align: center;
     position:fixed;
     bottom: 33%;
-    right: .2rem;
+    right: 0;
+    width: .2rem;
+    background-color: rgba(41,176,120,.8);
+}
+.hello a{
+    text-decoration: none;
+    color: white;
 }
 .company{
-    height: 2.4rem;
+   height: 15vw;
     width: 100%;
-    background: url("../picture/company.png")   ;
-    background-position: center -.01rem;
+    background: url("../picture/company.png") no-repeat center center   ;
+
+    background-size:130% 100%;
 }
 .line1{
     padding: .3rem;

@@ -60,6 +60,7 @@ body{
     margin-top: 25px;
 }
 .is-collapse{padding-right: 0;}
+.navbar-nav{margin:0;}                      /*消除滚动条*/
 .navbar-default .navbar-nav > li > .work {
     display: inline-block;
     padding-right: 0;
@@ -67,23 +68,21 @@ body{
     font-size: .18rem;
     color: white;
 }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+    background-color: transparent;                                               /*隐藏按钮背景色*/
+}
 .navbar-default .navbar-nav > li{
+    text-align: center;              / *导航隐藏居中*/
     padding-left: 0;
-    margin-left: .1rem;
-    border-bottom: rgba(225,225,225,0) solid 2px;
-
-
+    padding:0 .2rem;
+    border-bottom: rgba(255,255,255,0) solid 3px;
 }
 .navbar-default .navbar-nav > li:hover {
-    border-bottom: rgba(225,225,225,1) solid 2px;
+    border-bottom: rgba(255, 255, 255,1) solid 3px;
 }
 
 .navbar-default .navbar-nav > li > .work:hover {
   color: white;
-}
-.carousel-inner > .item > img {
-    height:6rem;
-    width:100%;
 }
 .carousel-inner{
     margin-bottom: 1.63rem;
@@ -235,17 +234,18 @@ main{
      border: 1px solid #eee7e7;
 }
 .company{
-    width: 100%;
+    display: inline-block;
     margin-bottom: .5rem;
     background-color: white;
+    box-shadow: 0 1px 3px #e4e4e4;
 }
 .company img{
-    width:1.9rem;
-    margin:0;
-    border: rgba(245,245,245,0) solid 2px;
+    height:1.7rem;
+    width:2.3rem;
+    margin:.01rem 0;
 }
 .company img:hover{
-    border: rgba(218, 218, 218,1) solid 2px;
+    box-shadow: 0 0 20px #e7e7e7;
 }
 footer{
     background-color: #26a26f;
@@ -263,14 +263,21 @@ ul{
     float: left;
     font-size: .14rem;
     margin:.07rem .3rem;
+    border-bottom: rgba(38,126,111,0) solid 1px;
 }
 .links{
     background-color: white;
     width: 100%;
 }
 .links a{
+    text-decoration: none;
     color: #a1a1a1;
 }
+.links li:hover {
+    border-bottom: rgba(38,126,111,1) solid 1px;
+}
+
+
 
 .foot a{
     text-decoration: none;
