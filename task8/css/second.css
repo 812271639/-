@@ -118,6 +118,10 @@ strong{
     padding: .3rem 0;
     border-bottom: #d0d6d9 solid 1px; /* 线条样式 前端开发  后端开发 。。。*/
 }
+.line3 a{
+    text-decoration: none;               /*覆盖锚点 a 的样式*/
+    color: #333333;
+}
 .massage{
     position: relative;              /*职业信息介绍部分*/
     margin: 0 auto;
@@ -143,7 +147,7 @@ strong{
     transition:opacity .5s,  transform 1.5s;
 
 }
-h3{  transform: rotateY(180deg);}
+   h3{  transform: rotateY(180deg);}
 .my p{
     text-align: left;
     text-indent: 2em;
@@ -168,9 +172,8 @@ h3{  transform: rotateY(180deg);}
     margin:.2rem .1rem .17rem 0;
 }
 .introduce{
-    margin-top: .2rem;
-   float: left;                 /*图片文字描述*/
-    width: 1.8rem;
+    margin-top: .2rem;              /*图片文字描述*/
+
 }
 .line4{
     overflow: hidden;
@@ -187,6 +190,10 @@ h3{  transform: rotateY(180deg);}
     line-height: .4rem;
 }
 .word4 img{
+    vertical-align: sub;
+    margin-left: .1rem;
+}
+.word41 img{
     vertical-align: sub;
     margin-left: .1rem;
 }

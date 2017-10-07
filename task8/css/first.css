@@ -87,6 +87,7 @@ body{
 .carousel-inner{
     margin-bottom: 1.63rem;
 }
+
 main{
     background-color: #fafafa;
 }
@@ -225,6 +226,14 @@ main{
     padding: .2rem .3rem;
     margin:.2rem;
     background-color: white;
+}
+main .carousel-indicators .active{background-color: #29b078;}  /*圆点样式*/
+main .carousel-indicators{  bottom: -3%;  }                    /*圆点样式*/
+
+@media screen and (min-width: 768px) {                          /*圆点样式*/
+    main .carousel-indicators {
+        bottom: -5%;
+    }
 }
 .carousel-control.right{
 
