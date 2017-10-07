@@ -78,6 +78,12 @@ body{
 .navbar-default .navbar-nav > li > .work:hover {
     color: white;
 }
+
+main .hello{
+    position:fixed;
+    bottom: 33%;
+    right: .2rem;
+}
 .company{
     height: 2.4rem;
     width: 100%;
@@ -116,8 +122,8 @@ strong{
 .introduce{
     margin-left: 32%;                    /*布局*/
    background-color: #ffffff;
-    padding-bottom: 1.8rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: .2rem;
 }
 .left ul{
      list-style-type:none;
@@ -143,10 +149,10 @@ strong{
 
 }
 .left a:hover{
-    color: #ff9459;                    /*hover文字链接*/
+    color: #ff9459;                    /*  hover文字链接  */
 }
 .left a:hover .circle{
-    background-color: #fea500;         /*hover圆圈效果*/
+    background-color: #fea500;         /*  hover圆圈效果   */
 }
 .introduce img{
     float: left;
@@ -154,7 +160,7 @@ strong{
 }
 .right-top{
     padding:.2rem .6rem;
-    padding-bottom: .3rem;
+    padding-bottom: .6rem;
     margin-bottom: .2rem;
     border-bottom: solid #e8e8e8 1px;
 }
