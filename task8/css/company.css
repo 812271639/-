@@ -153,8 +153,8 @@ strong{
     margin-top:-.2rem;
 }
 .right-top{
-    height: 1.5rem;
     padding:.2rem .6rem;
+    padding-bottom: .3rem;
     margin-bottom: .2rem;
     border-bottom: solid #e8e8e8 1px;
 }
