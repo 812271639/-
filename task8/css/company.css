@@ -130,6 +130,7 @@ strong{
     padding:.15rem 0;
     border-bottom: solid #e8e8e8 1px;
 }
+.left-top strong{color: black;}
 .right{
     width:100%;         /*布局*/
 }
