@@ -91,6 +91,7 @@ main .hello{
     right: 0;
     width: .2rem;
     background-color: rgba(41,176,120,.8);
+    z-index: 1;
 }
 .hello a{
     text-decoration: none;
@@ -121,6 +122,7 @@ strong{
     text-align: center;
     background-color: #ffffff;
     z-index: 1;
+    margin-bottom: .2rem;
 }
 .left-top{
     text-align: center;
@@ -149,7 +151,6 @@ strong{
     .left{
         float: left;
         width:100%;}
-    .left > ul > li{float: left;}
     .left a{
         margin-left: .1rem;
     }
