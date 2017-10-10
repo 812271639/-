@@ -64,7 +64,7 @@ main .line{
     float: right;
     text-align: center;
     font-size: .18rem;
-    width: 16vw;
+    width: 13.333%;
     padding-top: .3rem;
     margin:.4rem 0 .5rem 0;
     border-top: solid #cccccc 4px;
@@ -81,7 +81,7 @@ main .circle{
     text-align: center;
     font-size: .14rem;
     top:-.12rem;
-    left: 7vw;
+    left: 45%;
     border-radius: 100%;
     background-color:#cccccc ;
     color: white;
