@@ -1,0 +1,244 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 625%;
+}
+
+
+.top{
+    line-height: .4rem;
+    background-color: #1d7ad9;
+}
+.left{
+    color: white;
+    float: left;
+}
+.right1{
+    display: inline-block;
+    line-height: .4rem;
+    float: right;
+    padding-left:.1rem;
+    margin-right: .1rem;
+    color: white;
+    border-left: solid white 1px;        /*登录  注册样式*/
+}
+.right2{
+    display: inline-block;                /*登录  注册样式*/
+    line-height: .4rem;
+    float: right;
+    padding-left: .1rem;
+    color: white;
+    border-left: solid white 1px;
+}
+.top a{
+    color: white;
+    font-size: .16rem;
+}
+
+.navbar-default {
+    line-height: 1rem;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+.navbar-nav > li > a{
+    padding: .1rem .15rem;
+}
+.navbar-default .work{
+    text-align: center;
+    margin:.3rem 0 0 .3rem;
+    border-radius: 5px;
+    background-color: white;
+}
+.work:visited{ background-color: #1d7ad9;}    /* 导航hover*/
+ .work:hover{
+    background-color: #1d7ad9;
+}
+
+main .line{
+    position: relative;                   /*进度线*/
+    float: right;
+    text-align: center;
+    font-size: .18rem;
+    width: 16vw;
+    padding-top: .3rem;
+    margin:.4rem 0 .5rem 0;
+    border-top: solid #cccccc 4px;
+    color: #cccccc;
+}
+main .line1{
+    color: #ff7f02;
+    border-top: solid #ff7f02 4px;
+}
+main .circle{
+    position: absolute;                  /*进度圆圈*/
+    width: .2rem;
+    line-height:.2rem;
+    text-align: center;
+    font-size: .14rem;
+    top:-.12rem;
+    left: 7vw;
+    border-radius: 100%;
+    background-color:#cccccc ;
+    color: white;
+}
+main .circle1{
+    background-color: #ff7f02;}
+.main-top{
+    padding:.1rem 0;
+    font-size: .22rem;
+}
+.main-top span{
+    height:.22rem;
+    margin-right: .1rem;
+    border-right: solid 4px #1d7ad9;
+}
+.type{
+    padding:.1rem 0;
+    font-size: .18rem;
+    color: #1d7ad9;
+    background-color: #f3f3f3;
+}
+.type img{
+    margin:0 .1rem 0 .2rem;
+}
+.middle{                              /* 单选按钮 行样式*/
+    background-color: #fbfcff;
+    border: solid #cccccc 1px;
+}
+.middle .space{
+    margin: .3rem .25rem;
+}
+.middle2{                              /* 内外径单选按钮 行样式*/
+    background-color: #fbfcff;
+    border: solid #cccccc 1px;
+}
+.middle3{
+    padding-top: .3rem ;
+}
+.test{                                   /*内径样式*/
+    font-size: .18rem;
+    margin-bottom: .2rem;
+}
+.test2{
+    font-size: .18rem;                    /*外径样式*/
+    margin-bottom: .3rem;
+}
+.test input{                              /*mm长度*/
+    width: .7rem;
+    margin:0 .05rem 0 .1rem ;
+}
+.test2 input{                              /*mm长度*/
+    width: .7rem;
+    margin:0 .05rem 0 .1rem ;
+}
+.middle-right{
+    padding-top: .2rem;                   /*中间查看详情的定位*/
+}
+.middle-right2{
+    line-height: 1.4rem;
+}
+.right-position{
+    position: relative;
+    line-height: .9rem;
+}
+.right{
+    float: right;
+
+}
+.details{                             /* 查看详情*/
+    color: #999999;
+    width: 1.25rem;
+    font-size: .14rem;
+    padding-right: .5rem;
+    background:url("pictrue/off.png") no-repeat .97rem .02rem;
+    border: solid #cccccc 1px;
+    border-radius: 0;
+}
+.test-input{
+    display: none;
+}
+.test-label{
+    position: relative;
+    margin:0 .25rem;
+    padding-left: .3rem;
+    font-size: .18rem;
+    font-family: "微软雅黑";
+    color: #666666;
+}
+.test-span{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    margin:auto;
+    display: inline-block;
+    width: .16rem;
+    height: .16rem;
+    border-radius: 50%;
+    border: solid #e6e6e7 .01rem;
+}
+.test-input:checked + .test-span:after{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    display: inline-block;
+    background: url("pictrue/select.png") center center;
+    border-radius: 50%;
+    content: "";
+    height: .16rem;
+    width: .16rem;
+}
+.next{                       /*按钮 下一步 */
+    text-align: center;
+    padding:1.4rem 0;
+    margin-bottom: .5rem;
+    border-right: solid #cccccc 1px;
+    border-left: solid #cccccc 1px;
+    border-bottom: solid #cccccc 1px;
+}
+.next .nest{                     /* 下一步 样式 */
+    width: 1.8rem;
+    height: .45rem;
+    font-size: .24rem;
+    background-color: #e15053;
+    color: white;
+    border: transparent;
+    border-radius: 5px;
+}
+.bottom{                      /*底部*/
+    padding:.6rem 0;
+    background-color: #f9f9f9  ;
+}
+.bottom span{
+    color: #999999;
+}
+.bottom a {
+    text-decoration: none;
+    margin-right: .4rem;
+    color: #999999;
+}
+.bottom a:hover{
+    color: #1d7ad9;
+}
+.word{
+    float: left;             /* 二维码文字*/
+    line-height: .3rem;
+    color: #999999;
+}
+.bottom img {text-align:right;}
+
+
+.container-fluid{
+    text-align: center;
+    padding:.1rem 0;
+    background-color: #1d7ad9;
+}
+
