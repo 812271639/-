@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+@color: #999999; //border 和字体 颜色
+@word-color: white; //字体颜色
+@word1-color: white; //按钮字体颜色
+@word2-color: #68cdd5; //按钮字体颜色
+@background-color: #68cdd5; //背景颜色，两个边线颜色
+@max-width: 7.2rem;
+@font-size: 0.3rem;
+@margin:.2rem;
+@height:.8rem;
+@line-height:.8rem;
+.border(top;@width:1px;@border-color:#999999){
+  border-top:@width solid @border-color;
+}
+.border(left;@width:1px;@border-color:#999999){
+  border-left:@width  solid @border-color ;
+}
+.border(bottom;@width:1px;@border-color:#999999){
+  border-bottom:@width  solid @border-color ;
+}
+.border(right;@width:1px;@border-color:#999999){
+  border-right:@width  solid @border-color ;
+}
+.border(@_;@width:1px;@border-color:#999999){
+
+}
+html {
+  font-size: 625%;
+  background-color: #eff0f4;
+}
+body{
+  margin:0 auto;
+  max-width: @max-width;
+  background-color: white;
+}
+.btn {
+  width: 42%;             //按钮通用样式
+  line-height: 0.75rem;
+  margin-top: @margin + .6rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.header {
+  text-align: center;
+  color: @word-color;
+  background-color: @background-color;
+  max-width: @max-width;
+  line-height: @line-height + .3;
+  font-size:@font-size;
+  p {
+    float: left;
+    margin-left: @margin + .12;
+  }
+}
+main{
+  max-width: @max-width;
+}
+.main {
+  background: url("beijing.png") no-repeat;
+  background-size: cover;
+  max-width: @max-width;
+  height: @height + 1.92;
+  .picture {
+    position: relative;
+    top: 25%;
+    display: inline-block;
+    left: 5%;
+  }
+  .photo {
+    width: @height + .6;
+  }
+  .map {
+    width: .2rem;
+    margin-right: .1rem;
+  }
+  .name {
+    color: @word-color;
+    position: relative;
+    top: 12%;
+    left: 9%;
+    display: inline-block;
+    font-size: @font-size - .1;
+    line-height: @line-height - .4;
+    span {
+      font-size:@font-size;
+      margin-right: 0.1rem;
+    }
+  }
+  p {
+    width: 1.7rem;
+    display: block;
+  }
+}
+.content {
+  font-size: @font-size - .08;
+  line-height: @line-height;
+  span {
+    color: @color;
+    padding-right: 0.2rem;
+    margin: 0 @margin;
+    border: 0;
+    height: @height;
+    .border(right);
+  }
+  .style {
+    padding-left: 0.3rem;
+    font-size: @font-size;
+    height: @height;
+    .border(bottom);
+    span {
+      margin-left: -0.2rem;
+      .border(right;2px; #68cdd5);
+    }
+  }
+}
+.middle {
+  div {
+    margin-left: @margin + .1;
+    padding-left: 0.1rem;
+    .border(bottom);
+  }
+  img {
+    width: .2rem;
+    margin-right: @margin - .1;
+  }
+}
+
+p strong {
+  color: #e26163;
+}
+
+.last {
+  max-width: @max-width;
+  overflow: hidden;
+  font-size: @font-size - .08;
+  padding-left: 0.4rem;
+  .border(bottom);
+
+  .i {
+    display: inline-block;
+    span {
+      color: @color;
+      padding-right: 0.2rem;
+      margin-left: @margin;
+      .border(right);
+      line-height: @line-height;
+    }
+  }
+  .value {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(~"80% - 53px");
+  }
+}
+.footer {
+  max-width: @max-width;
+  font-size: @font-size - .1;
+  height: 2.2rem;
+  .left {
+    .btn;
+    margin-left: 5%;
+    float: left;
+    color: @word2-color;
+    border: solid 1px @background-color;
+  }
+  .right {
+    .btn;
+    margin-right: 5%;
+    float: right;
+    color: @word1-color;
+    background-color: @background-color;
+
+  }
+}
+
+@media screen and (max-width: 320px ) {
+  html {
+    font-size: 335%;
+  }
+}
+
+@media screen and (min-width: 321px ) and (max-width: 412px) {
+  html {
+    font-size: 370%;
+  }
+}
+
+@media screen and (min-width: 413px ) and (max-width: 767px) {
+  html {
+    font-size: 420%;
+  }
+}
+
+@media screen and (min-width: 768px ) {
+  html {
+    font-size: 625%;
+  }
+}
