@@ -40,19 +40,21 @@ body {
 .write {
   padding: .2rem 0 .2rem .3rem;
   margin-bottom: .02rem;
-  line-height: @line-height - .4;
+  line-height: .4rem;
   max-width: @max-width;
   background-color: @white;
-
+  overflow: hidden;
+  font-size: 0;
+  img{float: left}
   form {
-    display: inline-block;
     margin-left: .4rem;
+    font-size: .25rem;
     border-left: solid 2px #f0f4f7;
-  }
-
-  input {
-    border: none;
-    outline: none;
+    input {
+      border: none;
+      outline: none;
+      font-size: .25rem;
+    }
   }
 }
 
@@ -62,7 +64,7 @@ body {
   margin-bottom: 1.6rem;
   input {
     width: 95%;
-    height: .8rem;
+    padding:5% 0;
     font-size: @font-size;
     color: @white;
     background-color: @blue;
@@ -89,7 +91,7 @@ body {
 .third {
   text-align: center;
   margin-bottom: .4rem;
-  font-size: 18%;
+  font-size: 15%;
   vertical-align: middle;
   span {
     display: inline-block;
@@ -111,4 +113,5 @@ body {
 .image {
   text-align: center;
   margin-bottom: .55rem;
+  font-size: 15%;
 }
