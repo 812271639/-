@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 625%;
+  background-color: #eff0f4;
+}
+body {
+  max-width: 7.2rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1.2rem 0;
+}
+header {
+  position: fixed;
+  top: 0;
+  max-width: 7.2rem;
+  width: 100%;
+  font-size: 0;
+  border-bottom: #afbac0 solid 1px;
+  background-color: white;
+  z-index: 1;
+}
+header .head {
+  position: relative;
+  text-align: center;
+  background-color: #5fc0cd;
+  padding: .1rem 0 .1rem 0;
+  overflow: hidden;
+}
+header .head span {
+  font-size: .1rem;
+  background-color: #55a8b3;
+  border-radius: .1rem;
+  display: inline-block;
+}
+header .head span .boss {
+  background-color: #55a8b3;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: .05rem;
+  padding: .1rem;
+  font-size: .2rem;
+}
+header .head span .nurse {
+  background-color: white;
+  color: #5fc0cd;
+  border-radius: .05rem;
+  padding: .1rem;
+  border: none;
+  outline: none;
+  font-size: .2rem;
+}
+header .head .local {
+  position: absolute;
+  right: .2rem;
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 44px;
+  background: url('css_sprites.png') -10px -10px;
+  background-size: 1.67rem;
+}
+.drop-down {
+  text-align: center;
+}
+.drop-down select {
+  background-color: white;
+  border: 0;
+  height: .5rem;
+  font-size: .2rem;
+  outline: none;
+}
+.drop-down .left {
+  float: left;
+  margin-left: 5%;
+}
+.drop-down .middle {
+  display: inline-block;
+}
+.drop-down .right {
+  float: right;
+  margin-right: 5%;
+}
+main {
+  border-bottom: #afbac0 solid 1px;
+  line-height: .5rem;
+  font-size: .2rem;
+}
+main .message {
+  border-bottom: #afbac0 solid 1px;
+}
+main .serve-date {
+  margin-left: .2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+main .serve-date .date {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: .1rem;
+  width: 24px;
+  height: 24px;
+  background: url('css_sprites.png') -72px -74px;
+}
+main .site {
+  margin-left: .2rem;
+}
+main .site .map {
+  display: inline-block;
+  vertical-align: middle;
+  width: 19px;
+  height: 23px;
+  background: url('css_sprites.png') -138px -10px;
+}
+main .time {
+  text-align: right;
+  margin-left: .5rem;
+}
+main .time p {
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+main .time span {
+  width: 50%;
+  display: inline-block;
+  color: red;
+  padding-right: .4rem;
+}
+main .time strong {
+  color: #5fc0cd;
+  margin-left: .1rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 7.2rem;
+  text-align: center;
+  line-height: .7rem;
+  font-size: .18rem;
+  background-color: #f8fafb;
+  overflow: hidden;
+}
+footer .foot-middle {
+  line-height: .7rem;
+  display: inline-block;
+}
+footer .foot-middle img {
+  width: 60%;
+  padding: 0.05rem;
+  vertical-align: middle;
+}
+footer .home {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: .2rem;
+  margin-top: .1rem;
+}
+footer .home .house {
+  display: inline-block;
+  width: 46px;
+  height: 40px;
+  background: url('css_sprites.png') -72px -10px;
+}
+footer .home .man {
+  display: inline-block;
+  width: 42px;
+  height: 41px;
+  background: url('css_sprites.png') -10px -74px;
+}
+footer .foot-left {
+  margin-left: .2rem;
+  float: left;
+}
+footer .foot-right {
+  margin-right: .2rem;
+  float: right;
+}
