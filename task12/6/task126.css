@@ -63,24 +63,24 @@ header .head .local {
   background: url('css_sprites.png') -10px -10px;
   background-size: 1.67rem;
 }
-.drop-down {
+header .drop-down {
   text-align: center;
 }
-.drop-down select {
+header .drop-down select {
   background-color: white;
   border: 0;
   height: .5rem;
   font-size: .2rem;
   outline: none;
 }
-.drop-down .left {
+header .drop-down .left {
   float: left;
   margin-left: 5%;
 }
-.drop-down .middle {
+header .drop-down .middle {
   display: inline-block;
 }
-.drop-down .right {
+header .drop-down .right {
   float: right;
   margin-right: 5%;
 }
@@ -93,7 +93,7 @@ main .message {
   border-bottom: #afbac0 solid 1px;
 }
 main .serve-date {
-  margin-left: .2rem;
+  margin-left: 0.2rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -101,13 +101,13 @@ main .serve-date {
 main .serve-date .date {
   display: inline-block;
   vertical-align: middle;
-  margin-right: .1rem;
+  margin-right: 0.1rem;
   width: 24px;
   height: 24px;
   background: url('css_sprites.png') -72px -74px;
 }
 main .site {
-  margin-left: .2rem;
+  margin-left: 0.2rem;
 }
 main .site .map {
   display: inline-block;
@@ -118,7 +118,7 @@ main .site .map {
 }
 main .time {
   text-align: right;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 main .time p {
   position: relative;
@@ -138,7 +138,7 @@ main .time span {
 }
 main .time strong {
   color: #5fc0cd;
-  margin-left: .1rem;
+  margin-left: 0.1rem;
 }
 footer {
   position: fixed;
@@ -146,6 +146,7 @@ footer {
   width: 100%;
   max-width: 7.2rem;
   text-align: center;
+  padding-bottom: .05rem;
   line-height: .7rem;
   font-size: .18rem;
   background-color: #f8fafb;
@@ -164,7 +165,7 @@ footer .home {
   display: inline-block;
   vertical-align: middle;
   line-height: .2rem;
-  margin-top: .1rem;
+  margin-top: 0.1rem;
 }
 footer .home .house {
   display: inline-block;
@@ -179,10 +180,10 @@ footer .home .man {
   background: url('css_sprites.png') -10px -74px;
 }
 footer .foot-left {
-  margin-left: .2rem;
+  margin-left: 0.2rem;
   float: left;
 }
 footer .foot-right {
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   float: right;
 }
