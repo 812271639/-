@@ -1,15 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 html {
-  font-size: 625%;
   background-color: white;
 }
 body {
-  max-width: 6.4rem;
-  margin: 0 auto;
-  padding-top: .85rem;
   background-color: #f0f0f0;
 }
 img {
@@ -19,13 +11,7 @@ a {
   text-decoration: none;
 }
 header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  max-width: 6.4rem;
   padding: .3rem 0 .3rem ;
-  background-color: #29bde0;
 }
 header .line {
   width: .3rem;
@@ -98,19 +84,4 @@ main .foot span {
 }
 main .foot span:first-child {
   background-color: #69d1e9;
-}
-@media screen and (max-width: 425px) {
-  html {
-    font-size: 480%;
-  }
-}
-@media screen and (max-width: 375px) {
-  html {
-    font-size: 400%;
-  }
-}
-@media screen and (max-width: 320px) {
-  html {
-    font-size: 330%;
-  }
 }
