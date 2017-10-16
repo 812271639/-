@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 625%;
+  background-color: #f0f0f0;
+}
+body {
+  padding-top: .8rem;
+  padding-bottom: 1rem;
+  max-width: 6.4rem;
+  margin: 0 auto;
+}
+header {
+  position: fixed;
+  top: 0;
+  max-width: 6.4rem;
+  width: 100%;
+}
+.head {
+  position: relative;
+  text-align: center;
+  font-size: .34rem;
+  line-height: .8rem;
+  color: white;
+  background: #29bde0;
+  border-bottom: solid 1px;
+}
+.head img {
+  max-width: .5rem;
+}
+.head .right {
+  position: absolute;
+  right: .1rem;
+  top: 25%;
+}
+.head .left {
+  position: absolute;
+  left: .1rem;
+  top: 22%;
+}
+main {
+  background-color: white;
+}
+main .img_victory {
+  text-align: center;
+  padding: .23rem 0;
+  background-color: #29bde0;
+}
+main .img_victory img {
+  max-width: 3rem;
+}
+main .top_word {
+  padding: 0 12% .6rem 12%;
+  color: #ffc865;
+  font-size: .33rem;
+  background-color: #29bde0;
+}
+main .out_middle {
+  background-color: #29bde0;
+}
+main .out_middle .middle_word {
+  display: inline-block;
+  padding: 0 12% .25rem 12%;
+  max-width: 6.4rem;
+  color: white;
+  font-size: .26rem;
+}
+main .list_word {
+  border-bottom: #c7c7c7 solid 1px;
+  font-size: 0;
+}
+main .list_word .left {
+  display: inline-block;
+  width: 38%;
+  padding-left: 12%;
+  font-size: .3rem;
+  background-color: white;
+}
+main .list_word .right {
+  display: inline-block;
+  width: 38%;
+  text-align: right;
+  padding-right: 12%;
+  font-size: .2rem;
+  color: #c7c7c7;
+  background-color: white;
+}
+main .list_word .result {
+  padding-left: 12%;
+  color: #c7c7c7;
+  background-color: white;
+  font-size: .26rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 6.4rem;
+  font-size: .34rem;
+  background: rgba(136, 207, 223, 0.48);
+}
+footer .button {
+  text-align: center;
+  padding: 0.1rem;
+  overflow: hidden;
+  color: white;
+}
+footer .again {
+  float: left;
+  line-height: .8rem;
+  width: 45%;
+  color: white;
+  background-color: #f66f6f;
+  border-radius: 5px;
+}
+footer .share {
+  float: right;
+  width: 45%;
+  line-height: .8rem;
+  display: inline-block;
+  background-color: #fbb435;
+  color: white;
+  border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 480%;
+  }
+}
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 450%;
+  }
+}
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 400%;
+  }
+}
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 350%;
+  }
+}

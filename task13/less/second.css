@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 625%;
+  background-color: #f0f0f0;
+}
+body {
+  padding-top: .8rem;
+  padding-bottom: 1rem;
+  max-width: 6.4rem;
+  margin: 0 auto;
+}
+header {
+  position: fixed;
+  top: 0;
+  max-width: 6.4rem;
+  width: 100%;
+  z-index: 1;
+}
+.head {
+  position: relative;
+  text-align: center;
+  font-size: .34rem;
+  line-height: .8rem;
+  color: white;
+  background: #29bde0;
+  border-bottom: solid 1px;
+}
+.head img {
+  max-width: .4rem;
+}
+.head .right {
+  position: absolute;
+  right: .1rem;
+  top: 25%;
+}
+.head .left {
+  position: absolute;
+  left: .1rem;
+  top: 22%;
+}
+main {
+  max-width: 6.4rem;
+  padding-bottom: 1rem;
+  background-color: #29bde0;
+}
+main .top_vote {
+  position: relative;
+  font-size: .3rem;
+  line-height: .8rem;
+  background-color: #b9e9f5;
+  padding-left: .2rem;
+  color: #464646;
+}
+main .top_vote .music {
+  position: absolute;
+  right: 7%;
+  top: 0;
+}
+main .top_vote .music img {
+  width: .3rem;
+}
+main .top_vote .music audio {
+  position: absolute;
+  top: 24%;
+  right: 0;
+  opacity: 0;
+  width: 1.8rem;
+  transform: rotate(180deg);
+}
+main .triangle {
+  width: 0;
+  height: 0;
+  margin-left: 6%;
+  border-left: solid transparent 7px;
+  border-right: solid transparent 7px;
+  border-top: #b9e9f5 solid 13px;
+}
+main .triangle_word {
+  margin-left: 6%;
+  font-size: .2rem;
+  color: rgba(225, 225, 225, 0.5);
+}
+main .card_position {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 87.5%;
+  margin: 0 auto;
+}
+main .card_position .card:hover .card_sprite {
+  opacity: 1;
+}
+main .card_top {
+  width: 1.36rem;
+  margin: .2rem auto;
+  border: white solid 5px;
+  background-color: #f5c97b;
+}
+main .card_top .farmer {
+  text-align: center;
+  line-height: 1rem;
+  font-size: .3rem;
+}
+main .card_top .number {
+  text-align: center;
+  font-size: .22rem;
+  background: rgba(131, 176, 154, 0.5);
+}
+main .card_sprite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+}
+main .card_sprite .knife {
+  display: inline-block;
+  height: .3rem;
+  width: .312rem;
+  background: url("../picture/img.png") 0 0;
+  background-size: 1.34rem;
+}
+main .card_sprite .glass {
+  display: inline-block;
+  height: .3rem;
+  width: .312rem;
+  background: url("../picture/img.png") -0.68rem 0;
+  background-size: 1.34rem;
+}
+main .card_sprite .turn {
+  display: inline-block;
+  height: .3rem;
+  width: .312rem;
+  background: url("../picture/img.png") -0.34rem 0;
+  background-size: 1.34rem;
+}
+main .card_sprite .help {
+  display: inline-block;
+  height: .3rem;
+  width: .3rem;
+  background: url("../picture/img.png") -1.04rem 0;
+  background-size: 1.34rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  max-width: 6.4rem;
+  width: 100%;
+  padding: .2rem 0;
+  background-color: #29bde0;
+}
+footer .foot_btn {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 0;
+}
+footer .foot_btn input {
+  font-size: .36rem;
+  border: none;
+  width: 100%;
+  padding: 1% 0;
+  color: white;
+  background-color: #fbb435;
+}
+@media screen and (min-width: 501px) and (max-width: 640px) {
+  html {
+    font-size: 625%;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 500px) {
+  html {
+    font-size: 500%;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  html {
+    font-size: 450%;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 380px) {
+  html {
+    font-size: 400%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 360px) {
+  html {
+    font-size: 350%;
+  }
+}
+@media screen and (max-width: 319px) {
+  html {
+    font-size: 280%;
+  }
+}
