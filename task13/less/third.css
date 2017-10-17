@@ -33,8 +33,9 @@ main .list_word .left {
   display: inline-block;
   width: 38%;
   padding-left: 12%;
+  color: #515151;
   font-size: .3rem;
-  background-color: white;
+  line-height: .5rem;
 }
 main .list_word .right {
   display: inline-block;
@@ -43,13 +44,13 @@ main .list_word .right {
   padding-right: 12%;
   font-size: .2rem;
   color: #c7c7c7;
-  background-color: white;
 }
 main .list_word .result {
   padding-left: 12%;
   color: #c7c7c7;
-  background-color: white;
+  line-height: .5rem;
   font-size: .26rem;
+  margin-bottom: .2rem;
 }
 footer {
   font-size: .34rem;
