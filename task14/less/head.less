@@ -1,0 +1,90 @@
+.top_head {
+  font-size: .12rem;
+  overflow: hidden;
+  padding: .1rem 1rem;
+  color: #29b078;
+  .weixin {
+    float: right;
+    height: .24rem;
+    width: .25rem;
+    margin-left: .1rem;
+    background: url("../picture/sprite.png") -.48rem -.73rem;
+  }
+  .xinlang {
+    float: right;
+    height: .24rem;
+    width: 25px;
+    margin-left: .1rem;
+    background: url("../picture/sprite.png") -.87rem -.73rem;
+  }
+  .qq {
+    float: right;
+    height: .24rem;
+    width: .25rem;
+    background: url("../picture/sprite.png") -1.28rem -.73rem;
+  }
+}
+header {
+  padding: 0 1rem;
+  font-size: .12rem;
+  background-color: #29b078;
+  .navigation {
+    position: relative;
+    line-height: .8rem;
+    img {
+      float: left;
+      margin-top: .2rem;
+    }
+    .navigation_collapse {
+      position: relative;
+    }
+    .collapse_button {
+      position: absolute;
+      right: 0;
+      width: .3rem;
+      border-top: solid white 4px;
+      border-bottom: solid white 4px;
+      margin-top: .2rem;
+      padding: .1rem 0;
+      .in_line {
+        border-top: solid white 4px;
+      }
+    }
+    .collapse_list {
+      text-align: center;
+      li {
+        float: right;
+        color: white;
+        font-size: .18rem;
+        border-bottom: solid 2px rgba(255, 255, 255, 0);
+        a {
+          font-size: 0.25rem;
+          color: white;
+          margin-left: .2rem;
+        }
+      }
+      li:hover {
+        border-bottom: solid 2px rgba(255, 255, 255, 1);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .collapse_button {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .collapse_list {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .navigation_collapse:hover .collapse_list {
+        display: block;
+        padding-top: .8rem;
+        li {
+          float: none;
+        }
+      }
+    }
+  }
+}

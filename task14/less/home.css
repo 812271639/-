@@ -1,140 +1,20 @@
-* {
-  outline: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-input {
-  border: none;
-  outline: none;
-}
-a {
-  text-decoration: none;
-}
-html {
-  font-size: 625%;
-}
-body {
-  background-color: #fafafa;
-}
-.clear {
-  clear: both;
-}
-header {
-  font-size: .12rem;
-}
-header .head {
-  overflow: hidden;
-  padding: .1rem .5rem;
-  color: #29b078;
-}
-header .head .weixin {
-  float: right;
-  height: .24rem;
-  width: .25rem;
-  margin-left: .1rem;
-  background: url("../picture/sprite.png") -0.48rem -0.73rem;
-}
-header .head .xinlang {
-  float: right;
-  height: .24rem;
-  width: 25px;
-  margin-left: .1rem;
-  background: url("../picture/sprite.png") -0.87rem -0.73rem;
-}
-header .head .qq {
-  float: right;
-  height: .24rem;
-  width: .25rem;
-  background: url("../picture/sprite.png") -1.28rem -0.73rem;
-}
-header .navigation {
-  position: relative;
-  line-height: .8rem;
-  padding: 0 .5rem;
-  background-color: #29b078;
-}
-header .navigation img {
-  float: left;
-  margin-top: .2rem;
-}
-header .navigation .navigation_collapse {
-  position: relative;
-}
-header .navigation .collapse_button {
-  position: absolute;
-  right: 0;
-  width: .3rem;
-  border-top: solid white 4px;
-  border-bottom: solid white 4px;
-  margin-top: .2rem;
-  padding: .1rem 0;
-}
-header .navigation .collapse_button .in_line {
-  border-top: solid white 4px;
-}
-header .navigation .collapse_list {
-  text-align: center;
-}
-header .navigation .collapse_list li {
-  float: right;
-  color: white;
-  font-size: .18rem;
-  border-bottom: solid 2px rgba(255, 255, 255, 0);
-}
-header .navigation .collapse_list li a {
-  font-size: 0.25rem;
-  color: white;
-  margin-left: .2rem;
-}
-header .navigation .collapse_list li:hover {
-  border-bottom: solid 2px #ffffff;
-}
-@media screen and (min-width: 768px) {
-  header .navigation .collapse_button {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  header .navigation .collapse_list {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  header .navigation .navigation_collapse:hover .collapse_list {
-    display: block;
-    padding-top: .8rem;
-  }
-  header .navigation .navigation_collapse:hover .collapse_list li {
-    float: none;
-  }
-}
-main {
-  font-size: 12px;
-}
-main .banner {
+.banner {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 30vw;
 }
-main .image {
+.image {
   position: absolute;
   width: 600%;
   font-size: 0;
   -webkit-animation: banner 15s infinite linear;
 }
-main .image img {
+.image img {
   width: 100vw;
   height: 30vw;
 }
-main .page {
+.page {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -142,7 +22,7 @@ main .page {
   padding: 10px;
   font-size: 0;
 }
-main .page i {
+.page i {
   display: inline-block;
   margin-left: 10px;
   width: 15px;
@@ -151,7 +31,7 @@ main .page i {
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #fff;
 }
-main .page i:first-child {
+.page i:first-child {
   position: absolute;
   left: 10px;
   top: 10px;
@@ -228,6 +108,10 @@ main .page i:first-child {
     left: 10px;
   }
 }
+main {
+  padding: 0 1rem;
+  font-size: 12px;
+}
 main .content_word {
   text-align: center;
   font-size: .18rem;
@@ -235,8 +119,6 @@ main .content_word {
 }
 main .content_top {
   font-size: 0;
-  width: 80%;
-  margin: 0 auto;
   padding-top: 1.6rem;
   overflow: hidden;
 }
@@ -302,8 +184,6 @@ main .content_top .content_top_number .number3 {
 }
 main .content_way {
   font-size: 0;
-  width: 80%;
-  margin: 0 auto;
   overflow: hidden;
 }
 main .content_way_box {
@@ -340,8 +220,6 @@ main .content_way_box .point {
 }
 main .content_banner {
   font-size: 0;
-  width: 80%;
-  margin: 0 auto;
   overflow: hidden;
 }
 main .content_banner .content_banner_card {
@@ -388,8 +266,6 @@ main .content_banner .content_banner_card .content_banner_card_introduce {
 }
 main .content_company {
   text-align: center;
-  width: 80%;
-  margin: 0 auto;
   margin-bottom: .5rem;
   background-color: white;
   box-shadow: 0 1px 3px #e4e4e4;
@@ -402,85 +278,30 @@ main .content_company img {
 main .content_company img:hover {
   box-shadow: 0 0 20px #e7e7e7;
 }
-footer {
+.links {
   font-size: .12rem;
-  background-color: #26a26f;
-}
-footer .links {
   background-color: white;
-  width: 100%;
+  padding: 0 1rem;
 }
-footer .links .links_top {
+.links .links_top {
   text-align: center;
   padding: .15rem;
   font-size: .18rem;
 }
-footer .links ul {
+.links ul {
   overflow: hidden;
-  width: 80%;
-  margin: 0 auto;
 }
-footer .links li {
+.links li {
   color: #a1a1a1;
   float: left;
   font-size: .14rem;
   margin: 0 .8rem .2rem 0;
   border-bottom: rgba(38, 126, 111, 0) solid 1px;
 }
-footer .links a {
+.links a {
   text-decoration: none;
   color: #a1a1a1;
 }
-footer .links li:hover {
+.links li:hover {
   border-bottom: #267e6f solid 1px;
-}
-footer .foot {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-footer .foot .foot_content {
-  float: left;
-  width: 30%;
-  color: white;
-}
-footer .foot .foot_content .left_p {
-  float: left;
-  margin-right: 1rem;
-}
-footer .foot .foot_content .right_p {
-  float: left;
-}
-footer .foot .foot_content .line {
-  border-left: white solid 2px;
-  margin: .05rem;
-}
-footer .foot .foot_content a {
-  text-decoration: none;
-  padding-bottom: .05rem;
-  border-bottom: rgba(225, 225, 225, 0) solid 2px;
-  color: white;
-}
-footer .foot .foot_content a:hover {
-  border-bottom: #e1e1e1 solid 2px;
-}
-footer .foot .foot_content p {
-  line-height: .4rem;
-}
-footer .foot .code {
-  text-align: right;
-}
-footer .foot .code img {
-  width: .9rem;
-  height: .9rem;
-}
-footer .foot .code p {
-  font-size: .15rem;
-  color: white;
-}
-footer .foot_bottom {
-  text-align: center;
-  padding: .05rem;
-  color: white;
-  border-top: #32c086 solid 1px;
 }
