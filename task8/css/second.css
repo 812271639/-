@@ -153,6 +153,7 @@ strong{
     text-indent: 2em;
     font-size: .16rem;
     transform: rotateY(180deg);
+    transition-delay: .2s;
 }
 
 .massage:hover .my{                    /*隐藏的hover效果*/
