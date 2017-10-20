@@ -113,18 +113,12 @@ strong{
 }
 .content{
     margin-left: 30%;
-    padding:0 .1rem;
-}
-.introduce{
-    margin-left: 32%;                    /*布局*/
-   background-color: #ffffff;
-    padding-bottom: 1rem;
-    margin-bottom: .2rem;
+    padding:.1rem .1rem;
+    background-color: #ffffff;
 }
 @media screen and (max-width: 768px) {
 
     .right{  float: left;  width:100%;  }        /*布局*/
-    .introduce{ margin-left: 0;  }
     .left     { float: left;  width:100%;}
     .left a   { margin-left: .1rem;  }
 }
@@ -158,16 +152,6 @@ strong{
 .left a:hover .circle{
     background-color: #fea500;         /*  hover圆圈效果   */
 }
-.introduce img{
-    float: left;
-    margin-top:-.2rem;
-}
-.right-top{
-    padding:.2rem .6rem;
-    padding-bottom: .6rem;
-    margin-bottom: .2rem;
-    border-bottom: solid #e8e8e8 1px;
-}
 .right a{
     text-decoration: none;
     color: inherit;
@@ -175,14 +159,6 @@ strong{
 p{ color: #2f2f2f;
     text-indent: 2em;
 font-size: .16rem;}
-.introduce > p{
-    padding:0 .6rem;
-    word-break: break-all;
-    font-size: .14rem;
-    text-indent: 2em;
-    margin-bottom: .4rem;
-}
-
 
 footer{
     background-color: #26a26f;                       /*页脚*/
