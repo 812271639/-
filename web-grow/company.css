@@ -61,9 +61,13 @@ body{
 main{
     font-size: .2rem;
 }
+a{
+    color: black;
+}
 main .hello{
     text-align: center;
     position:fixed;
+    font-size: .12rem;
     bottom: 33%;
     right: 0;
     width: .2rem;
@@ -164,6 +168,7 @@ strong{
     border-bottom: solid #e8e8e8 1px;
 }
 p{ color: #2f2f2f;
+    text-indent: 2em;
 font-size: .2rem;}
 .introduce > p{
     padding:0 .6rem;
