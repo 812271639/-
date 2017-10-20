@@ -4,11 +4,6 @@
   background: url("../picture/company.png") no-repeat center center;
   background-size: 130% 100%;
 }
-main {
-  padding: 0 1rem;
-  font-size: .12rem;
-  overflow: hidden;
-}
 main .hello {
   text-align: center;
   position: fixed;
@@ -32,7 +27,6 @@ main .top_line {
   padding: .3rem;
 }
 main strong {
-  font-family: "Microsoft YaHeiHei";
   font-size: .16rem;
 }
 main .top_line > span {
@@ -54,7 +48,7 @@ main .left-top {
   padding: .15rem 0;
   border-bottom: solid #e8e8e8 1px;
 }
-main .left-top strong {
+main strong {
   color: black;
 }
 main .right {

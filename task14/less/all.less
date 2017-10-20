@@ -1,7 +1,7 @@
 .top_head {
   font-size: .12rem;
   overflow: hidden;
-  padding: .1rem 1rem;
+  padding: .1rem 10%;
   color: #29b078;
   .weixin {
     float: right;
@@ -24,8 +24,9 @@
     background: url("../picture/sprite.png") -1.28rem -.73rem;
   }
 }
+
 header {
-  padding: 0 1rem;
+  padding: 0 10%;
   font-size: .12rem;
   background-color: #29b078;
   .navigation {
@@ -33,7 +34,7 @@ header {
     line-height: .8rem;
     img {
       float: left;
-      margin-top: .2rem;
+      margin:1% 0;
     }
     .navigation_collapse {
       position: relative;
@@ -55,12 +56,12 @@ header {
       li {
         float: right;
         color: white;
+        margin-left: .2rem;
         font-size: .18rem;
         border-bottom: solid 2px rgba(255, 255, 255, 0);
         a {
           font-size: 0.25rem;
           color: white;
-          margin-left: .2rem;
         }
       }
       li:hover {
@@ -86,5 +87,85 @@ header {
         }
       }
     }
+  }
+}
+
+main {
+  padding: 0 10%;
+  margin-bottom: 1rem;
+  font-size: .12rem;
+  overflow: hidden;
+}
+
+footer {
+  padding: 0 10%;
+  font-size: .12rem;
+  background-color: #26a26f;
+  .foot {
+    overflow: hidden;
+    .foot_content {
+      float: left;
+      width: 30%;
+      color: white;
+      .left_p {
+        float: left;
+        margin-right: 1rem;
+      }
+      .right_p {
+        float: left;
+      }
+      .line {
+        border-left: white solid 2px;
+        margin: .05rem;
+      }
+      a {
+        text-decoration: none;
+        padding-bottom: .05rem;
+        border-bottom: rgba(225, 225, 225, 0) solid 2px;
+        color: white;
+
+        &:hover {
+          border-bottom: rgba(225, 225, 225, 1) solid 2px;
+        }
+      }
+      p {
+        line-height: .4rem;
+      }
+    }
+    .code {
+      text-align: right;
+      img {
+        width: .9rem;
+        height: .9rem;
+      }
+      p {
+        font-size: .15rem;
+        color: white;
+      }
+    }
+  }
+}
+
+.foot_bottom {
+  font-size: .12rem;
+  text-align: center;
+  padding: .05rem;
+  color: white;
+  background-color: #26a26f;
+  border-top: #32c086 solid 1px;
+}
+
+@media screen and (max-width: 790px) {
+  footer .foot .foot_content .right_p {
+    width: 100%;
+    float: left;
+  }
+  footer .foot .foot_content .code {
+    text-align: left;
+  }
+  footer .foot .foot_content {
+    float: left;
+    width: 100%;
+    color: white;
   }
 }
