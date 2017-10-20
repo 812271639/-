@@ -94,7 +94,7 @@ strong{
 
 .left{
     float: left;
-    width:30%;                            /*布局*/
+    width:20%;                            /*布局*/
     text-align: center;
     background-color: #ffffff;
     z-index: 1;
@@ -112,7 +112,7 @@ strong{
     padding:0 .5rem;
 }
 .content{
-    margin-left: 30%;
+    margin-left: 20%;
     padding:.1rem .1rem;
     background-color: #ffffff;
 }
