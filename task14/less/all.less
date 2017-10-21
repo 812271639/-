@@ -4,31 +4,66 @@
   margin: 0;
   border: 0;
 }
+
 ol, ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 input {
   border: none;
   outline: none;
 }
+
 a {
   text-decoration: none;
 }
+
 html {
   font-size: 625%;
 }
+
 body {
   background-color: #fafafa;
 }
+
 .clear {
   clear: both;
 }
+
+@media (min-width: 768px) {
+
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container {
+    width: 1170px;
+  }
+}
+
+.container {
+ /* padding-right: 15px;
+  padding-left: 15px;*/
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .top_head {
   font-size: .12rem;
   overflow: hidden;
-  padding: .1rem 10%;
+  padding: .1rem  0;
   color: #29b078;
   .weixin {
     float: right;
@@ -56,7 +91,6 @@ body {
 }
 
 header {
-  padding: 0 10%;
   font-size: .12rem;
   background-color: #29b078;
   .navigation {
@@ -87,7 +121,7 @@ header {
       li {
         float: right;
         color: white;
-        padding:0 .1rem;
+        padding: 0 .1rem;
         font-size: .18rem;
         border-bottom: solid 2px rgba(255, 255, 255, 0);
         a {
@@ -98,7 +132,7 @@ header {
       li:hover {
         border-bottom: solid 2px rgba(255, 255, 255, 1);
       }
-      .right{
+      .right {
         margin-right: -.1rem;
       }
     }
@@ -125,14 +159,12 @@ header {
 }
 
 main {
-  padding: 0 10%;
   margin-bottom: 1rem;
   font-size: .12rem;
   overflow: hidden;
 }
 
 footer {
-  padding: 0 10%;
   font-size: .12rem;
   background-color: #26a26f;
   .foot {
@@ -194,12 +226,15 @@ footer {
     width: 100%;
     float: left;
   }
+
   footer .foot .foot_content .code {
     text-align: left;
   }
+
   footer .foot .foot_content {
     float: left;
     width: 100%;
     color: white;
   }
 }
+

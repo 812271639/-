@@ -26,10 +26,31 @@ body {
 .clear {
   clear: both;
 }
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container {
+  /* padding-right: 15px;
+  padding-left: 15px;*/
+  margin-right: auto;
+  margin-left: auto;
+}
 .top_head {
   font-size: .12rem;
   overflow: hidden;
-  padding: .1rem 10%;
+  padding: .1rem  0;
   color: #29b078;
 }
 .top_head .weixin {
@@ -56,7 +77,6 @@ body {
   background-size: 1.8rem;
 }
 header {
-  padding: 0 10%;
   font-size: .12rem;
   background-color: #29b078;
 }
@@ -124,13 +144,11 @@ header .navigation .collapse_list .right {
   }
 }
 main {
-  padding: 0 10%;
   margin-bottom: 1rem;
   font-size: .12rem;
   overflow: hidden;
 }
 footer {
-  padding: 0 10%;
   font-size: .12rem;
   background-color: #26a26f;
 }

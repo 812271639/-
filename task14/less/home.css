@@ -275,8 +275,7 @@ main .content_company {
 }
 main .content_company img {
   height: 1.7rem;
-  width: 2.3rem;
-  margin: .01rem 1.5%;
+  width: 2.29rem;
 }
 main .content_company img:hover {
   box-shadow: 0 0 .3rem #e7e7e7;
