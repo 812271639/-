@@ -65,7 +65,7 @@ main {
     top: 0;
     bottom: 0;
     right: 0;
-    left: 0;
+    /*left: 0;*/
     padding: .8rem .4rem;
     background-color: transparent;
     border-radius: 5px;
@@ -74,6 +74,34 @@ main {
     word-break: break-all;
     text-align: center;
     transition: opacity 1s, transform 1.5s;
+    p{
+      word-break: break-all;
+      text-align: left;
+      text-indent: 2em;
+      font-size: .16rem;
+    }
+  }
+
+  /*h3{  transform: rotateY(180deg);}
+  .my p{
+    text-align: left;
+    text-indent: 2em;
+    font-size: .16rem;
+    transform: rotateY(180deg);
+  }
+  .massage:hover .my{
+    z-index: 1;
+    opacity: 1;
+    color: white;
+    background-color: rgba(61,61,61,0.9);
+    transform: rotateY(180deg);
+    transition-delay: 0.2s;
+  }*/
+  .massage:hover .my{
+    z-index: 1;
+    opacity: 1;
+    color: white;
+    background-color: rgba(61,61,61,0.9);
   }
   .card_photo {
     overflow: hidden;
