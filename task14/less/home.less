@@ -22,20 +22,20 @@
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
-  padding: 10px;
+  padding: .1rem;
   font-size: 0;
   i {
     display: inline-block;
-    margin-left: 10px;
-    width: 15px;
-    height: 15px;
+    margin-left: .1rem;
+    width: .15rem;
+    height: .15rem;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     &:first-child {
       position: absolute;
-      left: 10px;
-      top: 10px;
+      left: .1rem;
+      top: .1rem;
       background-color: white;
       -webkit-animation: runPage 15s infinite linear;
     }
@@ -80,37 +80,37 @@
 
 @-webkit-keyframes runPage {
   0% {
-    left: 10px;
+    left: .1rem;
   }
   15% {
-    left: 10px;
+    left: .1rem;
   }
   20% {
-    left: 37px;
+    left: .37rem;
   }
   35% {
-    left: 37px;
+    left: .37rem;
   }
   40% {
-    left: 64px;
+    left: .64rem;
   }
   55% {
-    left: 64px;
+    left: .64rem;
   }
   60% {
-    left: 91px;
+    left: .91rem;
   }
   75% {
-    left: 91px;
+    left: .91rem;
   }
   80% {
-    left: 118px;
+    left: 1.18rem;
   }
   95% {
-    left: 118px;
+    left: 1.18rem;
   }
   100% {
-    left: 10px;
+    left: .1rem;
   }
 }
 
@@ -126,7 +126,7 @@ main {
     overflow: hidden;
     .content_top_box {
       float: left;
-      font-size: 12px;
+      font-size: .12rem;
       width: 25%;
       p {
         text-align: center;
@@ -135,7 +135,8 @@ main {
       }
       .content_top_word {
         padding: 0 .2rem;
-        text-align: center;
+        margin: 0 auto;
+        width: 60%;
       }
       .efficient {
         height: 62px;
@@ -160,14 +161,14 @@ main {
     }
     .content_top_number {
       float: left;
-      font-size: 12px;
+      font-size: .12rem;
       width: calc(25% - 1px);
       height: 2.5rem;
       border-left: #999999 dashed 1px;
       .man {
         display: inline-block;
-        height: 13px;
-        width: 13px;
+        height: .13rem;
+        width: .13rem;
         margin-right: .1rem;
         background: url("../picture/sprite.png") -167px -73px;
       }
@@ -192,6 +193,9 @@ main {
     overflow: hidden;
   }
   .content_way_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     float: left;
     font-size: 0;
     width: 25%;
@@ -277,7 +281,7 @@ main {
     img {
       height: 1.7rem;
       width: 2.3rem;
-      margin: .01rem 0;
+      margin: .01rem 1.5%;
       &:hover {
         box-shadow: 0 0 20px #e7e7e7;
       }
@@ -288,7 +292,7 @@ main {
 .links {
   font-size: .12rem;
   background-color: white;
-  padding: 0 1rem;
+  padding: 0 10%;
   .links_top {
     text-align: center;
     padding: .15rem;
@@ -301,7 +305,7 @@ main {
     color: #a1a1a1;
     float: left;
     font-size: .14rem;
-    margin: 0 .8rem .2rem 0;
+    margin: 0 5% .2rem 0;
     border-bottom: rgba(38, 126, 111, 0) solid 1px;
     &:hover {
       border-bottom: rgba(38, 126, 111, 1) solid 1px;
@@ -313,32 +317,30 @@ main {
   }
 }
 
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1345px) {
   main .content_way_box {
     width: 50%;
   }
 }
-
 @media screen and(max-width: 900px) {
   main .content_top .content_top_box {
     width: 100%;
   }
-
   main .content_top .content_top_number {
     width: calc(100%);
   }
-
   main .content_banner .content_banner_card {
     width: 45%;
   }
 }
-
 @media screen and (max-width: 700px) {
+  html{
+    font-size: 500%;
+  }
   main .content_way_box {
     width: 100%;
   }
 }
-
 @media screen and (max-width: 900px) {
   main .content_banner .content_banner_card {
     width: 100%;

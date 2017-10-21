@@ -1,10 +1,14 @@
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
 main .top_line1 {
   padding: .3rem;
   border-bottom: #d0d6d9 solid 1px;
   /*首页 职业样式 线条样式*/
 }
 main strong {
-  font-family: "Microsoft YaHeiHei";
   font-size: .16rem;
 }
 main .top_line1 > span {
@@ -35,8 +39,8 @@ main .word3:hover {
   background-color: #29b078;
 }
 main .top_line3 {
+  clear: both;
   font-size: .16rem;
-  font-family: "Microsoft YaHei";
   padding: .3rem 0;
   border-bottom: #d0d6d9 solid 1px;
   /* 线条样式 前端开发  后端开发 。。。*/
@@ -49,10 +53,10 @@ main .top_line3 a {
 main .massage {
   float: left;
   position: relative;
-  margin: .5rem .3rem 0 0;
+  margin: .5rem 1.5%;
   border: #d0d6d9 solid 1px;
   border-radius: 5px;
-  width: 31%;
+  width: 30%;
 }
 main .my {
   position: absolute;
@@ -95,27 +99,32 @@ main .row1 .word4 {
   width: 35%;
   border-right: #d0d6d9 solid 1px;
 }
+main .row1 .word4 img {
+  max-width: .3rem;
+}
 main .row1 .word41 {
   display: inline-block;
-  width: 60%;
+  width: 55%;
   padding-left: .15rem;
+}
+main .row1 .word41 img {
+  max-width: .3rem;
 }
 main .row3 {
   overflow: hidden;
 }
 main .row3 .word5 {
-  line-height: 1.23rem;
+  line-height: 1.22rem;
   border-right: #d0d6d9 solid 1px;
   border-bottom: #d0d6d9 solid 1px;
-  /* display: inline-block; */
-  padding-left: .15rem;
-  width: 28%;
+  text-align: center;
+  width: 29%;
   float: left;
 }
 main .row3 .word6 {
   padding-left: .1rem;
   display: inline-block;
-  width: 66%;
+  width: calc(70.5% - .1rem);
   line-height: .4rem;
   border-bottom: #d0d6d9 solid 1px;
 }
@@ -134,4 +143,30 @@ main .word8 {
   padding: .12rem 0;
   padding-left: .1rem;
   font-size: .12rem;
+}
+@media screen and (max-width: 1360px) {
+  main .massage {
+    width: 46%;
+  }
+}
+@media screen and (max-width: 890px) {
+  main .massage {
+    width: 97%;
+  }
+}
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 500%;
+  }
+}
+@media screen and (max-width: 345px) {
+  html {
+    font-size: 300%;
+  }
+  main .row1 .word41 {
+    width: 57%;
+  }
+  main .row3 .word6 {
+    width: 63%;
+  }
 }

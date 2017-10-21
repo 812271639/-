@@ -120,7 +120,7 @@ main .introduce img {
 }
 main .right-top {
   padding: .2rem .6rem;
-  padding-bottom: .6rem;
+  padding-bottom: 10%;
   margin-bottom: .2rem;
   border-bottom: solid #e8e8e8 1px;
 }
