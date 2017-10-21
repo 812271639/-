@@ -168,12 +168,14 @@ main .content_top .content_top_number .man {
   background: url("../picture/sprite.png") -167px -73px;
 }
 main .content_top .content_top_number .number {
+  color: #26a26f;
   margin: .56rem 0 .1rem .3rem;
 }
 main .content_top .content_top_number .number1 {
   margin: .1rem 0 0 .3rem;
 }
 main .content_top .content_top_number .number2 {
+  color: #26a26f;
   margin: .3rem 0 0 .3rem;
 }
 main .content_top .content_top_number .number3 {
@@ -277,7 +279,7 @@ main .content_company img {
   margin: .01rem 1.5%;
 }
 main .content_company img:hover {
-  box-shadow: 0 0 20px #e7e7e7;
+  box-shadow: 0 0 .3rem #e7e7e7;
 }
 .links {
   font-size: .12rem;

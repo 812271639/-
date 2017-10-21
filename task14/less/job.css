@@ -44,16 +44,20 @@ main .word1 {
   color: #999999;
 }
 main .word2 {
+  padding: .02rem;
   display: inline-block;
   font-size: .14rem;
+  color: white;
   background-color: #29b078;
 }
 main .word3 {
+  padding: .02rem;
   margin-left: .3rem;
   display: inline-block;
 }
 main .word3:hover {
   background-color: #29b078;
+  color: white;
 }
 main .top_line3 {
   clear: both;

@@ -90,16 +90,19 @@ header .navigation .collapse_list {
 header .navigation .collapse_list li {
   float: right;
   color: white;
-  margin-left: .2rem;
+  padding: 0 .1rem;
   font-size: .18rem;
   border-bottom: solid 2px rgba(255, 255, 255, 0);
 }
 header .navigation .collapse_list li a {
-  font-size: 0.25rem;
+  font-size: 0.16rem;
   color: white;
 }
 header .navigation .collapse_list li:hover {
   border-bottom: solid 2px #ffffff;
+}
+header .navigation .collapse_list .right {
+  margin-right: -0.1rem;
 }
 @media screen and (min-width: 768px) {
   header .navigation .collapse_button {
@@ -136,7 +139,7 @@ footer .foot {
 }
 footer .foot .foot_content {
   float: left;
-  width: 30%;
+  width: 33.33333%;
   color: white;
 }
 footer .foot .foot_content .left_p {
