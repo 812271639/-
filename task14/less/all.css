@@ -48,6 +48,7 @@ body {
   margin-left: auto;
 }
 .top_head {
+  line-height: .26rem;
   font-size: .12rem;
   overflow: hidden;
   padding: .1rem  0;
