@@ -129,6 +129,7 @@ main .content_top .content_top_box p {
   padding: .3rem 0;
 }
 main .content_top .content_top_box .content_top_word {
+  text-align: center;
   padding: 0 .2rem;
   margin: 0 auto;
   width: 60%;
@@ -283,7 +284,6 @@ main .content_company img:hover {
 .links {
   font-size: .12rem;
   background-color: white;
-  padding: 0 10%;
 }
 .links .links_top {
   text-align: center;
@@ -315,6 +315,9 @@ main .content_company img:hover {
 @media screen and (max-width: 900px) {
   main .content_top .content_top_box {
     width: 100%;
+  }
+  main .content_top .content_top_box .content_top_word {
+    text-align: center;
   }
   main .content_top .content_top_number {
     width: calc(100%);
