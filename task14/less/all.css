@@ -42,8 +42,8 @@ body {
   }
 }
 .container {
-  /* padding-right: 15px;
-  padding-left: 15px;*/
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -61,7 +61,7 @@ body {
   float: right;
   height: .26rem;
   width: .25rem;
-  margin-left: .1rem;
+  margin: 0 .1rem;
   background: url("../picture/sprite.png") -0.48rem -0.72rem;
   background-size: 1.8rem;
 }
