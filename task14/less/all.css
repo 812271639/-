@@ -54,6 +54,9 @@ body {
   padding: .1rem  0;
   color: #29b078;
 }
+.top_head .container .left {
+  float: left;
+}
 .top_head .weixin {
   float: right;
   height: .26rem;
