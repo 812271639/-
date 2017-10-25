@@ -1,0 +1,136 @@
+.banner_company {
+  height: 15vw;
+  width: 100%;
+  background: url("../picture/company.png") no-repeat center center;
+  background-size: 130% 100%;
+}
+main .hello {
+  text-align: center;
+  position: fixed;
+  bottom: 33%;
+  right: 0;
+  width: .2rem;
+  background-color: rgba(41, 176, 120, 0.8);
+  z-index: 1;
+}
+main .hello a {
+  text-decoration: none;
+  color: white;
+}
+main .company {
+  height: 15vw;
+  width: 100%;
+  background: url("../picture/company.png") no-repeat center center;
+  background-size: 130% 100%;
+}
+main .top_line {
+  padding: .3rem;
+}
+main strong {
+  font-size: .16rem;
+}
+main .top_line > span {
+  font-size: .16rem;
+  color: #29b078;
+}
+main .left {
+  float: left;
+  width: 30%;
+  /*布局*/
+  text-align: center;
+  background-color: #ffffff;
+  z-index: 1;
+  margin-bottom: .2rem;
+}
+main .left-top {
+  text-align: center;
+  font-size: .18rem;
+  padding: .15rem 0;
+  border-bottom: solid #e8e8e8 1px;
+}
+main strong {
+  color: black;
+}
+main .right {
+  width: 100%;
+  /*布局*/
+  font-size: .12rem;
+}
+main .introduce {
+  margin-left: 32%;
+  /*布局*/
+  background-color: #ffffff;
+  padding-bottom: 1rem;
+  margin-bottom: .2rem;
+}
+@media screen and (max-width: 768px) {
+  main {
+    /*布局*/
+  }
+  main .right {
+    float: left;
+    width: 100%;
+  }
+  main .introduce {
+    margin-left: 0;
+  }
+  main .left {
+    float: left;
+    width: 100%;
+  }
+  main .left a {
+    margin-left: .1rem;
+  }
+}
+main .left ul {
+  list-style-type: none;
+  display: inline-block;
+}
+main .left > ul > li {
+  text-align: left;
+  color: #ff9459;
+  font-size: 30px;
+}
+main .left a {
+  /*添加链接*/
+  text-decoration: none;
+  font-size: .14rem;
+  color: #29b078;
+}
+main .circle {
+  display: inline-block;
+  /*圆圈*/
+  width: 10px;
+  height: 10px;
+  margin-right: .05rem;
+  border-radius: 50%;
+  border: solid 1px #ff9459;
+}
+main .left a:hover {
+  color: #ff9459;
+  /*  hover文字链接  */
+}
+main .left a:hover .circle {
+  background-color: #fea500;
+  /*  hover圆圈效果   */
+}
+main .introduce img {
+  float: left;
+  margin-top: -0.2rem;
+}
+main .right-top {
+  padding: .2rem .6rem;
+  padding-bottom: 10%;
+  margin-bottom: .2rem;
+  border-bottom: solid #e8e8e8 1px;
+}
+main p {
+  color: #999999;
+}
+main .introduce > p {
+  padding: 0 .6rem;
+  word-break: break-all;
+  font-size: .14rem;
+  text-indent: 2em;
+  margin-bottom: .4rem;
+}
