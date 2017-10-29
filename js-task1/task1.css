@@ -1,7 +1,4 @@
 
-body{
-    background-color: rgba(122, 186, 47, 0.46);
-}
 main{
     width: 40%;
     margin:0 auto;
@@ -17,7 +14,7 @@ main{
     width:30%;
     padding-top: 30%;
     border-radius:5px;
-    background: #9bcf5f
+    background: #fea500;
 }
 button{
     width: 95%;
