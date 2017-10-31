@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="hello">hello</div>
+<script>
+    var a= document.getElementById("hello");
+//   a.style.height="800px";
+//   a.style.width="800px";
+//   a.style.padding="500px";
+//    a.style.margin="10px";
+//    a.style.float="left";
+//    a.style.margin="10px";
+//    a.style.position="absolute";
+//    a.style.left="50%";
+//    a.style.top="50%";
+//   a.style.background="URL('picture/2.jpg') no-repeat";
+//   a.style.backgroundSize="400px 600px";
+    a.innerHTML="新文本!";       //使用 innerHTML 属性修改元素内容,这个方法会覆盖原来内容。
+</script>
+<div id="demo">测试</div>
+<script>
+    document.getElementById('demo').className="test";
+</script>
+<script>
+    var hello=new Array();              //使用Array构造函数创建数组，
+    hello[0]="a";
+    hello[1]="b";
+    hello[2]="c";
+</script>
+<script>
+    var hello=new Array("a","b","c"); //使用构造函数创建数组，并传递数组中所包含的项
+
+    //给构造函数传递一个值创建的数组会有很大差别。
+    // 如果传递的是数值，这是按照这个数值创建包含给定项数的数组。
+    // 传递其他参数则是创建包含一项的数组
+
+    var hello= new Array(2);       //有两项的数组
+    var hello=new Array("a");      //只有一项的数组
+
+    //使用Array构造函数可以省略 new 操作符
+
+    var hello=  Array(2);
+    var hello=  Array("a");
+</script>
+
+<script>
+    //使用数组字面量表示法创建数组
+    //var A = [1, 2，]; //在数值后加逗号“，”会创建一个包含2或3项的数组（不可取）IE8的bug
+    //var A = [, ，，，，];//创建一个包含5或6项的数组（不可取）
+    var A = ["a", "b"];
+    var B = ["c", "d", "e"];
+    var C = ["f"];
+
+    var Z = A.concat(B,C);     //使用concat()合并数组，并返回新数组长度
+    console.log(Z);          //输出六项(6) ["a", "b", "c", "d", "e", "f"]
+</script>
+<script>
+    var hello = ["a", "b", "c","d","e"];
+    hello.pop(); //移除数组最后一个元素，括号里可以不传入参数，下面例子不传入参数，传入1,2的结果是一样的。
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.pop();                            //不传入参数
+//    console.log(hello);
+//    (4) ["a", "b", "c", "d"]
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.pop(1);                            //传入1
+//    console.log(hello);
+//    (4) ["a", "b", "c", "d"]
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.pop(2);                              //传入2
+//    console.log(hello);
+//   (4) ["a", "b", "c", "d"]
+
+    hello.shift(); //移除数组第一个元素。括号里可以不传入参数，下面例子不传入参数，传入1,2的结果是一样的。
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.shift();                              //不带参数，移除数组第一个元素a
+//    console.log(hello)
+//  (4) ["b", "c", "d", "e"]
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.shift(1);                             //带参数1，移除数组第一个元素a
+//    console.log(hello)
+//    (4) ["b", "c", "d", "e"]
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.shift(2);                         //带参数2，也是移除数组第一个元素a
+//    console.log(hello)
+//  (4) ["b", "c", "d", "e"]
+
+    hello. push();      // 将一个或多个新元素添加到数组结尾
+//    var hello = ["a", "b", "c","d","e"];
+//    hello. push("f","g");          //向数组尾部添加  f g  .
+//    console.log(hello)
+//   (7) ["a", "b", "c", "d", "e", "f", "g"]     //输出结果
+
+    hello.unshift();// 将一个或多个新元素添加到数组开始，数组中的元素自动后移，返回数组新长度
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.unshift("F","G");                //向数组开头添加 F G
+//    console.log(hello)
+//    (7) ["F", "G", "a", "b", "c", "d", "e"] //输出结果
+
+    hello.splice(0,2);        //删除数组的前两项（参数 0 表示开始删除的项数是从0项开始，也就是第一项）
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.splice(0,2);
+//    console.log(hello);
+//   (3) ["c", "d", "e"]
+
+    hello.splice(1,0,"a","b");//从数组位置1插入"F","G"(第一位参数表示位置。第二位参数表示删除（0 不删除，不为零则删除指定数量的项数）)
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.splice(1,0,"F","G");
+//    console.log(hello);
+//    (7) ["a", "F", "G", "b", "c", "d", "e"]
+
+    hello.splice(2,1,"a","b");             //删除数组位置2的那一项，然后再从位置2开始插入字符串"F","G"
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.splice(2,1,"F","G");
+//    console.log(hello);
+//   (6) ["a", "b", "F", "G", "d", "e"]   //“c” 被删除了，插入"F","G"
+
+//    var hello = ["a", "b", "c","d","e"];
+//    hello.splice(2,2,"F","G");          //从位置二开始删除两项，也就是第三，第四项被删除。
+//    console.log(hello);
+//   (5) ["a", "b", "F", "G", "e"]
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
