@@ -86,6 +86,9 @@ main {
       line-height: .8rem;
       border-bottom: solid 1px #cecece;
       width: 100%;
+      &::-webkit-input-placeholder{
+        color: #f0f0f0;
+      }
     }
   }
   .amount{
@@ -93,6 +96,7 @@ main {
     font-size: .28rem;
     margin-top: .1rem;
     margin-bottom: .1rem;
+    padding-top: .2rem;
     padding-left: .15rem;
     background-color: white;
     .amount_input{
@@ -106,7 +110,23 @@ main {
     span{
       color: #FAB344;
       font-size: .16rem;
-      vertical-align: middle;
+    }
+    .slid_range{
+      text-align: center;
+      padding-top: .5rem;
+      .range_style{
+        display: inline-block;
+        width: 65%;
+        vertical-align: sub;
+      }
+      .range_btn{
+        line-height: .23rem;
+        width: .25rem;
+        border-radius: 3px;
+        background-color: white;
+        border: solid 1px #c9c5c5;
+        text-align: center;
+      }
     }
   }
   .bottom_btn{

@@ -84,11 +84,15 @@ main .col-padding .write_in {
   border-bottom: solid 1px #cecece;
   width: 100%;
 }
+main .col-padding .write_in::-webkit-input-placeholder {
+  color: #f0f0f0;
+}
 main .amount {
   height: 2rem;
   font-size: .28rem;
   margin-top: .1rem;
   margin-bottom: .1rem;
+  padding-top: .2rem;
   padding-left: .15rem;
   background-color: white;
 }
@@ -103,7 +107,23 @@ main .amount .amount_input {
 main .amount span {
   color: #FAB344;
   font-size: .16rem;
-  vertical-align: middle;
+}
+main .amount .slid_range {
+  text-align: center;
+  padding-top: .5rem;
+}
+main .amount .slid_range .range_style {
+  display: inline-block;
+  width: 65%;
+  vertical-align: sub;
+}
+main .amount .slid_range .range_btn {
+  line-height: .23rem;
+  width: .25rem;
+  border-radius: 3px;
+  background-color: white;
+  border: solid 1px #c9c5c5;
+  text-align: center;
 }
 main .bottom_btn {
   background-color: #fab344;

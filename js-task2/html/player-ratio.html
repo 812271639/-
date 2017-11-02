@@ -85,8 +85,8 @@
         </div>
         <div class="row">
             <div class="col-xs-12 col-padding">
-                <form  action="">
-                    <input class="write_in" type="text" placeholder="水民词组">
+                <form action="" name="form1" onsubmit="return number()">
+                    <input class="write_in" name="bbb" type="text" placeholder="水民词组">
                 </form>
                 <form action="">
                     <input class="write_in" type="text" placeholder="幽灵词组">
@@ -95,13 +95,92 @@
         </div>
         <div class="row amount">
             <form action="">
-                玩家人数&nbsp;<input class="amount_input" type="text">&nbsp;<span>玩家数量为4-18人</span>
+                玩家人数&nbsp;<input class="amount_input" onchange="text()" type="text" name="player_amount" max="18" min="0"
+            >&nbsp;<span>玩家数量为4-18人</span>
             </form>
+            <div class="slid_range">
+                <button type="button" class="range_btn" onclick="number_reduce()">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+                <input type="range" id="number_slid" class="range_style"  onchange="range()" value="0" max="18" min="0" step="1">
+                <button type="button" id="button1" class="range_btn" onclick="number_add()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
         </div>
         <div class="row">
-            <button class="bottom_btn" type="button">去发牌</button>
+            <button class="bottom_btn" onclick="get_value()" type="button">去发牌</button>
         </div>
     </div>
 </main>
+<script>
+    //获取 input 值
+    var value_name = document.getElementsByName("player_amount");//获取输入框值
+    var number_slid = document.getElementById("number_slid");    //获取进度条值
+    //验证数字
+    function get_value() {
+        var x = value_name[0].value;
+        if (isNaN(x) || x < 4 || x > 18) {
+            alert("请输入4-18的数字");
+        }
+    }
+    //进度条关联输入框
+    function range() {
+        value_name[0].value = number_slid.value;//当进度条变时，赋值给输入框
+    }
+    function text() {
+        number_slid.value = value_name[0].value;//当输入框变时，赋值给进度条
+    }
+    //点击进度条加
+        function number_add() {
+        if (number_slid.value >= 18) {
+            return false;
+        } else {
+            ++number_slid.value;
+            ++value_name[0].value;
+        }
+    }
+    //点击进度条减
+    function number_reduce() {
+        if (number_slid.value < 1) {
+            return false;
+        } else {
+            --number_slid.value;
+            --value_name[0].value;
+        }
+    }
+</script>
+<!--<script>-->
+<!--//验证数字范围-->
+<!--var value_name = document.getElementsByName("player_amount");-->
+<!--var number_slid = document.getElementById("number_slid");-->
+<!--function get_value() {-->
+<!--var x = value_name[0].value;-->
+<!--if (isNaN(x) || x < 4 || x > 18) {-->
+<!--alert("请输入4-18的数字");-->
+<!--}-->
+<!--}-->
+<!--//点击进度条加-->
+<!--function number_add() {-->
+
+<!--var z = number_slid.value;-->
+<!--if(z >= 18){-->
+<!--return false;-->
+<!--}else {-->
+<!--++number_slid.value;-->
+<!--++value_name[0].value;-->
+<!--}-->
+<!--}-->
+<!--//点击进度条减-->
+<!--function number_reduce() {-->
+<!--var z = number_slid.value;-->
+<!--if(z < 1){-->
+<!--return false;-->
+<!--}else {-->
+<!--&#45;&#45;number_slid.value;-->
+<!--&#45;&#45;value_name[0].value;-->
+<!--}-->
+<!--}-->
+<!--</script>-->
 </body>
 </html>
