@@ -130,7 +130,16 @@ main .amount .slid_range {
 main .amount .slid_range .range_style {
   display: inline-block;
   width: 65%;
-  vertical-align: sub;
+  vertical-align: 3px;
+  -webkit-appearance: none;
+  background-color: #fab344;
+  height: .05rem;
+}
+main .amount .slid_range .range_style::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: .36rem;
+  width: .6rem;
+  background: url("../picture/range.png") no-repeat;
 }
 main .amount .slid_range .range_btn {
   line-height: .23rem;

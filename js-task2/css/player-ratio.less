@@ -133,8 +133,16 @@ main {
       .range_style{
         display: inline-block;
         width: 65%;
-        vertical-align: sub;
-        input{
+        vertical-align: 3px;
+        -webkit-appearance: none;
+        background-color: #fab344;
+        height: .05rem;
+        &::-webkit-slider-thumb{
+          -webkit-appearance: none;
+          height: .36rem;
+          width:.6rem;
+          background: url("../picture/range.png") no-repeat;
+
 
         }
       }
