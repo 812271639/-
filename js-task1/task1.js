@@ -11,6 +11,7 @@ function start() {
     for (var b = 0; b < 9; b++) {
         change[b].style.background = "#fea500";
     }
+
     var arr = new Array(9);
     for (var i=0; i<9; i++) {
         arr[i] = i;
@@ -20,9 +21,10 @@ function start() {
         var rnd = Math.floor(Math.random()*i);
         arr2.push(arr[rnd]);
         arr.splice(rnd,1);
+
     }
-    change[arr2[0]].style.background = colors();
-     change[arr2[1]].style.background = colors();
+    change[arr2[3]].style.background = colors();
+    change[arr2[1]].style.background = colors();
     change[arr2[2]].style.background = colors();
 }
 //生成随机颜色

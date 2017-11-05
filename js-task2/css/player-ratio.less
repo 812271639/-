@@ -1,6 +1,6 @@
 html {
   font-size: 625%;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 body {
@@ -43,44 +43,60 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding:1.5rem 0 1.5rem .15rem;
     background-color: white;
-    padding:1.5rem 0;
     border-right:solid 1px #cecece;
+    margin-right: -.15rem;
     .vertical_words {
       width: .34rem;
       font-size: .34rem;
       line-height: .4rem;
+
     }
   }
-  .setting {
+  .content{
     color: #a1a1a1;
     background-color: #fbfbfb;
     text-align: center;
-    line-height: .81rem;
+    height: 4.05rem;
+    margin-left: -.15rem;
     font-size: 0.26rem;
-    .orange {
-      color: #ee9f1b;
-      font-size: .1rem;
-      vertical-align: .05rem;
+    overflow: auto;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      list-style: square;
+      color: #2aabd2;
+      padding: 0 .2rem;
+    li{
+      float: left;
+      margin:.2rem .3rem;
+      span{
+        color: #a1a1a1;
+        white-space:pre;
+      }
     }
-    .blue {
-      color: #29bde0;
-      font-size: .1rem;
-      vertical-align: .05rem;
     }
   }
   .set {
     text-align: center;
     line-height: .54rem;
     background-color: #fbfbfb;
-    color: #29bde0;
-    font-size: .28rem;
     border-top:solid 1px #cecece;
+    margin-left: -.15rem;
+    button{
+      font-size: .28rem;
+      color: #29bde0;
+      background: transparent;
+    }
   }
   .col-padding{
     background-color: white;
     padding-bottom: .3rem;
     margin-top: .1rem;
+    padding-left: .15rem;
+    padding-right: .15rem;
     .write_in{
       font-size: .28rem;
       line-height: .8rem;
@@ -118,6 +134,9 @@ main {
         display: inline-block;
         width: 65%;
         vertical-align: sub;
+        input{
+
+        }
       }
       .range_btn{
         line-height: .23rem;

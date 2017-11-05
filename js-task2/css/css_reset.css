@@ -29,9 +29,6 @@ blockquote,
 dl,
 dt,
 dd,
-ul,
-ol,
-li,
 pre,
 fieldset,
 lengend,
@@ -42,12 +39,6 @@ th,
 td {
   margin: 0;
   padding: 0;
-}
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 body,
 button,

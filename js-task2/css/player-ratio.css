@@ -1,6 +1,6 @@
 html {
   font-size: 625%;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 body {
   padding-top: .8rem;
@@ -39,44 +39,59 @@ main .vertical {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem 0 1.5rem .15rem;
   background-color: white;
-  padding: 1.5rem 0;
   border-right: solid 1px #cecece;
+  margin-right: -0.15rem;
 }
 main .vertical .vertical_words {
   width: .34rem;
   font-size: .34rem;
   line-height: .4rem;
 }
-main .setting {
+main .content {
   color: #a1a1a1;
   background-color: #fbfbfb;
   text-align: center;
-  line-height: .81rem;
+  height: 4.05rem;
+  margin-left: -0.15rem;
   font-size: 0.26rem;
+  overflow: auto;
 }
-main .setting .orange {
-  color: #ee9f1b;
-  font-size: .1rem;
-  vertical-align: .05rem;
+main .content ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: square;
+  color: #2aabd2;
+  padding: 0 .2rem;
 }
-main .setting .blue {
-  color: #29bde0;
-  font-size: .1rem;
-  vertical-align: .05rem;
+main .content ul li {
+  float: left;
+  margin: .2rem .3rem;
+}
+main .content ul li span {
+  color: #a1a1a1;
+  white-space: pre;
 }
 main .set {
   text-align: center;
   line-height: .54rem;
   background-color: #fbfbfb;
-  color: #29bde0;
-  font-size: .28rem;
   border-top: solid 1px #cecece;
+  margin-left: -0.15rem;
+}
+main .set button {
+  font-size: .28rem;
+  color: #29bde0;
+  background: transparent;
 }
 main .col-padding {
   background-color: white;
   padding-bottom: .3rem;
   margin-top: .1rem;
+  padding-left: .15rem;
+  padding-right: .15rem;
 }
 main .col-padding .write_in {
   font-size: .28rem;
