@@ -35,7 +35,7 @@ function number_add() {
 function number_reduce() {
     var number_slid = document.getElementById("number_slid");
     var valueNumber = document.getElementById("player_amount");
-    if (number_slid.value < 1) {
+    if (number_slid.value < 7) {
         return false;
     } else {
         -- number_slid.value;
@@ -50,8 +50,7 @@ function setPlayer() {
     var arr2 = [];
     var killer = [];
     var civilian = [];
-
-                                                  //判断玩家数量
+                                                //判断玩家数量
     if (6 <= num && num <= 9) {
         for (i = 0; i < 2; i++) {
             killer[i] = "杀手";

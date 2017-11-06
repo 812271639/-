@@ -39,14 +39,16 @@ body {
 }
 
 main {
+  padding: 0 .15rem;
   .vertical {
+    width: 15%;
+    float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:1.5rem 0 1.5rem .15rem;
+    padding:1.5rem 0 1.5rem 0;
     background-color: white;
     border-right:solid 1px #cecece;
-    margin-right: -.15rem;
     .vertical_words {
       width: .34rem;
       font-size: .34rem;
@@ -54,12 +56,15 @@ main {
 
     }
   }
+.content_out{
+  float: left;
+  width: 85%;
+}
   .content{
     color: #a1a1a1;
     background-color: #fbfbfb;
     text-align: center;
     height: 4.05rem;
-    margin-left: -.15rem;
     font-size: 0.26rem;
     overflow: auto;
     ul{
@@ -84,7 +89,6 @@ main {
     line-height: .54rem;
     background-color: #fbfbfb;
     border-top:solid 1px #cecece;
-    margin-left: -.15rem;
     button{
       font-size: .28rem;
       color: #29bde0;
@@ -142,8 +146,7 @@ main {
           height: .36rem;
           width:.6rem;
           background: url("../picture/range.png") no-repeat;
-
-
+          background-size: cover;
         }
       }
       .range_btn{
@@ -164,5 +167,10 @@ main {
     padding: .2rem 0;
     outline: none;
     text-decoration: none;
+  }
+}
+@media screen and (max-width: 425px) {
+  html{
+    font-size: 500%;
   }
 }
