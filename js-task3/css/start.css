@@ -1,0 +1,26 @@
+html {
+  font-size: 625%;
+  background-color: #f0f0f0;
+}
+body {
+  max-width: 6.4rem;
+  margin: 0 auto;
+  background-color: #29bde0;
+}
+main {
+  text-align: center;
+}
+main img {
+  margin: 2.25rem 0 .9rem 0;
+}
+main .word {
+  color: white;
+  font-size: .4rem;
+  padding-bottom: 2.8rem;
+}
+main .word span {
+  border: solid white;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}

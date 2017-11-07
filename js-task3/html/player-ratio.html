@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玩家配比页</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../css/css_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/player-ratio.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="huose">
+                    <a href="../html/edition.html">
+                        <img src="../picture/left-Back.png"/>
+                    </a>
+                </div>
+                <div class="gain">
+                    游戏结果
+                </div>
+                <div class="i">
+                    <img src="../picture/help.png"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="vertical">
+        <div class="vertical_words">玩家配比</div>
+    </div>
+    <div class="content_out">
+        <div class="content">
+            <ul id="player"></ul>
+        </div>
+
+        <div class="set">
+            <button id="setPlayer">点击设置</button>
+            <img src="../picture/pencil.png" alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 ">
+            <div class="col-padding">
+                <form action="" name="form1" onsubmit="return number()">
+                    <input class="write_in" name="bbb" type="text" placeholder="输入水民词组">
+                </form>
+                <form action="">
+                    <input class="write_in" type="text" placeholder="输入幽灵词组">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-xs-12 ">
+            <div class="amount">
+                <form action="">
+                    玩家人数&nbsp;<input class="amount_input" onchange="text()" type="text" id="player_amount"
+                                     max="18"
+                                     min="0"
+                                     value="6"
+                >&nbsp;<span>玩家数量为6-18人</span>
+                </form>
+                <div class="slid_range">
+                    <button type="button" class="range_btn" onclick="number_reduce()">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                    <input type="range" id="number_slid" class="range_style" onchange="range()" value="6" max="18"
+                           min="0" step="1">
+                    <button type="button" id="button1" class="range_btn" onclick="number_add()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="bottom_btn" onclick="get_value()" type="button">去发牌</button>
+        </div>
+    </div>
+</main>
+<script SRC="../js/elf.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(".bottom_btn").click(function () {
+            location.href='turnover.html';
+        })
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻牌</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../css/css_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/turnover.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="huose">
+                    <a href="../html/edition.html">
+                        <img class="left-Back" src="../picture/left-Back.png"/>
+                    </a>
+                </div>
+                <div class="gain">
+                    游戏结果
+                </div>
+                <div class="i">
+                    <img src="../picture/close.png"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+
+    <div class="content">
+        <div class="number number1">1</div>
+        <img id="image" class="image1" src="../picture/rever.png">
+        <div class="role">角 色：<span id="value"></span></div>
+        <div class=" word_group">词 组：西伯利亚</div>
+        <div class="remind">想办法猜到别人的词，同时还要注意不要暴露自己哦！</div>
+    </div>
+    <button type="button" class="bottom_btn1">查看<span class="number1">1</span>号身份</button>
+</main>
+<!--<script src="../js/elf.js"></script>-->
+<script>
+    $(document).ready(function () {
+        $(".left-Back").click(function () {
+            location.href = 'player-ratio.html';
+        })
+    });
+
+    $(document).ready(function () {
+        var a = 1;
+        $(".bottom_btn1").click(function () {
+//            var image = document.querySelector(".image1");         //获取图片
+//            var imageSrc = image.getAttribute("src");              //获取图片属性
+            var imageSrc = $("#image").attr('src');
+            var arr2 = JSON.parse(localStorage.getItem("user"));      //取出数据
+            var b = $("img").hasClass("image2");           //hassClass()判断是否为true
+            if (a <= arr2.length && b) {
+                a++;
+            }
+            if (imageSrc === "../picture/rever.png") {            //判断图片路径
+                $("#image").attr("src", "../picture/front.png").addClass("image2");
+                $(".role, .word_group, .remind").show();                              //显示元素
+                $("#value").append(arr2[a - 1]);                                        //添加身份
+                $(".bottom_btn1").text("隐藏并传递给" + (a + 1) + "号").addClass("bottom_btn2");
+            } else {
+                $("#image").attr("src", "../picture/rever.png").removeClass("image2");
+                $(".role, .word_group, .remind").hide();                                 //隐藏元素
+                $("#value").empty();                                                      //清空身份
+                $(".number1").text(a);                                                   //添加改变数字
+                $(".bottom_btn1").text("查看" + a + "号身份").removeClass("bottom_btn2");
+            }
+            if (a === arr2.length && imageSrc === "../picture/rever.png") {
+                $(".bottom_btn1").text('查看法官日志').addClass("bottom_btn3");
+            }
+            else if (a > arr2.length) {
+                location.href = 'player-ratio.html';
+            }
+        });
+    });
+</script>
+</body>
+</html>
