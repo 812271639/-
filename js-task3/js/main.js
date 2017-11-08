@@ -61,7 +61,7 @@ $(document).ready(function () {
 //获取 input 值
 var valueNumber = document.getElementById("player_amount");  //获取输入框
 var number_slid = document.getElementById("number_slid");    //获取进度条
-var num = valueNumber.value;
+// var num = valueNumber.value;
 
 document.getElementById("setPlayer").onclick = function () {
     var num = valueNumber.value;
@@ -106,6 +106,7 @@ function number_reduce() {
     var number_slid = document.getElementById("number_slid");
     var valueNumber = document.getElementById("player_amount");
     if (number_slid.value < 7) {
+        alert("请输入6-18的数字");
         return false;
     } else {
         --number_slid.value;
