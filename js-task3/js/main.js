@@ -65,7 +65,6 @@ var num = valueNumber.value;
 
 document.getElementById("setPlayer").onclick = function () {
     var num = valueNumber.value;
-    console.log(num);
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                      //设置按钮验证数字
     } else {
@@ -115,6 +114,7 @@ function number_reduce() {
 }
 //生成玩家
 function setPlayer() {
+    var num = valueNumber.value;
     var ul = document.getElementById("player");             //清空数组,避免从复生成
     document.getElementById("player").innerHTML = "";
     var arr2 = [];
@@ -177,7 +177,6 @@ function setPlayer() {
     }
 
     localStorage.setItem("user", JSON.stringify(arr2));   //存值
-
 }
 
 
