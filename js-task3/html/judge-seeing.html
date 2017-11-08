@@ -34,23 +34,7 @@
 <footer>
         <button type="button" class="foot">开始游戏</button>
 </footer>
-<script>
-
-    $(document).ready(function () {
-        var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
-//        var abc="<div class=\"card\"><div class=\"farmer\">医生</div><div class=\"number\">1号</div></div>";
-        for(var i=0;i < arr2.length;i++){
-            $(".identity").append("<div class=\"card\">\n" + "<div class=\"farmer\">"+arr2[i] +"</div>\n" + "<div class=\"number\">"+ (i+1) +"号</div>\n" + "</div>");
-
-        }
-
-    });
-    $(document).ready(function () {
-        $("#judge-seeing").click(function () {
-            location.href = 'player-ratio.html';
-        })
-    });
-
-</script>
+<script src="../js/main.js"></script>
+<!--<script src="../js/jq.js"></script>-->
 </body>
 </html>
