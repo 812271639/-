@@ -105,6 +105,7 @@ main {
       font-size: .28rem;
       line-height: .8rem;
       border-bottom: solid 1px #cecece;
+      background-color: white;
       width: 100%;
       &::-webkit-input-placeholder{
         color: #f0f0f0;
@@ -134,15 +135,35 @@ main {
     .slid_range{
       text-align: center;
       padding-top: .5rem;
+      input::-moz-range-track{    //兼容火狐
+        display: inline-block;
+        width: 65%;
+        vertical-align: 3px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background-color: #fab344;
+        height: .05rem;
+      }
       .range_style{
         display: inline-block;
         width: 65%;
         vertical-align: 3px;
         -webkit-appearance: none;
+        -moz-appearance: none;
         background-color: #fab344;
         height: .05rem;
-        &::-webkit-slider-thumb{
+        &::-webkit-slider-thumb{//谷歌
           -webkit-appearance: none;
+          height: .36rem;
+          width:.6rem;
+          background: url("../picture/range.png") no-repeat;
+          background-size: cover;
+        }
+        &::-moz-range-thumb{//兼容火狐
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          border:none;
+          outline: none;
           height: .36rem;
           width:.6rem;
           background: url("../picture/range.png") no-repeat;

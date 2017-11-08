@@ -1,5 +1,16 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
 // myHeading.innerHTML="hello world";
 
 var myImage = document.querySelector("img");
