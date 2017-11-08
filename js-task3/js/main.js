@@ -1,5 +1,3 @@
-
-
 //玩家配比页jQuery/////////////////////////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function () {
     var a = 1;
@@ -8,6 +6,11 @@ $(document).ready(function () {
 //      var imageSrc = image.getAttribute("src"); //原生js获取图片属性
         var imageSrc = $("#image").attr('src');                  //获取图片属性保存在变量中
         var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
+
+        var v1 = localStorage.getItem("v1");
+        var v2 = localStorage.getItem("v2");
+        // console.log(v1);
+        // console.log(v2);
         var b = $("img").hasClass("image2");                     //hassClass()判断是否为true
         if (a <= arr2.length && b) {                             //条件语句，a + 1，用来取出数组元素
             a++;
@@ -17,18 +20,25 @@ $(document).ready(function () {
             $(".role, .word_group, .remind").show();                              //显示元素
             $("#value").append(arr2[a - 1]);                                      //添加身份
             $(".bottom_btn1").text("隐藏并传递给" + (a + 1) + "号").addClass("bottom_btn2");//添加按钮样式
+
         } else {
             $("#image").attr("src", "../picture/rever.png").removeClass("image2");
             $(".role, .word_group, .remind").hide();                                 //隐藏元素
             $("#value").empty();                                                     //清空身份
             $(".number1").text(a);                                                   //添加改变数字
             $(".bottom_btn1").text("查看" + a + "号身份").removeClass("bottom_btn2"); //去除按钮样式
+
         }
         if (a === arr2.length && imageSrc === "../picture/rever.png") {
             $(".bottom_btn1").text('查看法官日志').addClass("bottom_btn3");            //添加按钮样式
-        }
-        else if (a > arr2.length) {
+        } else if (a > arr2.length) {
             location.href = 'judge-seeing.html';
+        }
+        var aaa =$("#value").text();
+        if(aaa  === "平民"){
+            $(".word_group").text("词  组：" + v1);
+        }else if(aaa === "杀手"){
+             $(".word_group").text("词  组：" + v2);
         }
     });
 });
@@ -59,9 +69,9 @@ $(document).ready(function () {
 //玩家配比页面原生js////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //获取 input 值
-var valueNumber = document.getElementById("player_amount");  //获取输入框
-var number_slid = document.getElementById("number_slid");    //获取进度条
-// var num = valueNumber.value;
+var valueNumber = document.getElementById("player_amount");  //选择数字输入框
+var number_slid = document.getElementById("number_slid");    //选择进度条
+
 
 document.getElementById("setPlayer").onclick = function () {
     var num = valueNumber.value;
@@ -70,11 +80,24 @@ document.getElementById("setPlayer").onclick = function () {
     } else {
         setPlayer()
     }
+    var write1 = document.getElementById("write1").value;       //选择水民词组输入框
+    var write2 = document.getElementById("write2").value;       //选择杀手词组输入框
+    localStorage.setItem("v1", write1);   //存值水民词组
+    localStorage.setItem("v2", write2);   //存值杀手词组
 
+    console.log(write1);
+    console.log(write2);
 };
 
-document.getElementsByClassName("bottom_btn")[0].onclick=function () {
+document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     var num = valueNumber.value;
+    var write1 = document.getElementById("write1").value;       //选择水民词组输入框
+    var write2 = document.getElementById("write2").value;       //选择杀手词组输入框
+    localStorage.setItem("v1", write1);   //存值水民词组
+    localStorage.setItem("v2", write2);   //存值杀手词组
+    console.log(write1);
+    console.log(write2);
+
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                                     //验证数字
     } else {
@@ -90,6 +113,7 @@ function range() {
 function text() {
     number_slid.value = valueNumber.value;//当输入框变时，赋值给进度条
 }
+
 //点击进度条加
 function number_add() {
     var number_slid = document.getElementById("number_slid");
@@ -101,6 +125,7 @@ function number_add() {
         ++valueNumber.value;
     }
 }
+
 //点击进度条减
 function number_reduce() {
     var number_slid = document.getElementById("number_slid");
@@ -113,6 +138,7 @@ function number_reduce() {
         --valueNumber.value;
     }
 }
+
 //生成玩家
 function setPlayer() {
     var num = valueNumber.value;
@@ -178,6 +204,8 @@ function setPlayer() {
     }
 
     localStorage.setItem("user", JSON.stringify(arr2));   //存值
+
+
 }
 
 
