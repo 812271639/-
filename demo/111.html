@@ -7,32 +7,26 @@
 
 </head>
 
-<body onload="startTime()">
-<div id="txt"></div>
+<body >
+<div id="text">hello</div>
 
-    <script type="text/javascript">
-        function startTime()
-        {
-            var today=new Date();
-            var h=today.getHours();
-            var m=today.getMinutes();
-            var s=today.getSeconds();
-// add a zero in front of numbers<10
-            m=checkTime(m);
-            s=checkTime(s);
-            document.getElementById('txt').innerHTML=h+":"+m+":"+s;
-            t=setTimeout(startTime,1)
-        }
+<button  onclick="abc()">点击获取元素</button>
+<script>
 
-        function checkTime(i)
-        {
-            if (i<10)
-            {i="0" + i}
-            return i
-        }
-    </script>
+     function abc () {
 
+        var hello = document.getElementById("text").innerHTML;
+        alert(hello);
 
-
+    }
+</script>
+<script>
+    function myFunction(){
+        document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
+    }
+</script>
+<h1>我的 Web 页面</h1>
+<p id="demo">一个段落。</p>
+<button type="button" onclick="myFunction()">点击这里</button>
 </body>
 </html>
