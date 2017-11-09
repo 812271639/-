@@ -96,13 +96,19 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     var hello = document.getElementById("player").innerHTML;
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                                     //验证数字
-    } else if(hello === "" ){
+    } else if(hello == false ){     //使用 布尔值 判断 是否有内容
         alert("请设置玩家数量");
-// alert(null);
     }else {
         location.href = 'turnover.html';//跳转
-
     }
+    // var hello = document.getElementById("player").innerHTML;
+    // if (isNaN(num) || num < 6 || num > 18) {
+    //     alert("请输入6-18的数字");                                     //验证数字
+    // } else if(hello === "" ){     // 使用空引号 “ ” 判断 是否有内容
+    //     alert("请设置玩家数量");
+    // }else {
+    //     location.href = 'turnover.html';//跳转
+    // }
 };
 //进度条关联输入框
 function range() {
