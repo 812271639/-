@@ -1,4 +1,5 @@
-//玩家翻牌页jQuery/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////玩家翻牌页jQuery////////////////////////////////////////////////////////
 $(document).ready(function () {
     var a = 1;
     $(".bottom_btn1").click(function () {
@@ -47,7 +48,7 @@ $(document).ready(function () {
 });
 
 
-//法官日志页jQuery /////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////法官日志页jQuery ////////////////////////////////////////////////
 
 $(document).ready(function () {
     var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
@@ -64,7 +65,7 @@ $(document).ready(function () {
     })
 });
 
-//玩家配比页面原生js////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////玩家配比页面原生js/////////////////////////////////////////////////
 
 //获取 input 值
 var valueNumber = document.getElementById("player_amount");  //选择数字输入框
@@ -78,19 +79,13 @@ document.getElementById("setPlayer").onclick = function () {
     } else {
         setPlayer()
     }
-    var write1 = document.getElementById("write1").value;       //选择水民词组输入框
-    var write2 = document.getElementById("write2").value;       //选择杀手词组输入框
-    localStorage.setItem("v1", write1);   //存值水民词组
-    localStorage.setItem("v2", write2);   //存值杀手词组
-    console.log(write1);
-    console.log(write2);
 };
 document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     var num = valueNumber.value;
     var write1 = document.getElementById("write1").value;       //选择水民词组输入框
     var write2 = document.getElementById("write2").value;       //选择杀手词组输入框
-    localStorage.setItem("v1", write1);   //存值水民词组
-    localStorage.setItem("v2", write2);   //存值杀手词组
+    localStorage.setItem("v1", write1);                         //存值水民词组
+    localStorage.setItem("v2", write2);                         //存值杀手词组
     // console.log(write1);
     // console.log(write2);
     var hello = document.getElementById("player").innerHTML;
