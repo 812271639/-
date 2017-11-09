@@ -6,17 +6,33 @@
     <script SRC="example.js"></script>
 
 </head>
-<body>
-<div id="result"> </div>
-<p id="a"></p>
-<script>
-    localStorage.setItem("lastname","小姐姐");
-    document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-    if(localStorage.pagecount){
-        localStorage.pagecount=Number(localStorage.pagecount) +1;
-    }
-    document.getElementById("a").innerHTML = localStorage.pagecount;
 
-</script>
+<body onload="startTime()">
+<div id="txt"></div>
+
+    <script type="text/javascript">
+        function startTime()
+        {
+            var today=new Date();
+            var h=today.getHours();
+            var m=today.getMinutes();
+            var s=today.getSeconds();
+// add a zero in front of numbers<10
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+            t=setTimeout(startTime,1)
+        }
+
+        function checkTime(i)
+        {
+            if (i<10)
+            {i="0" + i}
+            return i
+        }
+    </script>
+
+
+
 </body>
 </html>

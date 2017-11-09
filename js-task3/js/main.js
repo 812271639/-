@@ -7,8 +7,8 @@ $(document).ready(function () {
         var imageSrc = $("#image").attr('src');                  //获取图片属性保存在变量中
         var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
 
-        var v1 = localStorage.getItem("v1");
-        var v2 = localStorage.getItem("v2");
+        var v1 = localStorage.getItem("v1");  //获取平民词组传过来的值
+        var v2 = localStorage.getItem("v2"); //获取杀手词组传过来的值
         // console.log(v1);
         // console.log(v2);
         var b = $("img").hasClass("image2");                     //hassClass()判断是否为true
@@ -72,7 +72,7 @@ $(document).ready(function () {
 var valueNumber = document.getElementById("player_amount");  //选择数字输入框
 var number_slid = document.getElementById("number_slid");    //选择进度条
 
-
+// var num = valueNumber.value;
 document.getElementById("setPlayer").onclick = function () {
     var num = valueNumber.value;
     if (isNaN(num) || num < 6 || num > 18) {
@@ -97,7 +97,6 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     localStorage.setItem("v2", write2);   //存值杀手词组
     console.log(write1);
     console.log(write2);
-
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                                     //验证数字
     } else {
