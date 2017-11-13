@@ -1,4 +1,3 @@
-
 ///////////////////////////////////////////////玩家翻牌页jQuery////////////////////////////////////////////////////////
 $(document).ready(function () {
     var a = 1;
@@ -74,7 +73,7 @@ var number_slid = document.getElementById("number_slid");    //选择进度条
 // var num = valueNumber.value;
 document.getElementById("setPlayer").onclick = function () {
     var num = valueNumber.value;
-    if (isNaN(num) || num < 6 || num > 18) {
+    if (isNaN(num) || num < 6 || num > 18 || (num%1 !== 0)) {
         alert("请输入6-18的数字");                      //设置按钮验证数字
     } else {
         setPlayer()
@@ -91,9 +90,9 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     var hello = document.getElementById("player").innerHTML;
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                                     //验证数字
-    } else if(hello == false ){     //使用 布尔值 判断 是否有内容
+    } else if (hello == false) {     //使用 布尔值 判断 是否有内容
         alert("请设置玩家数量");
-    }else {
+    } else {
         location.href = 'turnover.html';//跳转
     }
     // var hello = document.getElementById("player").innerHTML;
@@ -105,6 +104,7 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     //     location.href = 'turnover.html';//跳转
     // }
 };
+
 //进度条关联输入框
 function range() {
     valueNumber.value = number_slid.value;//当进度条变时，赋值给输入框
@@ -113,22 +113,28 @@ function range() {
 function text() {
     number_slid.value = valueNumber.value;//当输入框变时，赋值给进度条
 }
+
 //点击进度条加
 function number_add() {
+
     var number_slid = document.getElementById("number_slid");
     var valueNumber = document.getElementById("player_amount");
-    if (number_slid.value >= 18) {
+    var num = valueNumber.value;
+    if (number_slid.value >= 18 || num >=18 || num<0 || (num%1 !== 0)) {
+        alert("请输入6-18的数字");
         return false;
     } else {
         ++number_slid.value;
         ++valueNumber.value;
     }
 }
+
 //点击进度条减
 function number_reduce() {
     var number_slid = document.getElementById("number_slid");
     var valueNumber = document.getElementById("player_amount");
-    if (number_slid.value < 7) {
+    var num = valueNumber.value;
+    if (number_slid.value < 7 || (num%1 !== 0) || num<0 ) {
         alert("请输入6-18的数字");
         return false;
     } else {
@@ -136,6 +142,7 @@ function number_reduce() {
         --valueNumber.value;
     }
 }
+
 //生成玩家
 function setPlayer() {
     var num = valueNumber.value;
