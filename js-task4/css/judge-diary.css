@@ -1,0 +1,124 @@
+html {
+  font-size: 500%;
+  background-color: white;
+}
+body {
+  padding-top: .8rem;
+  padding-bottom: 2rem;
+  max-width: 6.4rem;
+  margin: 0 auto;
+  background-color: #efefef;
+}
+.navbar-fixed-top {
+  margin: 0 auto;
+  max-width: 6.4rem;
+  text-align: center;
+  font-size: .34rem;
+  background-color: #29bde0;
+  color: white;
+}
+.navbar-fixed-top .huose {
+  float: left;
+  margin: .1rem;
+}
+.navbar-fixed-top .huose img {
+  max-width: .5rem;
+}
+.navbar-fixed-top .i {
+  float: right;
+  margin: .1rem;
+}
+.navbar-fixed-top .i img {
+  max-width: .4rem;
+}
+.navbar-fixed-top .gain {
+  display: inline-block;
+  line-height: .8rem;
+}
+main .first_day {
+  line-height: .8rem;
+  text-align: center;
+  margin-top: .3rem;
+  font-size: .3rem;
+  color: #29bde0;
+  background-color: white;
+}
+main .top_triangle {
+  margin: 0 auto;
+  width: 0;
+  border-right: solid transparent .125rem;
+  border-left: solid transparent .125rem;
+  border-bottom: solid white .2rem;
+}
+main .content {
+  padding: .5rem .2rem .5rem .45rem;
+  background-color: white;
+}
+main .content .left_line {
+  position: relative;
+  border-left: solid 1px #c9c9c9;
+}
+main .content .left_line .moon {
+  position: absolute;
+  top: 2.5%;
+  width: .5rem;
+  padding-top: .5rem;
+  margin-left: -0.25rem;
+  background: url("../picture/moon.png") center center no-repeat white;
+  border-radius: 50%;
+  border: solid 1px #c9c9c9;
+}
+main .content .left_line .sun {
+  position: absolute;
+  top: 29%;
+  width: .5rem;
+  padding-top: .5rem;
+  margin-left: -0.25rem;
+  background: url("../picture/sun.png") center center no-repeat white;
+  border-radius: 50%;
+  border: solid 1px #c9c9c9;
+}
+main .content .left_line .flow {
+  position: relative;
+  line-height: .7rem;
+  text-align: center;
+  margin-top: .3rem;
+  margin-left: .5rem;
+  font-size: .3rem;
+  color: white;
+  background-color: #29bde0;
+}
+main .content .left_line .flow .left_triangle {
+  position: absolute;
+  top: 36%;
+  left: -0.7rem;
+  margin-left: .5rem;
+  width: 0;
+  border-right: solid #29bde0.2rem ;
+  border-top: solid transparent .1rem;
+  border-bottom: solid transparent .1rem;
+}
+footer .again {
+  line-height: .6rem;
+  padding: 0 14%;
+  display: inline-block;
+  color: white;
+  background-color: #fbb435;
+  border-radius: 5px;
+}
+footer .share {
+  line-height: .6rem;
+  padding: 0 5.5%;
+  display: inline-block;
+  background-color: #fbb435;
+  border-radius: 5px;
+}
+footer .navbar-fixed-bottom {
+  margin: 0 auto;
+  max-width: 6.4rem;
+  line-height: .8rem;
+  text-align: center;
+  font-size: .34rem;
+  color: white;
+  background: rgba(136, 207, 223, 0.48);
+}

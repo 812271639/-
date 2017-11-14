@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>法官日志</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../css/css_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/judge-diary.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="huose">
+                    <img class="left-Back" src="../picture/left-Back.png"/>
+                </div>
+                <div class="gain">
+                    法官日记
+                </div>
+                <div class="i">
+                    <img src="../picture/close.png"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <div id="first_day_id" class="first_day">第一天</div>
+        <div class="top_triangle"></div>
+        <div class="content">
+            <div class="left_line">
+            <div>
+                <div class="moon"></div>
+                <div id="kill" class="flow">
+                    <div class="left_triangle"></div>
+                    杀手杀人
+                </div>
+            </div>
+            <div>
+                <div class="sun"></div>
+                <div id="lastWords" class="flow">
+                    <div class="left_triangle"></div>
+                    亡灵发表遗言
+                </div>
+            </div>
+            <div id="speak" class="flow">
+                <div class="left_triangle"></div>
+                玩家依次发言
+            </div>
+            <div id="vote" class="flow">
+                <div class="left_triangle"></div>
+                全民投票
+            </div>
+        </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="row">
+                <div class="col-xs-6">
+                        <div class="again">结束游戏</div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="share">法官日志</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</footer>
+<script src="../js/judge-diary.js"></script>
+<script src="../js/state-machine.js"></script>
+</body>
+</html>

@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script SRC="example.js"></script>
-
 </head>
 
 <body >
 <div id="text">hello</div>
 
-<button  onclick="abc()">点击获取元素</button>
-<script>
 
-     function abc () {
+<button id="ppp" onclick="fsm.melt()" >melt融化</button>
+<button id="ddd" onclick="fsm.vaporize()" >vaporize汽化</button>
+<button id="aaa" onclick="fsm.condense()" >condense冷凝</button>
+<button id="ccc" onclick="fsm.freeze()" >freeze冻结</button>
 
-        var hello = document.getElementById("text").innerHTML;
-        alert(hello);
 
-    }
-</script>
-<script>
-    function myFunction(){
-        document.getElementById("demo").innerHTML="我的第一个 JavaScript 函数";
-    }
-</script>
-<h1>我的 Web 页面</h1>
-<p id="demo">一个段落。</p>
-<button type="button" onclick="myFunction()">点击这里</button>
+
+<script src="../javascript-state-machine/dist/state-machine.js"></script>
+<script SRC="example.js"></script>
+
 </body>
 </html>

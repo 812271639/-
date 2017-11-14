@@ -29,11 +29,12 @@ function colors() {
     }
 }
 
-var mytime; //放在函数里不起作用？（变量初始化，将定时器清除了.
+ //放在函数里不起作用？（变量初始化，将定时器清除了.
             // 每次执行函数都会从新定义这个变量，这个变量没有初始化，
             // clearInterval(mytime);就没有意义。放在函数外面，当执行一次函数后，
-            // 这个变量就初始化为mytime = setInterval(start, 1000); 。从而保存了一个值。后面函数执行就可以调用)
+var mytime;     // 这个变量就初始化为mytime = setInterval(start, 1000); 。从而保存了一个值。后面函数执行就可以调用)
 function myFunction() {
+
     clearInterval(mytime);         //清除定时
     mytime = setInterval(start, 1000);       //连续执行定时
     // setInterval('start()', 1000);
