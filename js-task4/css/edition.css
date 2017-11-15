@@ -3,7 +3,7 @@
   padding: 0;
 }
 html {
-  font-size: 625%;
+  font-size: 500%;
 }
 @media screen and (min-width: 376px) and (max-width: 414px) {
   html {

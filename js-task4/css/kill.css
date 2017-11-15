@@ -19,6 +19,7 @@ body {
 .navbar-fixed-top .huose {
   float: left;
   margin: .1rem;
+  width: .4rem;
 }
 .navbar-fixed-top .huose img {
   max-width: .5rem;
@@ -33,28 +34,6 @@ body {
 .navbar-fixed-top .gain {
   display: inline-block;
   line-height: .8rem;
-}
-main {
-  overflow: hidden;
-}
-main .card {
-  float: left;
-  width: 1.36rem;
-  margin-left: .2rem;
-  margin-top: .2rem;
-  border: white solid 5px;
-  background-color: #f5c97b;
-}
-main .farmer {
-  text-align: center;
-  line-height: 1rem;
-  font-size: .3rem;
-}
-main .number {
-  text-align: center;
-  line-height: .26rem;
-  font-size: .22rem;
-  background: rgba(131, 176, 154, 0.5);
 }
 footer {
   text-align: center;
