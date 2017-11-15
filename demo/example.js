@@ -28,9 +28,8 @@ var fsm = new StateMachine({
         {name: 'Melt', from: 'A', to: 'B'},
         {name: 'Vaporize', from: 'B', to: 'C'},
         {name: 'Condense', from: 'C', to: 'D'},
-        {name: 'Freeze', from: 'D', to: 'E'},
-        {name: 'test', from: 'E', to: 'F'},
-        {name:'clear',from:'F',to:'none'}
+        {name: 'Freeze', from: 'D', to: 'A'},
+        {name:'clear',from:'A',to:'none'}
         // {
         //     name: 'goto', from: '*', to: function (a) {
         //     return a
@@ -112,20 +111,14 @@ var fsm = new StateMachine({
 
 
         },
-        onAfterFreeze: function () {
-
-            console.log('44444在事件Freeze后,当前状态 ' + fsm.state);
-        },
-        onLeaveE: function () {
-            console.log('离开E，当前状态 ' + fsm.state);
-        },
-        onEnterF: function () {
-            console.log('进入F，当前状态 ' + fsm.state);
-        },
         onEnterNone: function () {
             console.log('44442执行事件Freeze，进入none，当前状态 ' + fsm.state);
 
 
+        },
+        onAfterFreeze: function () {
+
+            console.log('44444在事件Freeze后,当前状态 ' + fsm.state);
         }
 //         // onLeaveState:function () {
 //         //     return false; // 会终止后续转换onBeforeTransition  onBefore<TRANSITION>  onLeaveState  onLeave<STATE>  onTransition
