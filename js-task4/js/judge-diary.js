@@ -8,64 +8,65 @@ $(document).ready(function () {
            {name:'kill',from:'none',to:'die'},
            {name:'lastWords',from:'die',to:'lastSpeak'},
            {name:'speak',from:'lastSpeak',to:'discuss'},
-           {name:'vote',from:'discuss',to:'results '}
+           {name:'vote',from:'discuss',to:'none '}
        ],
        methods:{
            onBeforeKill:function (lifecycle){                     //{name:'kill',from:'none',to:'die'},
-               console.log('1111');
+               console.log("'kill',from:'none',to:'die'");
+               console.log('a1 ' + fsm.state);
            },
            onLeaveNone:function (lifecycle) {
-               console.log('1111');
+               console.log('a2 ' + fsm.state);
            },
            onEnterDie:function (lifecycle) {
-               console.log('1111')
+               console.log('a3 ' + fsm.state)
            },
            onAfterKill:function (lifecycle) {
-               console.log('1111');
-
+               console.log('a4 ' + fsm.state);
            },
 ///////////////////////////////////////////////////////////    {name:'lastWords',from:'die',to:'lastSpeak'},
            onBeforeLastWords:function (lifecycle) {
-               console.log(2222);
-
+               console.log("'lastWords',from:'die',to:'lastSpeak'");
+               console.log('b1 ' + fsm.state);
            },
            onLeaveDie:function (lifecycle) {
-               console.log(2222);
+               console.log('b2 ' + fsm.state);
            },
            onEnterLastSpeak:function (lifecycle) {
-               console.log(2222);
+               console.log('b3 ' + fsm.state);
            },
            onAfterLastWords:function(lifecycle){
-               console.log(2222);
-
+               console.log('b4 ' + fsm.state);
            },
 //////////////////////////////////////////////////////////////   {name:'speak',from:'lastSpeak',to:'discuss'},
            onBeforeSpeak:function (lifecycle) {
-               console.log(3333);
+               console.log("'speak',from:'lastSpeak',to:'discuss'");
+               console.log('c1 ' + fsm.state);
            },
            onLeaveLastSpeak:function (lifecycle) {
-               console.log(3333);
+               console.log('c2 ' + fsm.state);
            },
            onEnterDiscuss:function (lifecycle) {
-               console.log(3333);
+               console.log('c3 ' + fsm.state);
            },
            onAfterSpeak:function(lifecycle){
-               console.log(3333);
+               console.log('c4 ' + fsm.state);
            },
 //////////////////////////////////////////////////////////////    {name:'vote',from:'discuss',to:'results '}
            onBeforeVote:function () {
-               console.log(4441);
+               console.log("'vote',from:'discuss',to:'results '");
+               console.log('d1 ' + fsm.state);
            },
            onLeaveDiscuss:function () {
-               console.log(4442);
+               console.log('d2 ' + fsm.state);
            },
 
-           onEnterResults:function () {              //这一句是没有的（none）
-               console.log(4443);
+           onEnterNone:function () {              //这一句是没有的（none）
+               console.log('d3 ' + fsm.state);
            },
 
            onAfterVote:function () {
-               console.log(4444);
+               console.log('d4 ' + fsm.state);
            }
        }
    });

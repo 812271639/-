@@ -30,19 +30,14 @@ var fsm = new StateMachine({
         {name: 'Condense', from: 'C', to: 'D'},
         {name: 'Freeze', from: 'D', to: 'A'},
         {name:'clear',from:'A',to:'none'}
-        // {
-        //     name: 'goto', from: '*', to: function (a) {
-        //     return a
-        // }
-        // } //q 可以是任何字符,数字不可以
+        //{name: 'goto', from: '*', to: function (a) {return a}} //q 可以是任何字符,数字不可以
     ],
     // data: {
     //     color: 'red',
     //     girl: '小姐姐'
     // },
-
     methods: {
-        
+
         // hello:function () {
         //     console.log('另一个小姐姐')
         // },
@@ -58,79 +53,117 @@ var fsm = new StateMachine({
             // console.log('进入 ' + lifecycle.to + '状态');
             // console.log(arg1);
             // console.log(arg2);
-            console.log('1111 在事件 melt 前,当前状态 ' + fsm.state);
+            console.log('a1 在事件 melt 前,当前状态 ' + fsm.state);
 
         },
         onLeaveA: function () {
-            console.log('11112执行事件melt，离开 A 状态,当前状态 ' + fsm.state);
+            console.log('a2执行事件melt，离开 A 状态,当前状态 ' + fsm.state);
         },
         onEnterB: function () {
-            console.log('11113执行事件melt，进入 B 状态,当前状态 ' + fsm.state);
+            console.log('a3执行事件melt，进入 B 状态,当前状态 ' + fsm.state);
         },
         onAfterMelt: function () {
-            console.log('11114在事件 melt 后,当前状态 ' + fsm.state);
+            console.log('a4在事件 melt 后,当前状态 ' + fsm.state);
             console.log();
         },
         onBeforeVaporize: function () {
             console.log("name: 'vaporize', from: 'B', to: 'C'");
 
-            console.log('22221在事件Vaporize前,当前状态 ' + fsm.state);
+            console.log('b1在事件Vaporize前,当前状态 ' + fsm.state);
         },
         onLeaveB: function () {
 
-            console.log('22222执行事件Vaporize，离开B，当前状态 ' + fsm.state);
+            console.log('b2执行事件Vaporize，离开B，当前状态 ' + fsm.state);
         },
         onEnterC: function () {
-            console.log('22223执行事件Vaporize，进入C，当前状态 ' + fsm.state);
+            console.log('b3执行事件Vaporize，进入C，当前状态 ' + fsm.state);
         },
         onAfterVaporize: function () {
-            console.log('22224在事件Vaporize后，当前状态 ' + fsm.state);
+            console.log('b4在事件Vaporize后，当前状态 ' + fsm.state);
         },
         onBeforeCondense: function () {
             console.log("name: 'condense', from: 'C', to: 'D'");
-            console.log('33331在事件Condense前，当前状态 ' + fsm.state);
+            console.log('c1在事件Condense前，当前状态 ' + fsm.state);
         },
         onLeaveC: function () {
-            console.log('33332执行事件Condense，离开C，当前状态 ' + fsm.state);
+            console.log('c2执行事件Condense，离开C，当前状态 ' + fsm.state);
         },
         onEnterD: function () {
-            console.log('33333执行事件Condense，进入D，当前状态 ' + fsm.state);
+            console.log('c3执行事件Condense，进入D，当前状态 ' + fsm.state);
         },
         onAfterCondense: function () {
-            console.log('33334在事件Condense后，当前状态 ' + fsm.state);
+            console.log('c4在事件Condense后，当前状态 ' + fsm.state);
         },
         onBeforeFreeze: function () {
-            console.log("name: 'freeze', from: 'D', to: 'E'");
-            console.log('44441在事件Freeze前，当前状态 ' + fsm.state);
+            console.log("name: 'freeze', from: 'D', to: 'A'");
+            console.log('d1在事件Freeze前，当前状态 ' + fsm.state);
         },
         onLeaveD: function () {
-            console.log('44442执行事件Freeze，离开D，当前状态 ' + fsm.state);
+            console.log('d2执行事件Freeze，离开D，当前状态 ' + fsm.state);
         },
-        onEnterE: function () {
-            console.log('44442执行事件Freeze，进入E，当前状态 ' + fsm.state);
-
-
-        },
-        onEnterNone: function () {
-            console.log('44442执行事件Freeze，进入none，当前状态 ' + fsm.state);
-
-
+        onEnterA: function () {
+            console.log('d3执行事件Freeze，进入A，当前状态 ' + fsm);
+            console.log('d3执行事件Freeze，进入A，当前状态 ' + fsm.state);
         },
         onAfterFreeze: function () {
-
-            console.log('44444在事件Freeze后,当前状态 ' + fsm.state);
+            console.log('d4在事件Freeze后,当前状态 ' + fsm.state);
         }
-//         // onLeaveState:function () {
-//         //     return false; // 会终止后续转换onBeforeTransition  onBefore<TRANSITION>  onLeaveState  onLeave<STATE>  onTransition
-//         // }
+        // onLeaveA: function () {                                                 //试验
+        //     console.log('d2执行事件Freeze，离开A，当前状态 fsm 为 ' + fsm.state);
+        // },
+        // onEnternone: function () {                                               //试验
+        //     console.log('d2执行事件Freeze，进入none，当前状态 ' + fsm.state);
+        // }
+
+        // onLeaveState:function () {
+        //     return false; // 会终止后续转换onBeforeTransition  onBefore<TRANSITION>  onLeaveState  onLeave<STATE>  onTransition
+        // }
     }
 
 });
 
+fsm.start(); //这个方法调用很重要，如果没有clear ，start事件点击就必须先触发这个方法,但是会先运行onEnterA。
+
+// document.getElementById("bbbb").onclick = function () {
+//     fsm.clear();
+// };
+// document.getElementById("aaaa").onclick = function () {
+//     fsm.start();
+// };
+document.getElementById("aa").onclick = function () {
+    fsm.melt('小姐姐', '另一个小姐姐');
+};
+document.getElementById("bb").onclick = function () {
+    fsm.vaporize();
+};
+document.getElementById("cc").onclick = function () {
+    fsm.condense();
+};
+document.getElementById("dd").onclick = function () {
+    fsm.freeze();
+};
+document.getElementById("ee").onclick = function () {
+    console.log('goto前的状态 ' + fsm.state);
+    fsm.goto('C');
+    console.log('goto后的状态 ' + fsm.state);
+    // console.log(fsm.color);
+    // console.log(fsm.girl);
+    // fsm.hello();
+
+    // goto 用法比较奇怪，会执行两个状态变化 ？？？
+    // 首先是执行离开初始状态A的步骤，再进入执行相应状态（也就是说goto的状态也是由相应的状态转变而来）。
+    // 例如：goto状态为D，
+    // 首先（执行事件melt，离开 A 状态,当前状态 A），
+    // 接着（执行事件Condense，进入液体，当前状态 D）；
+    // goto状态为C
+    // 首先（执行事件melt，离开 A 状态,当前状态 A），
+    // 接着（执行事件Vaporize，进入C，当前状态 C）。
+};
 // fsm.onMelt();             //状态都是初始状态
 // fsm.onFreeze();           //状态都是初始状态
 // fsm.onVaporize();         //状态都是初始状态
 // fsm.onCondense();         //状态都是初始状态
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // $(document).ready(function () {
 // var fsm = new StateMachine({
 //
@@ -180,42 +213,8 @@ var fsm = new StateMachine({
 //     fsm.quit();
 // };
 // });
-fsm.start();
-document.getElementById("aa").onclick = function () {
-    fsm.melt('小姐姐', '另一个小姐姐');
-};
-document.getElementById("bb").onclick = function () {
-    fsm.vaporize();
-};
-document.getElementById("cc").onclick = function () {
-    fsm.condense();
-};
-document.getElementById("dd").onclick = function () {
-    fsm.freeze();
-};
-document.getElementById("ee").onclick = function () {
-    console.log('goto前的状态 ' + fsm.state);
-    fsm.goto('C');
-    console.log('goto后的状态 ' + fsm.state);
-    // console.log(fsm.color);
-    // console.log(fsm.girl);
-    // fsm.hello();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // goto 用法比较奇怪，会执行两个状态变化 ？？？
-    // 首先是执行离开初始状态A的步骤，再进入执行相应状态（也就是说goto的状态也是由相应的状态转变而来）。
-    // 例如：goto状态为D，
-    // 首先（执行事件melt，离开 A 状态,当前状态 A），
-    // 接着（执行事件Condense，进入液体，当前状态 D）；
-    // goto状态为C
-    // 首先（执行事件melt，离开 A 状态,当前状态 A），
-    // 接着（执行事件Vaporize，进入C，当前状态 C）。
-};
-
-//     <button id="aa" onclick="fsm.melt()" >melt融化</button>
-//     <button id="bb" onclick="fsm.vaporize()" >vaporize汽化</button>
-//     <button id="cc"  >condense冷凝</button>
-//     <button id="dd" onclick="fsm.freeze()" >freeze冻结</button>
-//
 // var fsm = new StateMachine({
 //     init: 'A',
 //     transitions: [
