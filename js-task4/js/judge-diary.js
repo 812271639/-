@@ -1,14 +1,12 @@
 
-
 $(document).ready(function () {
-
    var fsm = new StateMachine({
        init:      'none',
        transitions:[
            {name:'kill',from:'none',to:'die'},
            {name:'lastWords',from:'die',to:'lastSpeak'},
            {name:'speak',from:'lastSpeak',to:'discuss'},
-           {name:'vote',from:'discuss',to:'none '}
+           {name:'vote',from:'discuss',to:'none'}
        ],
        methods:{
            onBeforeKill:function (lifecycle){                     //{name:'kill',from:'none',to:'die'},
@@ -61,7 +59,7 @@ $(document).ready(function () {
                console.log('d2 ' + fsm.state);
            },
 
-           onEnterNone:function () {              //这一句是没有的（none）
+           onEnterResults:function () {              //这一句是没有的（none）
                console.log('d3 ' + fsm.state);
            },
 
@@ -73,7 +71,7 @@ $(document).ready(function () {
 
     $('#kill').click(function () {
         fsm.kill();
-        // $(this).css('color','red');
+        // $(this).css('background-color','red');
     });
     $('#lastWords').click(function () {
         fsm.lastWords();
@@ -86,5 +84,4 @@ $(document).ready(function () {
     $('#vote').click(function () {
         fsm.vote();
     });
-
 });

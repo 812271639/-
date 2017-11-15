@@ -32,13 +32,13 @@ var fsm = new StateMachine({
         {name:'clear',from:'A',to:'none'}
         //{name: 'goto', from: '*', to: function (a) {return a}} //q 可以是任何字符,数字不可以
     ],
-    // data: {
+    // data: {              //添加数据
     //     color: 'red',
     //     girl: '小姐姐'
     // },
     methods: {
 
-        // hello:function () {
+        // hello:function () {                 //添加方法
         //     console.log('另一个小姐姐')
         // },
         // onMelt:     function() { console.log(' melted to ' + fsm.state);  },
@@ -46,6 +46,10 @@ var fsm = new StateMachine({
         // onCondense: function() { console.log(' condensed to ' + fsm.state) },
         // onFreeze:   function() { console.log(' froze to ' + fsm.state)     }
         //
+        onEnterA: function () {
+            console.log(fsm);
+            console.log('进入A，当前状态 ' + fsm.state);
+        },
         onBeforeMelt: function (lifecycle, arg1, arg2) {
             console.log("name: 'melt', from: 'A', to: 'B'");
             // console.log('事件： ' + lifecycle.transition);
@@ -101,19 +105,19 @@ var fsm = new StateMachine({
         onLeaveD: function () {
             console.log('d2执行事件Freeze，离开D，当前状态 ' + fsm.state);
         },
-        onEnterA: function () {
-            console.log('d3执行事件Freeze，进入A，当前状态 ' + fsm);
-            console.log('d3执行事件Freeze，进入A，当前状态 ' + fsm.state);
-        },
+        // onEnterA: function () {
+        //     console.log(fsm);
+        //     console.log('进入A，当前状态 ' + fsm.state);
+        // },
         onAfterFreeze: function () {
             console.log('d4在事件Freeze后,当前状态 ' + fsm.state);
+        },
+        onLeaveA: function () {                                                 //试验
+            console.log('d2执行事件Freeze，离开A，当前状态 fsm 为 ' + fsm.state);
+        },
+        onEnternone: function () {                                               //试验没有执行
+            console.log('进入none，当前状态 ' + fsm.state);
         }
-        // onLeaveA: function () {                                                 //试验
-        //     console.log('d2执行事件Freeze，离开A，当前状态 fsm 为 ' + fsm.state);
-        // },
-        // onEnternone: function () {                                               //试验
-        //     console.log('d2执行事件Freeze，进入none，当前状态 ' + fsm.state);
-        // }
 
         // onLeaveState:function () {
         //     return false; // 会终止后续转换onBeforeTransition  onBefore<TRANSITION>  onLeaveState  onLeave<STATE>  onTransition
@@ -122,14 +126,14 @@ var fsm = new StateMachine({
 
 });
 
-fsm.start(); //这个方法调用很重要，如果没有clear ，start事件点击就必须先触发这个方法,但是会先运行onEnterA。
+// fsm.start(); //这个方法调用很重要，如果没有clear ，start事件点击就必须先触发这个方法,但是会先运行onEnterA。
 
-// document.getElementById("bbbb").onclick = function () {
-//     fsm.clear();
-// };
-// document.getElementById("aaaa").onclick = function () {
-//     fsm.start();
-// };
+document.getElementById("bbbb").onclick = function () {
+    fsm.clear();
+};
+document.getElementById("aaaa").onclick = function () {
+    fsm.start();
+};
 document.getElementById("aa").onclick = function () {
     fsm.melt('小姐姐', '另一个小姐姐');
 };
@@ -149,7 +153,6 @@ document.getElementById("ee").onclick = function () {
     // console.log(fsm.color);
     // console.log(fsm.girl);
     // fsm.hello();
-
     // goto 用法比较奇怪，会执行两个状态变化 ？？？
     // 首先是执行离开初始状态A的步骤，再进入执行相应状态（也就是说goto的状态也是由相应的状态转变而来）。
     // 例如：goto状态为D，
@@ -164,55 +167,55 @@ document.getElementById("ee").onclick = function () {
 // fsm.onVaporize();         //状态都是初始状态
 // fsm.onCondense();         //状态都是初始状态
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// $(document).ready(function () {
-// var fsm = new StateMachine({
-//
-//     init: 'menu',
-//
-//     transitions: [
-//         { name: 'play1', from: 'menu', to: 'game' },
-//         { name: 'quit', from: 'game', to: 'menu' }
-//     ],
-//
-//     methods: {
-//         onLeaveMenu: function() {
-//
-//             return new Promise(function(resolve, reject) {
-//                 $('#menu').fadeOut(3000, resolve);
-//                 console.log('1离开Menu,当前状态 ' + fsm.state + '隐藏 小姐姐');
-//             })
-//
-//         },
-//         onEnterGame: function() {
-//             return new Promise(function(resolve, reject) {
-//                 $('#game').fadeIn(2000, resolve);
-//                 console.log('2进入Game,当前状态 '+ fsm.state + '显示 另一个小姐姐');
-//             })
-//         },
-//         onLeaveGame: function() {
-//             return new Promise(function(resolve, reject) {
-//                 $('#game').fadeOut(2000, resolve);
-//                 console.log('3离开Game,当前状态 '+fsm.state + '隐藏 另一个小姐姐');
-//             })
-//         },
-//         onEnterMenu: function() {
-//             return new Promise(function(resolve, reject) {
-//                 $('#menu').fadeIn('fast', resolve);
-//                 console.log('4进入Menu,当前状态 '+fsm.state + '显示 小姐姐');
-//             })
-//         }
-//     }
-// });
+$(document).ready(function () {
+var fsm = new StateMachine({
+
+    init: 'menu',
+
+    transitions: [
+        { name: 'play1', from: 'menu', to: 'game' },
+        { name: 'quit', from: 'game', to: 'menu' }
+    ],
+
+    methods: {
+        onLeaveMenu: function() {
+
+            return new Promise(function(resolve, reject) {
+                $('#menu').fadeOut(3000, resolve);
+                console.log('1离开Menu,当前状态 ' + fsm.state + '隐藏 小姐姐');
+            })
+
+        },
+        onEnterGame: function() {
+            return new Promise(function(resolve, reject) {
+                $('#game').fadeIn(2000, resolve);
+                console.log('2进入Game,当前状态 '+ fsm.state + '显示 另一个小姐姐');
+            })
+        },
+        onLeaveGame: function() {
+            return new Promise(function(resolve, reject) {
+                $('#game').fadeOut(2000, resolve);
+                console.log('3离开Game,当前状态 '+fsm.state + '隐藏 另一个小姐姐');
+            })
+        },
+        onEnterMenu: function() {
+            return new Promise(function(resolve, reject) {
+                $('#menu').fadeIn('fast', resolve);
+                console.log('4进入Menu,当前状态 '+fsm.state + '显示 小姐姐');
+            })
+        }
+    }
+});
 
 
-// document.getElementById("ff").onclick = function () {
-//     fsm.play1();
-//
-// };
-// document.getElementById("gg").onclick = function () {
-//     fsm.quit();
-// };
-// });
+document.getElementById("ff").onclick = function () {
+    fsm.play1();
+
+};
+document.getElementById("gg").onclick = function () {
+    fsm.quit();
+};
+});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // var fsm = new StateMachine({
