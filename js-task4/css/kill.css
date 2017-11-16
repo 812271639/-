@@ -35,6 +35,83 @@ body {
   display: inline-block;
   line-height: .8rem;
 }
+.top {
+  font-size: .3rem;
+  line-height: .8rem;
+  background-color: #b9e9f5;
+  padding-left: .2rem;
+  color: #464646;
+}
+.music {
+  position: relative;
+  float: right;
+  margin-right: .3rem;
+}
+.music img {
+  width: .3rem;
+}
+audio {
+  position: absolute;
+  margin: auto;
+  top: .1rem;
+  bottom: 0;
+  right: -0.01rem;
+  opacity: 0;
+  width: 1.8rem;
+  transform: rotate(180deg);
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: solid transparent 7px;
+  border-right: solid transparent 7px;
+  border-top: #b9e9f5 solid 13px;
+}
+.middle {
+  height: .9rem;
+  margin-left: .4rem;
+  font-size: .2rem;
+  color: rgba(225, 225, 225, 0.5);
+}
+.rowHide {
+  display: none;
+}
+main {
+  overflow: hidden;
+}
+main .player {
+  overflow: hidden;
+}
+main .player .identity-main {
+  float: left;
+  text-align: center;
+}
+main .player .identity-main .card {
+  float: left;
+  width: 1.36rem;
+  margin: .2rem 0 .1rem .11rem;
+  border: white solid 5px;
+  background-color: #f5c97b;
+}
+main .player .identity-main .farmer {
+  text-align: center;
+  line-height: 1rem;
+  font-size: .3rem;
+}
+main .player .identity-main .number {
+  text-align: center;
+  line-height: .26rem;
+  font-size: .22rem;
+  background: rgba(131, 176, 154, 0.5);
+}
+main .player .identity-main .killKnife {
+  opacity: 0;
+  clear: both;
+}
+main .player .identity-main .killKnife2 {
+  clear: both;
+  opacity: 1;
+}
 footer {
   text-align: center;
   position: fixed;

@@ -38,31 +38,40 @@ body {
   }
 }
 
-main{
+main {
   overflow: hidden;
-  .card{
-    float:left;
-    width:1.36rem;
-    margin-left: .2rem;
-    margin-top: .2rem;
-    border: white solid 5px;
-    background-color: #f5c97b;
-  }
-  .farmer{
-    text-align: center;
-    line-height:1rem;
-    font-size: .3rem;
-  }
-  .number{
-    text-align: center;
-    line-height:.26rem;
-    font-size: .22rem;
-    background: rgba(131,176,154,.5);
-  }
+  .identity {
+    overflow: hidden;
+    .identity-main {
+      float: left;
+      text-align: center;
 
+      .card {
+        float: left;
+        width: 1.36rem;
+        margin: .2rem .12rem .1rem .12rem;
+        border: white solid 5px;
+        background-color: #f5c97b;
+      }
+      .farmer {
+        text-align: center;
+        line-height: 1rem;
+        font-size: .3rem;
+      }
+      .number {
+        text-align: center;
+        line-height: .26rem;
+        font-size: .22rem;
+        background: rgba(131, 176, 154, .5);
+      }
+      .killKnife{
+        opacity: 0;
+      }
+    }
+  }
 }
 
-footer{
+footer {
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -71,13 +80,14 @@ footer{
   margin: auto;
   z-index: 1;
   max-width: 6.4rem;
-  padding:.2rem;
+  padding: .2rem;
   background-color: #29bde0;
 }
-.foot{
-  line-height:.6rem;
-  width:70%;
-  background-color:#fbb435;
-  color:white;
+
+.foot {
+  line-height: .6rem;
+  width: 70%;
+  background-color: #fbb435;
+  color: white;
   font-size: .36rem;
 }

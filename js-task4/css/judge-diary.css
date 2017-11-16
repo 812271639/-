@@ -97,6 +97,16 @@ main .content .left_line .flow .left_triangle {
   border-top: solid transparent .1rem;
   border-bottom: solid transparent .1rem;
 }
+main .content .left_line .flow .left_triangle2 {
+  position: absolute;
+  top: 36%;
+  left: -0.7rem;
+  margin-left: .5rem;
+  width: 0;
+  border-right: solid #18758D.2rem ;
+  border-top: solid transparent .1rem;
+  border-bottom: solid transparent .1rem;
+}
 footer .again {
   line-height: .6rem;
   padding: 0 14%;

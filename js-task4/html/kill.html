@@ -19,7 +19,7 @@
                     <!--<img id="judge-seeing" class="left-Back" src="../picture/left-Back.png"/>-->
                 </div>
                 <div class="gain">
-                    杀手杀人
+                    <!--杀手杀人-->投票
                 </div>
                 <div class="i">
                     <img src="../picture/close.png"/>
@@ -28,10 +28,28 @@
         </div>
     </nav>
 </header>
-
+<div class="container">
+<div class="row rowHide">
+    <div class="top">
+        发言讨论结束，请大家投票
+        <div class="music">
+            <audio src="../music/gangganghao.mp3" controls="controls"></audio>
+            <img src="../picture/nest.png">
+        </div>
+    </div>
+    <div class="middle">
+        <div class="triangle"></div>
+        点击得票数最多人的头像
+    </div>
+</div>
+<main>
+    <div class="player"></div>
+</main>
 
 <footer>
-    <button type="button" class="foot">确定</button>
+    <button id="sureKill" type="button" class="foot">确定</button>
 </footer>
+<script src="../js/state-machine.js"></script>
+<script src="../js/kill.js"></script>
 </body>
 </html>

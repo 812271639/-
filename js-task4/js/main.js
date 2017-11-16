@@ -52,15 +52,24 @@ $(document).ready(function () {
 $(document).ready(function () {
     var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
     for (var i = 0; i < arr2.length; i++) {
-        $(".identity")
-            .append("<div class=\"card\">\n" +
-                "<div class=\"farmer\">" + arr2[i] +
-                "</div>\n" + "<div class=\"number\">" + (i + 1) + "号</div>\n" + "</div>");
+        $(".identity").append("<div class=\"identity-main\">\n" +
+            "<div class=\"card\">\n" +
+            "<div class=\"farmer\">"+ arr2[i] +"</div>\n" +
+            "<div class=\"number\">" + (i + 1) + "号</div>\n" +
+            "</div>\n" +
+            "<div class=\"killKnife\"><img src=\"../picture/knife.png\"></div>\n" +
+            "</div>");
+            // .append("<div class=\"card\">\n" +
+            //     "<div class=\"farmer\">" + arr2[i] +
+            //     "</div>\n" + "<div class=\"number\">" + (i + 1) + "号</div>\n" + "</div>");
     }
 });
 $(document).ready(function () {
     $("#judge-seeing").click(function () {
         location.href = 'player-ratio.html';
+    });
+    $("#begin").click(function () {
+        location.href = 'judge-diary.html';
     })
 });
 
