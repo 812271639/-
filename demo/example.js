@@ -62,6 +62,22 @@ var fsm = new StateMachine({
         },
         onLeaveA: function () {
             console.log('a2执行事件melt，离开 A 状态,当前状态 ' + fsm.state);
+            // console.log(fsm.transitions());                         //放在状态和事件里can和cannot会得到相反的果。放在点击事件里正常
+            // if(fsm.can('speak') ){
+            //     console.log('can、  true  ');
+            // }else{
+            //     console.log('can、 false');
+            // }
+            // if(fsm.cannot('speak') ){
+            //     console.log('cant、  true  ');
+            // }else{
+            //     console.log('cant、 false');
+            // }
+            // if(fsm.is('lastSpeak') ){
+            //     console.log('is、 true');
+            // }else{
+            //     console.log('is、 false');
+            // }
         },
         onEnterB: function () {
             console.log('a3执行事件melt，进入 B 状态,当前状态 ' + fsm.state);
@@ -138,6 +154,23 @@ document.getElementById("aa").onclick = function () {
     fsm.melt('小姐姐', '另一个小姐姐');
 };
 document.getElementById("bb").onclick = function () {
+    console.log('$、 ' + fsm.state);
+    console.log(fsm.transitions());
+    if(fsm.can('lastWords') ){
+        console.log('can、  true  ');
+    }else{
+        console.log('can、 false');
+    }
+    if(fsm.cannot('lastWords') ){
+        console.log('cannot、  true  ');
+    }else{
+        console.log('cannot、 false');
+    }
+    if(fsm.is('lastSpeak') ){
+        console.log('is、 true');
+    }else{
+        console.log('is、 false');
+    }
     fsm.vaporize();
 };
 document.getElementById("cc").onclick = function () {
@@ -162,6 +195,7 @@ document.getElementById("ee").onclick = function () {
     // 首先（执行事件melt，离开 A 状态,当前状态 A），
     // 接着（执行事件Vaporize，进入C，当前状态 C）。
 };
+// 自动执行方法
 // fsm.onMelt();             //状态都是初始状态
 // fsm.onFreeze();           //状态都是初始状态
 // fsm.onVaporize();         //状态都是初始状态
@@ -253,6 +287,13 @@ document.getElementById("gg").onclick = function () {
 //    fsm.onCondense()
 
 //辅助方法：                                                 可用于条件判断
+// fsm.is(s) - return true if state s is the current state
+// fsm.can(t) - return true if transition t can occur from the current state
+// fsm.cannot(t) - return true if transition t cannot occur from the current state
+// fsm.transitions() - return list of transitions that are allowed from the current state
+// fsm.allTransitions() - return list of all possible transitions
+// fsm.allStates() - return list of all possible states
+//翻译如下
 // fsm.is(s) - 如果状态s是当前状态，则返回true
 // fsm.can(t) - 如果t从当前状态发生转换，则返回true
 // fsm.cannot(t) - 如果t从当前状态不能发生转换，则返回true

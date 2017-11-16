@@ -9,77 +9,55 @@ $(document).ready(function () {
            {name:'vote',from:'discuss',to:'none'}
        ],
        methods:{
-           onBeforeKill:function (lifecycle){                     //{name:'kill',from:'none',to:'die'},
-               console.log("'kill',from:'none',to:'die'");
-               console.log('a1 ' + fsm.state);
-           },
-           onLeaveNone:function (lifecycle) {
-               console.log('a2 ' + fsm.state);
-           },
-           onEnterDie:function (lifecycle) {
-               console.log('a3 ' + fsm.state)
-           },
            onAfterKill:function (lifecycle) {
-               console.log('a4 ' + fsm.state);
+               console.log('a、 ' + fsm.state);
+               console.log(fsm.transitions());
+               $('#kill').css('background-color','#18758D');
            },
-///////////////////////////////////////////////////////////    {name:'lastWords',from:'die',to:'lastSpeak'},
-           onBeforeLastWords:function (lifecycle) {
-               console.log("'lastWords',from:'die',to:'lastSpeak'");
-               console.log('b1 ' + fsm.state);
-           },
-           onLeaveDie:function (lifecycle) {
-               console.log('b2 ' + fsm.state);
-           },
-           onEnterLastSpeak:function (lifecycle) {
-               console.log('b3 ' + fsm.state);
-           },
-           onAfterLastWords:function(lifecycle){
-               console.log('b4 ' + fsm.state);
-           },
-//////////////////////////////////////////////////////////////   {name:'speak',from:'lastSpeak',to:'discuss'},
-           onBeforeSpeak:function (lifecycle) {
-               console.log("'speak',from:'lastSpeak',to:'discuss'");
-               console.log('c1 ' + fsm.state);
-           },
-           onLeaveLastSpeak:function (lifecycle) {
-               console.log('c2 ' + fsm.state);
-           },
-           onEnterDiscuss:function (lifecycle) {
-               console.log('c3 ' + fsm.state);
-           },
+           // onAfterLastWords:function(lifecycle){
+           //     console.log('b、 ' + fsm.state);
+           //     console.log(fsm.transitions());
+           // // },
+           // onLeaveLastSpeak:function (lifecycle) {
+           //     console.log('*、 ' + fsm.state);
+           //     console.log(fsm.transitions());
+           // },
            onAfterSpeak:function(lifecycle){
-               console.log('c4 ' + fsm.state);
+               console.log('c、 ' + fsm.state);
+               console.log(fsm.transitions());
            },
-//////////////////////////////////////////////////////////////    {name:'vote',from:'discuss',to:'results '}
-           onBeforeVote:function () {
-               console.log("'vote',from:'discuss',to:'results '");
-               console.log('d1 ' + fsm.state);
-           },
-           onLeaveDiscuss:function () {
-               console.log('d2 ' + fsm.state);
-           },
-
-           onEnterResults:function () {              //这一句是没有的（none）
-               console.log('d3 ' + fsm.state);
-           },
-
            onAfterVote:function () {
-               console.log('d4 ' + fsm.state);
+               console.log('d、 ' + fsm.state);
+               console.log(fsm.transitions());
            }
        }
    });
 
     $('#kill').click(function () {
         fsm.kill();
-        // $(this).css('background-color','red');
     });
     $('#lastWords').click(function () {
         fsm.lastWords();
-        // $(this).css('background-color','blue');
+        console.log('$、 ' + fsm.state);
+        // console.log(fsm.transitions());
+        // if(fsm.can('lastWords') ){
+        //     console.log('can、  true  ');
+        // }else{
+        //     console.log('can、 false');
+        // }
+        // if(fsm.cannot('lastWords') ){
+        //     console.log('cannot、  true  ');
+        // }else{
+        //     console.log('cannot、 false');
+        // }
+        // if(fsm.is('lastSpeak') ){
+        //     console.log('is、 true');
+        // }else{
+        //     console.log('is、 false');
+        // }
     });
     $('#speak').click(function () {
         fsm.speak();
-        // $('#speak').css('background-color','blue');
     });
     $('#vote').click(function () {
         fsm.vote();
