@@ -34,9 +34,8 @@ $(document).ready(function () {
             $(this).prev().css('background-color','#77623C').addClass('a');
             console.log($(this).prev());
             $(this).css('opacity','0');   //点击后隐藏图标
-            if($('.a').hasClass('a') ){
                 $('.a').off('click');
-            }
+
             return false;    //防止返回执行第一个点击事件（事件冒泡）。
     });
 
