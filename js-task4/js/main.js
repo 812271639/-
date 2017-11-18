@@ -218,7 +218,9 @@ function setPlayer() {
 
     localStorage.setItem("user", JSON.stringify(arr2));   //存值
 
-
+    var arr3 = [];
+    localStorage.setItem('arr3',JSON.stringify(arr3));
+    //新建一个数组为后面的杀人步骤保存死亡玩家，避免加载页面时从新清空保存在localStorage里的数组
 }
 
 

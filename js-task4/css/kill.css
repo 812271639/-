@@ -93,6 +93,9 @@ main .player .identity-main .card {
   border: white solid 5px;
   background-color: #f5c97b;
 }
+main .player .identity-main .b {
+  background-color: #77623C;
+}
 main .player .identity-main .farmer {
   text-align: center;
   line-height: 1rem;
