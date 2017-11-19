@@ -47,33 +47,6 @@ $(document).ready(function () {
 });
 
 
-///////////////////////////////////////////////////////法官日志页jQuery ////////////////////////////////////////////////
-
-$(document).ready(function () {
-    var arr2 = JSON.parse(localStorage.getItem("user"));     //取出数据
-    for (var i = 0; i < arr2.length; i++) {
-        $(".identity").append("<div class=\"identity-main\">\n" +
-            "<div class=\"card\">\n" +
-            "<div class=\"farmer\">"+ arr2[i] +"</div>\n" +
-            "<div class=\"number\">" + (i + 1) + "号</div>\n" +
-            "</div>\n" +
-            "<div class=\"killKnife\"><img src=\"../picture/knife.png\"></div>\n" +
-            "</div>");
-            // .append("<div class=\"card\">\n" +
-            //     "<div class=\"farmer\">" + arr2[i] +
-            //     "</div>\n" + "<div class=\"number\">" + (i + 1) + "号</div>\n" + "</div>");
-    }
-
-});
-$(document).ready(function () {
-    $("#judge-seeing").click(function () {
-        location.href = 'player-ratio.html';
-    });
-    $("#begin").click(function () {
-        location.href = 'judge-diary.html';
-    })
-});
-
 /////////////////////////////////////////////////////玩家配比页面原生js/////////////////////////////////////////////////
 
 //获取 input 值
@@ -90,6 +63,7 @@ document.getElementById("setPlayer").onclick = function () {
     }
 };
 document.getElementsByClassName("bottom_btn")[0].onclick = function () {
+    var li = document.getElementsByTagName("li");
     var num = valueNumber.value;
     var write1 = document.getElementById("write1").value;       //选择水民词组输入框
     var write2 = document.getElementById("write2").value;       //选择杀手词组输入框
@@ -100,8 +74,8 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
     var hello = document.getElementById("player").innerHTML;
     if (isNaN(num) || num < 6 || num > 18) {
         alert("请输入6-18的数字");                                     //验证数字
-    } else if (hello == false) {     //使用 布尔值 判断 是否有内容
-        alert("请设置玩家数量");
+    } else if (hello == false || num != li.length ) {     //使用 布尔值 判断 是否有内容
+        alert("请点击设置玩家数量");
     } else {
         location.href = 'turnover.html';//跳转
     }
@@ -247,6 +221,7 @@ function setPlayer() {
     localStorage.setItem('arr4',JSON.stringify(arr4));//用来保存被杀死玩家
     var arr7 = [];
     localStorage.setItem('arr7',JSON.stringify(arr7)); //用来保存被投死玩家
+    sessionStorage.setItem('x',1234)
 }
 
 

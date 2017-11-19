@@ -60,14 +60,17 @@ $(document).ready(function () {
    });
 
     $('#kill').click(function () {
+        fsm.goto('none');
         fsm.kill();                                         //触发AfterKill事件
         console.log(fsm.state);
 
     });
-    $('#lastWords').click(function () {
-
+    var stateDie = localStorage.getItem('stateDie');                      //死亡状态
+    if(stateDie === "die"){
         fsm.goto('die');
+    }
 
+    $('#lastWords').click(function () {
         console.log(fsm.state);
         if((fsm.state === 'die') || (fsm.state === 'lastSpeak' ) ||  (fsm.state === 'discuss' ) ){
               false;

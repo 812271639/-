@@ -51,8 +51,16 @@ body {
   background-color: #29bde0;
 }
 .victory {
+  position: relative;
   text-align: center;
   padding: .23rem;
+}
+.victory .imgWord {
+  position: absolute;
+  top: 62%;
+  left: 38%;
+  font-size: .4rem;
+  color: white;
 }
 .victory img {
   max-width: 3rem;
