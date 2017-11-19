@@ -101,8 +101,5 @@ $(document).ready(function () {
         }else{
             alert('请选择玩家')
         }
-
-
-
     });
 });

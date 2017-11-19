@@ -12,21 +12,10 @@ var killer = JSON.parse(localStorage.getItem('killer'));         //杀手
 var civilian = JSON.parse(localStorage.getItem('civilian'));     //平民
 var v1 = localStorage.getItem("v1");  //获取平民词组传过来的值
 var v2 = localStorage.getItem("v2"); //获取杀手词组传过来的值
-// var killer = localStorage.getItem("killer");  //获取平民词组传过来的值
-// var civilian = localStorage.getItem("civilian"); //获取杀手词组传过来的值
-
-
-console.log(arr4);
-console.log(arr7);
-console.log(arr7[0].num);
-var i = 0;
-var num1 = arr4[i].num + 1;
-var num2 = arr7[i].num + 1;
-var name1 = arr4[i].name;
-var name2 = arr7[i].name;
 
 $(document).ready(function () {
-    for( i=0;i <arr4.length;i ++){
+
+    for(var i=0;i <arr4.length;i ++){
     $(".record").append(
         "<div class=\"row \">\n" +
         "<div class=\"col-xs-6 left\">\n" +
@@ -38,8 +27,8 @@ $(document).ready(function () {
         "</div>\n" +
         "<div class=\"row \">\n" +
         "<div class=\"result\">\n" +
-        "晚上："+ num1 +"号被杀手杀死，"+num1+"号是"+name1+"<br>\n" +
-        "白天："+ num2 +"号被全民投票投死，" +num2+"号是"+name2+"\n" +
+        "晚上："+ (arr4[i].num + 1) +"号被杀手杀死，"+ (arr4[i].num + 1) +"号是"+(arr4[i].name)+"<br>\n" +
+        "白天："+ (arr7[i].num + 1) +"号被全民投票投死，" + (arr7[i].num + 1) +"号是"+ (arr7[i].name) +"\n" +
         "</div>"
     )}
 

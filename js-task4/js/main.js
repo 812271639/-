@@ -30,7 +30,7 @@ $(document).ready(function () {
         if (a === arr2.length && imageSrc === "../picture/rever.png") {
             $(".bottom_btn1").text('查看法官日志').addClass("bottom_btn3");            //添加按钮样式
         } else if (a > arr2.length) {
-            location.href = 'judge-seeing.html';
+            location.href = 'judge-seeing.html';                                     //跳转到法官页面
         }
         var aaa = $("#value").text();
         if (aaa === "平民") {
@@ -221,7 +221,7 @@ function setPlayer() {
     localStorage.setItem('arr4',JSON.stringify(arr4));//用来保存被杀死玩家
     var arr7 = [];
     localStorage.setItem('arr7',JSON.stringify(arr7)); //用来保存被投死玩家
-    sessionStorage.setItem('x',1234)
+
 }
 
 

@@ -53,8 +53,18 @@ $(document).ready(function () {
                // console.log('onAfterVote状态、 ' + fsm.state);
                var stateNone = fsm.state;                                    //声明变量
                localStorage.setItem('stateNone',stateNone  );                //保存状态 None
-               location.href = 'Vote1.html';                               //跳转到投票
+               location.href = 'Vote1.html';                                 //跳转到投票
                localStorage.removeItem('stateDie');                          //清除 stateDie 状态的数据，回到第二天
+               localStorage.removeItem('stateLast');
+               localStorage.removeItem('stateDiscuss');
+               $('#kill').css('background-color',' #29bde0');              //回到初始颜色
+               $('#killTriangle').removeClass('left_triangle2');
+               $('#lastWords').css('background-color',' #29bde0');
+               $('#lastTriangle').removeClass('left_triangle2');
+               $('#speak').css('background-color',' #29bde0');
+               $('#speakTriangle').removeClass('left_triangle2');
+               console.log('状态、 ' + fsm.state);
+               console.log('事件、'+fsm.transitions()[0]);
            }
        }
    });
@@ -63,13 +73,11 @@ $(document).ready(function () {
         fsm.goto('none');
         fsm.kill();                                         //触发AfterKill事件
         console.log(fsm.state);
-
     });
     var stateDie = localStorage.getItem('stateDie');                      //死亡状态
-    if(stateDie === "die"){
+    if(stateDie === "die"){    //用于发表遗言事件的逻辑
         fsm.goto('die');
     }
-
     $('#lastWords').click(function () {
         console.log(fsm.state);
         if((fsm.state === 'die') || (fsm.state === 'lastSpeak' ) ||  (fsm.state === 'discuss' ) ){
@@ -77,7 +85,6 @@ $(document).ready(function () {
         }else {
             alert('小姐姐杀人了' +fsm.state);
         }
-
         fsm.lastWords();                                      //触发AfterLsatWords事件
 
         if(fsm.state === 'lastSpeak' ){
@@ -94,7 +101,6 @@ $(document).ready(function () {
 
             alert('小姐姐杀人了' +fsm.state);
         }
-
         fsm.speak();                                              //触发AfterSpeak事件
 
         if(fsm.state === 'discuss' ){
@@ -105,22 +111,17 @@ $(document).ready(function () {
         console.log('状态、 ' + fsm.state);
         console.log('事件、'+fsm.transitions()[0]);
     });
+    var stateDiscuss = localStorage.getItem('stateDiscuss');              //讨论状态
+    if(stateDiscuss === "discuss"){    //用于发表遗言事件的逻辑
+        fsm.goto('discuss');
+    }
     $('#vote').click(function () {
         console.log(fsm.state);
         if(fsm.state === 'none'){
             alert('小姐姐杀人了' +fsm.state);
         }
-
         fsm.vote();                                                  //触发AfterVote事件
 
-        $('#kill').css('background-color',' #29bde0');
-        $('#killTriangle').removeClass('left_triangle2');
-        $('#lastWords').css('background-color',' #29bde0');
-        $('#lastTriangle').removeClass('left_triangle2');
-        $('#speak').css('background-color',' #29bde0');
-        $('#speakTriangle').removeClass('left_triangle2');
-        console.log('状态、 ' + fsm.state);
-        console.log('事件、'+fsm.transitions()[0]);
     });
 
     var none = localStorage.getItem('none');                              //开始状态 （取出状态数据）
@@ -132,7 +133,14 @@ $(document).ready(function () {
         $('#kill').css('background-color','#18758D').off('click');                     //通过保存的状态，保存颜色变化
         $('#killTriangle').addClass('left_triangle2');
     }
-
+    if(stateLast === "lastSpeak"){
+        $('#lastWords').css('background-color','#18758D');
+        $('#lastTriangle').addClass('left_triangle2');
+    }
+    if(stateDiscuss === "discuss"){
+        $('#speak').css('background-color','#18758D');
+        $('#speakTriangle').addClass('left_triangle2');
+    }
     for(var i=0;i < arr7.length;i++){
         $('.top_triangle').before(
             "<div>"
@@ -152,7 +160,7 @@ $(document).ready(function () {
     $(".day").click(function () {
        $(this).next().toggle();
     });
-
+$("#kill").after("<div style='padding-left:.5rem;'>"+ ( arr3[(arr3.length-1)] +1 ) + "号被杀死,"+" 其真实身份是"+(arr4[i].name));
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）
 });
