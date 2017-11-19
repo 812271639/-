@@ -73,9 +73,6 @@ audio {
   font-size: .2rem;
   color: rgba(225, 225, 225, 0.5);
 }
-.rowHide {
-  display: none;
-}
 main {
   overflow: hidden;
 }

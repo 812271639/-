@@ -34,11 +34,16 @@ body {
   display: inline-block;
   line-height: .8rem;
 }
-main .first_day {
+main .day {
   line-height: .8rem;
   text-align: center;
   margin-top: .3rem;
   font-size: .3rem;
+  color: #29bde0;
+  background-color: white;
+}
+main .record {
+  padding-left: .5rem;
   color: #29bde0;
   background-color: white;
 }

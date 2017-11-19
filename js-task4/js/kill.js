@@ -6,6 +6,11 @@
 //
 var arr3 = JSON.parse(localStorage.getItem('arr3'));
 //arr3 保存在main.js页面。保存杀人步骤死亡玩家，避免加载页面时从新清空保存在localStorage里的数组
+var arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
+var arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
+var arr4 = JSON.parse(localStorage.getItem('arr4'));        //用来保存被杀死玩家condition对象
+var arr7 = JSON.parse(localStorage.getItem('arr7'));         //保存被投死玩家condition对象
+var condition = JSON.parse(localStorage.getItem('condition'));      //用localStorage 以JSON 格式保存 数组
 $(document).ready(function () {
     var fsm = new StateMachine({
         init:      'living',
@@ -18,7 +23,8 @@ $(document).ready(function () {
                 console.log(fsm.state)
             },
             onAfterStart:function(){
-               console.log(fsm.state)
+               console.log(fsm.state);
+
            }
         }
     });
@@ -38,10 +44,6 @@ $(document).ready(function () {
             "</div>");
     }
 
-    if(stateDie === 'die' ){                      //投票页面和杀人页面的转换（改变文字）
-        $('.gain').text('杀手杀人').addClass('a');  //添加class 用于后面判断杀手不能自杀
-        $('.rowHide').show();
-    }
     $('.card').click(function () {
         $(this).next().css('opacity','1');    //点击玩家现出小刀图标
     });
@@ -49,48 +51,57 @@ $(document).ready(function () {
         $('.killKnife').css('opacity','0');
     });
 
-    var condition = [];               //新建一个数组，保存玩家对象属性状态
-    for(i=0;i<arr2.length;i++){
-        condition[i]={                //给新建数组添加两个属性：名字 和 状态
-            name:arr2[i],
-            state:'living'
-        }
-    }
-    localStorage.setItem('s',JSON.stringify(condition));      //用localStorage 以JSON 格式保存 数组
-    var s =JSON.parse(localStorage.getItem('s'));             //取出保存的数组，用JSON 转换回数组形式
-
     $('.killKnife').click(function () {
-        fsm.start();                                        //点击杀人触发有限状态机start事件
-        var died = fsm.state;                               //声明变量保存当前状态 Died
-        localStorage.setItem('died2',died);                 //保存死亡状态 Died
-        fsm.end();                                          //让有限状态机返回初始状态living
         var position = $(this).parent().index();            //获取当前元素父元素的数组下标
-        arr3.push(position);                                //将下标推送到一个新数组保存
-        localStorage.setItem('arr3',JSON.stringify(arr3));  //用localStorage 以JSON 格式保存 数组arr3
-        var player = s[arr3[position]].name;                //杀手不能杀死自己 s 为保存玩家属性的数组对象
+        var player = condition[position].name;                //杀手不能杀死自己 condition 为保存玩家属性的数组对象
         console.log(player);
-        if( player === '杀手'&& ($('.gain').hasClass('a')) ){//杀手不能自杀
-            alert('不能杀死自己')
+        if( player === '杀手' ){                              //杀手不能自杀
+            alert('不能杀死自己');
+            fsm.end();                                          //点击杀手后触发事件 end 让页面不能跳转
         }else{
+            fsm.start();                                      //点击水民触发start事件，事件end可以触发，页面就可以跳转
+            var died = fsm.state;                               //声明变量保存当前状态 Died
+            localStorage.setItem('died2',died);                 //保存死亡状态 Died
+            arr3.push(position );                                //将下标推送到一个新数组保存
+            localStorage.setItem('arr3',JSON.stringify(arr3));  //用localStorage 以JSON 格式保存 数组arr3
+            condition[position].state = 'died';                  //改变玩家生死状态
+            condition[position].num = position;
+            localStorage.setItem('condition',JSON.stringify(condition));    //保存数组对象
+            arr6.pop();
+            localStorage.setItem('arr6',JSON.stringify(arr6));//保存删除后的数组长度，用于判断游戏结束
+            arr4.push(condition[position]);                   //arr4 用来保存被杀死玩家
+            localStorage.setItem('arr4',JSON.stringify(arr4));
+
             $(this).prev().addClass('b');                     //添加一个class 改变颜色作为死亡状态
             $(this).css('opacity','0');                       //点击后隐藏图标
-            // $('.card, .killKnife').off('click');           //点击一次后移除所有点击事件
+            $('.card, .killKnife').off('click');              //点击一次后移除所有点击事件
+
             return false;                                     //防止返回执行第一个点击事件（事件冒泡）。
         }
     });
     var died2 = localStorage.getItem('died2');                //使用变量保存在localStorage中的死亡状态 Died
     if(died2 === 'died'){
-
         for(i=0;i<arr3.length;i++){
             $( $('.card')[arr3[i]])
                 .addClass('b')      //如果玩家状态为 died 玩家改变玩家颜色
                 .off('click')       //移除被杀玩家点击事件
+                .next().off('click')
         }
     }
 
-
     $('#sureKill').click(function () {
-        location.href = 'judge-diary.html';        //跳转回法官日记页面
+
+        if( (arr5.length === 0)  || (arr5.length >= arr6.length) ){
+            arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
+            arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
+            location.href = 'result.html';             //当杀手为0，或者杀手等于平民时，结束游戏
+        }else if(fsm.can('end')  ){
+            location.href = 'judge-diary.html';        //如果事件end的能被触发，跳转回法官日记页面
+        }else{
+            alert('请选择玩家')
+        }
+
+
 
     });
 });

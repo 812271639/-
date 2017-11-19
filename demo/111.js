@@ -1,3 +1,5 @@
+
+
 var fsm = new StateMachine({
     init: 'solid',
     transitions: [
@@ -17,7 +19,7 @@ var fsm = new StateMachine({
         },
         onEnterLiquid: function () {
             console.log('a3, onEnterLiquid,当前状态 ' + fsm.state);
-        },
+},
         onAfterMelt: function () {
             console.log('a4 在事件 melt 后,当前状态 ' + fsm.state);
             console.log();
@@ -76,23 +78,25 @@ document.getElementById("aa").onclick = function () {
 };
 document.getElementById("bb").onclick = function () {
     fsm.vaporize();
-    // console.log('$、 ' + fsm.state);
-    // console.log(fsm.transitions());
-    // if(fsm.can('lastWords') ){
-    //     console.log('can、  true  ');
-    // }else{
-    //     console.log('can、 false');
-    // }
-    // if(fsm.cannot('lastWords') ){
-    //     console.log('cannot、  true  ');
-    // }else{
-    //     console.log('cannot、 false');
-    // }
-    // if(fsm.is('lastSpeak') ){
-    //     console.log('is、 true');
-    // }else{
-    //     console.log('is、 false');
-    // }
+    console.log('$、 ' + fsm.state);
+
+    console.log(fsm.transitions());
+
+    if(fsm.can('Condense') ){
+        console.log('can、  true  ');
+    }else{
+        console.log('can、 false');
+    }
+    if(fsm.cannot('Condense') ){
+        console.log('cannot、  true  ');
+    }else{
+        console.log('cannot、 false');
+    }
+    if(fsm.is('gas') ){
+        console.log('is、 true');
+    }else{
+        console.log('is、 false');
+    }
 
 };
 document.getElementById("cc").onclick = function () {
@@ -119,17 +123,16 @@ document.getElementById("dd").onclick = function () {
 // };
 //
 
-
+//
 ///////////////////////////////////////     另一个例子    ////////////////////////////////////////////
 $(document).ready(function () {
 var fsm = new StateMachine({
-
     init: 'menu',
 
     transitions: [
         { name: 'play1', from: 'menu', to: 'game' },
         { name: 'quit', from: 'game', to: 'menu' }
-    ],
+],
 
     methods: {
         onLeaveMenu: function() {

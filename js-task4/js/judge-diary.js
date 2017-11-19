@@ -1,7 +1,12 @@
 
 
 $(document).ready(function () {
-
+    var arr2 = JSON.parse(localStorage.getItem("user"));        // 保存在main.js页面据
+    var arr3 = JSON.parse(localStorage.getItem('arr3'));        // 保存在main.js页面
+    var arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
+    var arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
+    var arr4 = JSON.parse(localStorage.getItem('arr4'));        //用来保存被杀死玩家condition对象
+    var arr7 = JSON.parse(localStorage.getItem('arr7'));         //保存被投死玩家condition对象
    var fsm = new StateMachine({
        init:      'none',
        transitions:[
@@ -38,12 +43,17 @@ $(document).ready(function () {
                var stateDiscuss = fsm.state;                                //声明变量
                localStorage.setItem('stateDiscuss',stateDiscuss );          //保存状态 Discuss
            },
+           onLeaveDiscuss:function () {
+               console.log(fsm.state);
+               // arr4.push(1);
+               // localStorage.setItem('arr4',JSON.stringify(arr4));  //用localStorage 以JSON 格式保存 数组arr3
+           },
            onAfterVote:function () {                                        //投票事件后
                // $('#vote').css('background-color','#18758D');
                // console.log('onAfterVote状态、 ' + fsm.state);
                var stateNone = fsm.state;                                    //声明变量
                localStorage.setItem('stateNone',stateNone  );                //保存状态 None
-               location.href = 'Kill.html';                               //跳转到投票
+               location.href = 'Vote1.html';                               //跳转到投票
                localStorage.removeItem('stateDie');                          //清除 stateDie 状态的数据，回到第二天
            }
        }
@@ -120,10 +130,24 @@ $(document).ready(function () {
         $('#killTriangle').addClass('left_triangle2');
     }
 
+    for(var i=0;i < arr7.length;i++){
+        $('.top_triangle').before("<div id=\"dayId\" class=\"day\">第"+ (i+1) + "天</div>" +
+            "<div class=\"record\">" +( arr4[i].num )+ "号被杀死，其真实身份是" + (arr4[i].name) + "</div>"+
+            "<div class=\"record\">" +( arr7[i].num )+ "号被投票投死，其真实身份是" + (arr7[i].name) + "</div>"+
+            "<div id=\"dayId\" class=\"day\">第"+ (i+2) + "天</div>"
+        );
+    }
+
+
+
+
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）
 });
     $('#toJudgeSeeing').click(function () {                                 //跳转到法官日志页面(底部按钮)
         location.href = 'judge-seeing.html';
     });
+    $("#end").click(function () {
+        location.href = 'result.html';
+    })
 });

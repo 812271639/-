@@ -63,6 +63,7 @@ $(document).ready(function () {
             //     "<div class=\"farmer\">" + arr2[i] +
             //     "</div>\n" + "<div class=\"number\">" + (i + 1) + "号</div>\n" + "</div>");
     }
+
 });
 $(document).ready(function () {
     $("#judge-seeing").click(function () {
@@ -215,12 +216,37 @@ function setPlayer() {
             li.style.color = "#29bde0";
         }
     }
-
+    localStorage.setItem('killer',JSON.stringify(killer));//保存杀手
+    localStorage.setItem('civilian',JSON.stringify(civilian));//保存平民
     localStorage.setItem("user", JSON.stringify(arr2));   //存值
-
+    var condition = [];               //新建一个数组，保存玩家对象属性状态
+    for(i=0;i<arr2.length;i++){
+        condition[i]={                //给新建数组添加两个属性：名字 和 状态
+            name:arr2[i],
+            state:'living',
+            num:""
+        }
+    }
+    localStorage.setItem('condition',JSON.stringify(condition));      //用localStorage 以JSON 格式保存 数组
     var arr3 = [];
     localStorage.setItem('arr3',JSON.stringify(arr3));
     //新建一个数组为后面的杀人步骤保存死亡玩家，避免加载页面时从新清空保存在localStorage里的数组
+
+    var arr5 = [];
+    var arr6 = [];
+    for (var i=0;i<arr2.length;i++){
+        if(arr2[i]==="杀手"){
+            arr5.push(arr2[i])
+        }else if(arr2[i]==="平民"){
+            arr6.push(arr2[i])
+        }
+    }
+    localStorage.setItem('arr5',JSON.stringify(arr5));
+    localStorage.setItem('arr6',JSON.stringify(arr6)); //arr5 arr6保存玩家数量，用于判断游戏结束
+    var arr4 = [];
+    localStorage.setItem('arr4',JSON.stringify(arr4));//用来保存被杀死玩家
+    var arr7 = [];
+    localStorage.setItem('arr7',JSON.stringify(arr7)); //用来保存被投死玩家
 }
 
 
