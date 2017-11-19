@@ -90,13 +90,14 @@ $(document).ready(function () {
     }
 
     $('#sureKill').click(function () {
-
-        if( (arr5.length === 0)  || (arr5.length >= arr6.length) ){
-            arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
-            arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
-            location.href = 'result.html';             //当杀手为0，或者杀手等于平民时，结束游戏
+        arr6 = JSON.parse(localStorage.getItem('arr6'));
+        arr5 = JSON.parse(localStorage.getItem('arr5'));
+        console.log(arr5.length);
+        console.log(arr6.length);
+        if( (arr5.length === 0)  || (arr5.length >= arr6.length) ){   //当杀手为0，或者杀手等于平民时，结束游戏
+            location.href = 'result.html';
         }else if(fsm.can('end')  ){
-            location.href = 'judge-diary.html';        //如果事件end的能被触发，跳转回法官日记页面
+            location.href = 'judge-diary.html';        //如果事件end的能被触发，跳转回法官日记页面,用于没有选择杀死玩家弹出警告
         }else{
             alert('请选择玩家')
         }

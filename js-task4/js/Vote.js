@@ -85,13 +85,14 @@ $(document).ready(function () {
         }
     }
     $('#sureVote').click(function () {
-        var arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
-        var arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
+        arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
+        arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
+        console.log(arr5.length);
+        console.log(arr6.length);
+        if((arr5.length === 0)  || (arr5.length >= arr6.length)){
 
-        if( (arr5.length === 0) || (arr5.length >= arr6.length) ){
             location.href = 'result.html';             //当杀手为0，或者杀手等于平民时，结束游戏
-        }
-        if(fsm.can('end')  ){
+        }else if(fsm.can('end')  ){
             location.href = 'judge-diary.html';        //如果事件end的能被触发，跳转回游戏步骤页面
         }else{
             alert('请选择玩家进行投票')

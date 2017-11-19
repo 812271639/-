@@ -131,15 +131,24 @@ $(document).ready(function () {
     }
 
     for(var i=0;i < arr7.length;i++){
-        $('.top_triangle').before("<div id=\"dayId\" class=\"day\">第"+ (i+1) + "天</div>" +
-            "<div class=\"record\">" +( arr4[i].num )+ "号被杀死，其真实身份是" + (arr4[i].name) + "</div>"+
-            "<div class=\"record\">" +( arr7[i].num )+ "号被投票投死，其真实身份是" + (arr7[i].name) + "</div>"+
-            "<div id=\"dayId\" class=\"day\">第"+ (i+2) + "天</div>"
+        $('.top_triangle').before(
+            "<div>"
+            + "<div  class=\"day\">第"+ (i+1) + "天</div>"
+            + "<div class=\"record\">" +( arr4[i].num +1 )
+            + "号被杀死，其真实身份是" + (arr4[i].name)
+            + "<br>"
+            + ( arr7[i].num +1 )+ "号被投票投死，其真实身份是" + (arr7[i].name)
+            + "</div>"
+            +"</div>"
         );
     }
-
-
-
+    $(".top_triangle").before(
+        "<div  class=\"day\">第"+(arr7.length+1)+"天</div>"
+        +"<span></span>"
+    );
+    $(".day").click(function () {
+       $(this).next().toggle();
+    });
 
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）
