@@ -44,16 +44,23 @@ var fsm = new StateMachine({
         /////////////////////////////////////////////////////////////////////////////////////////
         onBeforeMelt: function (lifecycle, arg1, arg2) {
             console.log("name: 'Melt', from: 'solid', to: 'liquid'");
-            // console.log('事件： ' + lifecycle.transition);
-            // console.log('离开 ' + lifecycle.from + '状态');
-            // console.log('进入 ' + lifecycle.to + '状态');
-            // console.log(arg1);
-            // console.log(arg2);
+            console.log('事件： ' + lifecycle.transition);
+            console.log('离开 ' + lifecycle.from + '状态');
+            console.log('进入 ' + lifecycle.to + '状态');
+            console.log(lifecycle);
+            console.log(arg1);
+            console.log(arg2);
             console.log('a1 在事件 melt 前,当前状态 ' + fsm.state);
 
         },
-        onLeaveSolid: function () {
+        onLeaveSolid: function (lifecycle, arg1, arg2) {
             console.log('a2, onLeaveSolid,当前状态 ' + fsm.state);
+            console.log('事件： ' + lifecycle.transition);
+            console.log('离开 ' + lifecycle.from + '状态');
+            console.log('进入 ' + lifecycle.to + '状态');
+            console.log(lifecycle);
+            console.log(arg1);
+            console.log(arg2);
             // console.log(fsm.transitions());
             // if(fsm.can('speak') ){              //放在状态和事件里can和cannot会得到相反的果。放在点击事件里正常
             //     console.log('can、  true  ');
@@ -71,12 +78,23 @@ var fsm = new StateMachine({
             //     console.log('is、 false');
             // }
         },
-        onEnterLiquid: function () {
+        onEnterLiquid: function (lifecycle, arg1, arg2) {
             console.log('a3, onEnterLiquid,当前状态 ' + fsm.state);
+            console.log('事件： ' + lifecycle.transition);
+            console.log('离开 ' + lifecycle.from + '状态');
+            console.log('进入 ' + lifecycle.to + '状态');
+            console.log(lifecycle);
+            console.log(arg1);
+            console.log(arg2);
         },
-        onAfterMelt: function () {
+        onAfterMelt: function (lifecycle, arg1, arg2) {
             console.log('a4 在事件 melt 后,当前状态 ' + fsm.state);
-            console.log();
+            console.log('事件： ' + lifecycle.transition);
+            console.log('离开 ' + lifecycle.from + '状态');
+            console.log('进入 ' + lifecycle.to + '状态');
+            console.log(lifecycle);
+            console.log(arg1);
+            console.log(arg2);
         },
         /////////////////////////////////////////////////////////////////////////
         onBeforeVaporize: function () {

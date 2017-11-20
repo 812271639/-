@@ -19,7 +19,8 @@
         #ff,#gg{
             background-color: #efdbd4;
         }
-       #aaaa,#bbbb,#ff,#ee,#gg, #aa,#bb,#dd,#cc{
+        #aa,#bb,#dd,#cc, #aaaa,#bbbb,#ff,#ee,#gg,#a{
+
            height:40px;
             margin:10px 20px;
         }
@@ -27,10 +28,11 @@
 </head>
 
 <body >
+<div style="clear: both; width: 20px; margin:0 auto" id="b"></div>
 <div style="float: left;" class="btn-group-vertical" role="group" aria-label="...">
-<!--<button  type="button" class="btn btn-default" id="aaaa"  >start </button>-->
-    <!--<button  type="button" class="btn btn-default" id="bbbb"  >clear </button>-->
-    <!--<button  type="button" class="btn btn-default" id="ee" >使用goto</button>-->
+<button  type="button" class="btn btn-default" id="aaaa"  >start </button>
+    <button  type="button" class="btn btn-default" id="bbbb"  >clear </button>
+    <button  type="button" class="btn btn-default" id="ee" >使用goto</button>
 
 <button  type="button" class="btn btn-default" id="aa"  >melt </button>
 <button  type="button" class="btn btn-default" id="bb" >vaporize </button>
@@ -39,15 +41,25 @@
 
 <button  type="button" class="btn btn-default" id="ff" >隐藏</button>
 <button  type="button" class="btn btn-default" id="gg" >显示</button>
-
+    <button  type="button" class="btn btn-default" id="a"  >点击加 </button>
 </div>
+
 
 <h1 id="menu"><img src="picture/3.jpg" height="640" width="384"/></h1>
 <h1 id="menu2"><img src="picture/3.jpg" height="640" width="384"/></h1>
 <h2 style="padding-top: 200px;" id="game">小姐姐不见了</h2>
 
 
-
+<script>
+    var a =0;
+    document.getElementById('a').onclick=function () {
+        if (a <= 100) {
+            a++;
+        }
+        console.log(a);
+        document.getElementById("b").innerHTML= a;
+    }
+</script>
 <script src="../javascript-state-machine/dist/state-machine.js"></script>
 <!--<script SRC="example.js"></script>-->
 <script src="111.js"></script>
