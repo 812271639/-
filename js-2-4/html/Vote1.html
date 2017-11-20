@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>投票页面</title>
+    <script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../css/css_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/kill.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+                <div class="huose">
+                    <!--<img id="judge-seeing" class="left-Back" src="../picture/left-Back.png"/>-->
+                </div>
+                <div class="gain">
+                    <!--杀手杀人-->投票
+                </div>
+                <div class="i">
+                    <img src="../picture/close.png"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row rowHide">
+        <div class="top">
+            发言讨论结束，请大家投票
+            <div class="music">
+                <audio src="../music/gangganghao.mp3" controls="controls"></audio>
+                <img src="../picture/nest.png">
+            </div>
+        </div>
+        <div class="middle">
+            <div class="triangle"></div>
+            点击得票数最多人的头像
+        </div>
+    </div>
+</div>
+<main>
+    <div class="player"></div>
+</main>
+
+<footer>
+    <button id="sureVote" type="button" class="foot">确定</button>
+</footer>
+<script src="../js/state-machine.js"></script>
+<script src="../js/Vote.js"></script>
+</body>
+</html>
