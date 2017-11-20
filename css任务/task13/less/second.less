@@ -1,0 +1,110 @@
+
+main {
+  padding-bottom: 1rem;
+  background-color: #29bde0;
+  .top_vote {
+    position: relative;
+    font-size: .3rem;
+    line-height: .8rem;
+    background-color: #b9e9f5;
+    padding-left: .2rem;
+    color: #464646;
+    .music {
+      position: absolute;
+      right: 7%;
+      top: 0;
+      img {
+        width: .3rem;
+      }
+      audio {
+        position: absolute;
+        top: 24%;
+        right: 0;
+        opacity: 0;
+        width: 1.8rem;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .triangle {
+    width: 0;
+    height: 0;
+    margin-left: 6%;
+    border-left: solid transparent 7px;
+    border-right: solid transparent 7px;
+    border-top: #b9e9f5 solid 13px;
+  }
+  .triangle_word {
+    margin-left: 6%;
+    font-size: .2rem;
+    color: rgba(225, 225, 225, 0.5);
+  }
+  .card_position {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 87.5%;
+    margin: 0 auto;
+    .card {
+      &:hover .card_sprite {
+        opacity: 1;
+      }
+    }
+  }
+  .card_top {
+    width: 1.36rem;
+    margin: .2rem auto;
+    border: white solid 5px;
+    background-color: #f5c97b;
+    .farmer {
+      text-align: center;
+      line-height: 1rem;
+      font-size: .3rem;
+    }
+    .number {
+      text-align: center;
+      font-size: .22rem;
+      background: rgba(131, 176, 154, .5);
+    }
+  }
+  .card_sprite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    .knife {
+      background: url("../picture/img.png") 0 0;
+    }
+    .glass {
+      background: url("../picture/img.png") -.68rem 0;
+    }
+    .turn {
+      background: url("../picture/img.png") -.34rem 0;
+    }
+    .help {
+      width: .3rem;
+      background: url("../picture/img.png") -1.04rem 0;
+    }
+  }
+}
+
+footer {
+  padding: .2rem 0;
+  background-color: #29bde0;
+  .foot_btn {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 0;
+    input {
+      font-size: .36rem;
+      border: none;
+      width: 100%;
+      padding: 1% 0;
+      color: white;
+      background-color: #fbb435;
+    }
+  }
+}
+

@@ -1,0 +1,270 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 625%;
+}
+body{
+    background-color: #fafafa;
+}
+.head {
+    line-height: .4rem;
+    color: #29b078;
+}
+
+.head .weixin {
+    float: right;
+    height: .24rem;
+    width: .25rem;
+    margin: .1rem 0 .1rem .1rem;
+    background: url("../picture/sprite.png") -.48rem -.73rem;      /*顶部图标*/
+}
+
+.head .xinlang {
+    float: right;
+    height: .24rem;
+    width: 25px;
+    margin: .1rem 0 .1rem .1rem;
+    background: url("../picture/sprite.png") -.87rem -.73rem;       /*顶部图标*/
+}
+
+.head .qq {
+    float: right;
+    height: .24rem;
+    width: .25rem;
+    margin: .1rem 0 .1rem 0;
+    background: url("../picture/sprite.png") -1.28rem -.73rem;         /*顶部图标*/
+}
+.navbar-header{line-height: .8rem;}                               /*导航栏高度，用于居中*/
+.navbar-default {
+    line-height: .8rem;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background-color: #29b078;
+}
+.navbar-nav{margin:0;}
+.navbar-default .navbar-toggle .icon-bar {
+    width: 20px;
+    height: 3px;
+    background-color: rgba(76, 3, 3, 0.27);
+}
+.navbar-default .navbar-toggle{
+    border: none;
+    margin-top: 25px;
+}
+.is-collapse{padding-right: 0;}
+.navbar-default .navbar-nav > li > .work {
+    display: inline-block;
+    padding-right: 0;
+    padding-left: 0;
+    font-size: .18rem;
+    color: white;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+    background-color: transparent;                                               /*隐藏按钮背景色*/
+}
+.navbar-default .navbar-nav > li{
+    text-align: center;
+    padding-left: .2rem;
+    border-bottom: rgba(225,225,225,0) solid 2px;
+
+
+}
+.navbar-default .navbar-nav > li:hover {
+    border-bottom: rgba(225,225,225,1) solid 2px;
+}
+
+.navbar-default .navbar-nav > li > .work:hover {
+    color: white;
+}
+.line1{
+    padding: .3rem;
+    border-bottom: #d0d6d9 solid 1px; /*首页 职业样式 线条样式*/
+}
+strong{
+    font-family:"Microsoft YaHeiHei";
+    font-size: .16rem;
+}
+.line1 > span{color: #29b078;}
+.line2{
+    padding:.2rem 0;
+    border-bottom: #edf1f2 solid 1px; /*线条样式*/
+}
+.line2 a{
+    text-decoration: none;
+    color: #333333;
+}
+.word1{
+    color: #999999;
+}
+.word2{
+    display: inline-block;
+    font-size: .14rem;
+    background-color:#29b078 ;
+}
+.word3{
+    margin-left: .3rem;
+    display: inline-block;
+
+}
+.word3:hover{ background-color:#29b078 ;}
+.line3{
+    font-size: .16rem;
+    font-family: "Microsoft YaHei";
+    padding: .3rem 0;
+    border-bottom: #d0d6d9 solid 1px; /* 线条样式 前端开发  后端开发 。。。*/
+}
+.line3 a{
+    text-decoration: none;               /*覆盖锚点 a 的样式*/
+    color: #333333;
+}
+.massage{
+    position: relative;              /*职业信息介绍部分*/
+    margin: 0 auto;
+    margin-top: .5rem;
+    border: #d0d6d9 solid 1px ;
+    border-radius: 5px;
+
+}
+
+.my{                                 /*隐藏层*/
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;        /*使隐藏层充满父元素*/
+    left: 0;
+    padding:.8rem .4rem;
+    background-color: transparent;
+    border-radius: 5px;
+    opacity: 0;           /*隐藏元素*/
+    z-index: 1;           /*让隐藏层在最上方显示*/
+    word-break: break-all; /*让文字换行*/
+    text-align: center;
+    transition:opacity .5s,  transform 1.5s;
+
+}
+   h3{  transform: rotateY(180deg);}
+.my p{
+    text-align: left;
+    text-indent: 2em;
+    font-size: .16rem;
+    transform: rotateY(180deg);
+}
+
+.massage:hover .my{                    /*隐藏的hover效果*/
+    z-index: 1;
+    opacity: 1;
+    color: white;
+    background-color: rgba(61,61,61,0.9);
+    transform: rotateY(180deg);
+
+}
+
+.image{
+    float: left;
+    width: 1.38rem;             /*图片*/
+    margin:.2rem .1rem .17rem 0;
+}
+.introduce{
+    margin-top: .2rem;              /*图片文字描述*/
+
+}
+.line4{
+    overflow: hidden;
+    border-bottom: #d0d6d9 solid 1px ;               /*表格分隔线*/
+}
+.word4{
+    line-height: .4rem;
+    border-bottom: #d0d6d9 solid 1px ;                /*表格*/
+    color: #999999;
+}
+.word41{
+    border-left: #d0d6d9 solid 1px;
+    border-bottom: #d0d6d9 solid 1px ;
+    line-height: .4rem;
+}
+.word4 img{
+    vertical-align: sub;
+    margin-left: .1rem;
+}
+.word41 img{
+    vertical-align: sub;
+    margin-left: .1rem;
+}
+.word4 span{
+    color: red;                                      /*红色字体*/
+}
+
+.word5{
+    line-height: 1.04rem;
+    border-right: #d0d6d9 solid 1px;                   /*表格   行高居中*/
+    border-bottom: #d0d6d9 solid 1px;
+    color: #999999;
+}
+.word6{
+    line-height: .34rem;
+    border-bottom: #d0d6d9 solid 1px ;
+}
+.right{
+    float: right;                                   /*文字居右*/
+}
+.word7{
+    line-height: .4rem;
+    border-bottom: #d0d6d9 solid 1px;
+}
+.word7 strong{
+     font-size: .14rem;                             /*卡片底部字体样式*/
+}
+.word7 span{
+    color: red;
+}
+.word8{
+    padding:.12rem 0;
+    padding-left: .1rem;
+    font-size: .12rem;                           /*卡片底部字体样式*/
+}
+
+footer{
+    background-color: #26a26f;
+    margin-top: 2.3rem;
+}
+.foot a{
+    text-decoration: none;
+    padding-bottom: .05rem;
+    border-bottom: rgba(225,225,225,0) solid 2px;
+    color: white;
+}
+.foot a:hover{
+    border-bottom: rgba(225,225,225,1) solid 2px;
+}
+.foot1{
+    color: white;
+    margin-top: .2rem ;
+}
+
+.foot .foot1 span{
+    border-left: white solid 2px;
+    margin: .05rem;
+}
+.foot img{
+    width: .9rem;
+    height: .9rem;
+}
+.foot p{
+    font-size: .15rem;
+    color: white;
+}
+.code {
+
+    margin:.3rem 0 .2rem 0;
+}
+.foot3{
+    text-align: center;
+    padding:.05rem;
+    color: white;
+    border-top:#32c086 solid 1px;
+}

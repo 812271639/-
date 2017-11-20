@@ -1,0 +1,81 @@
+main {
+  background-color: white;
+}
+main .img_victory {
+  text-align: center;
+  padding: .23rem 0;
+  background-color: #29bde0;
+}
+main .img_victory img {
+  max-width: 3rem;
+}
+main .top_word {
+  padding: 0 12% .6rem 12%;
+  color: #ffc865;
+  font-size: .33rem;
+  background-color: #29bde0;
+}
+main .out_middle {
+  background-color: #29bde0;
+}
+main .out_middle .middle_word {
+  display: inline-block;
+  padding: 0 12% .25rem 12%;
+  max-width: 6.4rem;
+  color: white;
+  font-size: .26rem;
+}
+main .list_word {
+  border-bottom: #c7c7c7 solid 1px;
+  font-size: 0;
+}
+main .list_word .left {
+  display: inline-block;
+  width: 38%;
+  padding-left: 12%;
+  color: #515151;
+  font-size: .3rem;
+  line-height: .5rem;
+}
+main .list_word .right {
+  display: inline-block;
+  width: 38%;
+  text-align: right;
+  padding-right: 12%;
+  font-size: .2rem;
+  color: #c7c7c7;
+}
+main .list_word .result {
+  padding-left: 12%;
+  color: #c7c7c7;
+  line-height: .5rem;
+  font-size: .26rem;
+  margin-bottom: .2rem;
+}
+footer {
+  font-size: .34rem;
+  background: rgba(136, 207, 223, 0.48);
+}
+footer .button {
+  text-align: center;
+  padding: 0.1rem;
+  overflow: hidden;
+  color: white;
+}
+footer .again {
+  float: left;
+  line-height: .8rem;
+  width: 45%;
+  color: white;
+  background-color: #f66f6f;
+  border-radius: 5px;
+}
+footer .share {
+  float: right;
+  width: 45%;
+  line-height: .8rem;
+  display: inline-block;
+  background-color: #fbb435;
+  color: white;
+  border-radius: 5px;
+}

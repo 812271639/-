@@ -1,0 +1,45 @@
+body {
+  background: url("2.jpg") no-repeat;
+  background-size: cover;
+}
+main {
+  position: absolute;
+  background-color: #dcdcdc42;
+  text-align: center;
+  padding: 10px 30px;
+}
+.top {
+  font-size: 25px;
+  color: #00bcd459;
+}
+.inside {
+  background-color: #ffffff82;
+  margin-top: 20px;
+  padding: 3px;
+  width: 250px;
+}
+.inside img {
+  max-width: 20px;
+  vertical-align: middle;
+}
+.inside input {
+  line-height: 20px;
+  border: none;
+  outline: none;
+  border-left: 1px solid #cec8c8;
+  background-color: #f5f0f00d;
+  margin-left: 10px;
+  width: 85%;
+}
+.verification {
+  height: 20px;
+  margin-top: 10px;
+}
+.btn {
+  width: 100%;
+  line-height: 33px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: #00bcd421;
+}
