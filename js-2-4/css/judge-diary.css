@@ -19,6 +19,7 @@ body {
 .navbar-fixed-top .huose {
   float: left;
   margin: .1rem;
+  cursor: pointer;
 }
 .navbar-fixed-top .huose img {
   max-width: .5rem;
@@ -41,6 +42,7 @@ main .day {
   font-size: .3rem;
   color: #29bde0;
   background-color: white;
+  cursor: pointer;
 }
 main .record {
   display: none;
@@ -92,6 +94,7 @@ main .content .left_line .flow {
   font-size: .3rem;
   color: white;
   background-color: #29bde0;
+  cursor: pointer;
 }
 main .content .left_line .flow .left_triangle {
   position: absolute;
@@ -120,6 +123,7 @@ footer .again {
   color: white;
   background-color: #fbb435;
   border-radius: 5px;
+  cursor: pointer;
 }
 footer .share {
   line-height: .6rem;
@@ -127,6 +131,7 @@ footer .share {
   display: inline-block;
   background-color: #fbb435;
   border-radius: 5px;
+  cursor: pointer;
 }
 footer .navbar-fixed-bottom {
   margin: 0 auto;

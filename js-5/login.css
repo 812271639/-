@@ -4,6 +4,9 @@ body {
 }
 main {
   position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #dcdcdc42;
   text-align: center;
   padding: 10px 30px;
@@ -31,6 +34,9 @@ main {
   margin-left: 10px;
   width: 85%;
 }
+.inside input::-webkit-input-placeholder {
+  color: #dedede;
+}
 .verification {
   height: 20px;
   margin-top: 10px;
@@ -42,4 +48,5 @@ main {
   outline: none;
   border: none;
   background-color: #00bcd421;
+  cursor: pointer;
 }

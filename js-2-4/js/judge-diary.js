@@ -86,7 +86,7 @@ $(document).ready(function () {
         if((fsm.state === 'die') || (fsm.state === 'lastSpeak' ) ||  (fsm.state === 'discuss' ) ){
               false;
         }else {
-            alert('小姐姐杀人了' +fsm.state);
+            alert('小姐姐请先杀人' );
         }
         fsm.lastWords();                                      //触发AfterLsatWords事件
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
               false;
         }else {
 
-            alert('小姐姐杀人了' +fsm.state);
+            alert('小姐姐请先杀人' );
         }
         fsm.speak();                                              //触发AfterSpeak事件
 
@@ -121,7 +121,7 @@ $(document).ready(function () {
     $('#vote').click(function () {
         console.log(fsm.state);
         if(fsm.state === 'none'){
-            alert('小姐姐杀人了' +fsm.state);
+            alert('小姐姐请先杀人' );
         }
         fsm.vote();                                                  //触发AfterVote事件
 
@@ -163,7 +163,13 @@ $(document).ready(function () {
     $(".day").click(function () {
        $(this).next().toggle();
     });
-$("#kill").after("<div style='padding-left:.5rem;'>"+ ( arr3[(arr3.length-1)] +1 ) + "号被杀死,"+" 其真实身份是"+(arr4[i].name));
+$("#kill").after(
+    "<div style='padding-left:.5rem;'>"
+    + ( arr3[(arr3.length-1)] +1 )
+    + "号被杀死,"
+    +" 其真实身份是"
+    +(arr4[i].name));
+
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）
 });

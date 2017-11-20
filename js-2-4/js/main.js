@@ -169,7 +169,8 @@ function setPlayer() {
     }
     localStorage.setItem('arr5',JSON.stringify(arr5));
     localStorage.setItem('arr6',JSON.stringify(arr6)); //arr5 arr6保存玩家数量，用于判断游戏结束
-    var arr4 = [];
+var arr4 = null;
+     arr4 = new Array();
     localStorage.setItem('arr4',JSON.stringify(arr4));//用来保存被杀死玩家
     var arr7 = [];
     localStorage.setItem('arr7',JSON.stringify(arr7)); //用来保存被投死玩家
