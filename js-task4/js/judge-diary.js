@@ -53,10 +53,12 @@ $(document).ready(function () {
                // console.log('onAfterVote状态、 ' + fsm.state);
                var stateNone = fsm.state;                                    //声明变量
                localStorage.setItem('stateNone',stateNone  );                //保存状态 None
-               location.href = 'Vote1.html';                                 //跳转到投票
                localStorage.removeItem('stateDie');                          //清除 stateDie 状态的数据，回到第二天
                localStorage.removeItem('stateLast');
                localStorage.removeItem('stateDiscuss');
+
+               top.location='Vote1.html';
+               // location.href = 'Vote1.html';                                 //跳转到投票
                $('#kill').css('background-color',' #29bde0');              //回到初始颜色
                $('#killTriangle').removeClass('left_triangle2');
                $('#lastWords').css('background-color',' #29bde0');
@@ -65,6 +67,7 @@ $(document).ready(function () {
                $('#speakTriangle').removeClass('left_triangle2');
                console.log('状态、 ' + fsm.state);
                console.log('事件、'+fsm.transitions()[0]);
+
            }
        }
    });

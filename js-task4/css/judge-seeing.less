@@ -42,6 +42,7 @@ main {
   overflow: hidden;
   .identity {
     overflow: hidden;
+
     .identity-main {
       float: left;
       text-align: center;
@@ -49,7 +50,7 @@ main {
       .card {
         float: left;
         width: 1.36rem;
-        margin: .2rem .12rem .1rem .12rem;
+        margin: .2rem .35rem .1rem .35rem;
         border: white solid 5px;
         background-color: #f5c97b;
       }
@@ -72,6 +73,14 @@ main {
         opacity: 0;
       }
     }
+  }
+  @media screen and (max-width: 480px) {
+    .identity {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;}
   }
 }
 
