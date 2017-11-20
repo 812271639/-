@@ -28,7 +28,9 @@ document.getElementsByClassName("bottom_btn")[0].onclick = function () {
         alert("请输入6-18的数字");                                     //验证数字
     } else if (hello == false || num != li.length ) {     //使用 布尔值 判断 是否有内容
         alert("请点击设置玩家数量");
-    } else {
+    }else if(write1 == false || write2== false){
+        alert("请输入词组")
+    }  else {
         location.href = 'turnover.html';//跳转
     }
     // var hello = document.getElementById("player").innerHTML;

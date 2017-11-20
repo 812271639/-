@@ -73,13 +73,13 @@ $(document).ready(function () {
    });
 
     $('#kill').click(function () {
-        fsm.goto('none');
+        fsm.goto('none');                                  //使用goto方法，当前条件满足时跳到改状态。
         fsm.kill();                                         //触发AfterKill事件
         console.log(fsm.state);
     });
-    var stateDie = localStorage.getItem('stateDie');                      //死亡状态
-    if(stateDie === "die"){    //用于发表遗言事件的逻辑
-        fsm.goto('die');
+    var stateDie = localStorage.getItem('stateDie');        //死亡状态
+    if(stateDie === "die"){                                   //用于发表遗言事件的逻辑
+        fsm.goto('die');                                     //使用goto方法，当前条件满足时跳到改状态。
     }
     console.log(fsm.state);
     $('#lastWords').click(function () {
@@ -97,9 +97,9 @@ $(document).ready(function () {
             $('#lastTriangle').addClass('left_triangle2');
         }
     });
-    var stateLast = localStorage.getItem('stateLast');                      //死亡状态
+    var stateLast = localStorage.getItem('stateLast');            //死亡状态
     if(stateLast === "lastSpeak"){    //用于发表遗言事件的逻辑
-        fsm.goto('lastSpeak');
+        fsm.goto('lastSpeak');                                     //使用goto方法，当前条件满足时跳到改状态。
     }
 
     $('#speak').click(function () {
