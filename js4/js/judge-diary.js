@@ -57,8 +57,8 @@ $(document).ready(function () {
                localStorage.removeItem('stateLast');
                localStorage.removeItem('stateDiscuss');
 
-               top.location='Vote1.html';
-               // location.href = 'Vote1.html';                                 //跳转到投票
+               // top.location='Vote1.html';
+               location.href = 'Vote1.html';                                 //跳转到投票
                $('#kill').css('background-color',' #29bde0');              //回到初始颜色
                $('#killTriangle').removeClass('left_triangle2');
                $('#lastWords').css('background-color',' #29bde0');
@@ -81,6 +81,7 @@ $(document).ready(function () {
     if(stateDie === "die"){    //用于发表遗言事件的逻辑
         fsm.goto('die');
     }
+    console.log(fsm.state);
     $('#lastWords').click(function () {
         console.log(fsm.state);
         if((fsm.state === 'die') || (fsm.state === 'lastSpeak' ) ||  (fsm.state === 'discuss' ) ){
@@ -96,6 +97,11 @@ $(document).ready(function () {
             $('#lastTriangle').addClass('left_triangle2');
         }
     });
+    var stateLast = localStorage.getItem('stateLast');                      //死亡状态
+    if(stateLast === "lastSpeak"){    //用于发表遗言事件的逻辑
+        fsm.goto('lastSpeak');
+    }
+
     $('#speak').click(function () {
         console.log(fsm.state);
         if((fsm.state === 'lastSpeak') || (fsm.state === 'discuss' ) ){
@@ -120,7 +126,7 @@ $(document).ready(function () {
     }
     $('#vote').click(function () {
         console.log(fsm.state);
-        if(fsm.state === 'none'){
+        if(fsm.state === 'none' || (fsm.state === 'lastSpeak') || (fsm.state === 'die')){
             alert('小姐姐请先杀人' );
         }
         fsm.vote();                                                  //触发AfterVote事件
@@ -144,7 +150,8 @@ $(document).ready(function () {
         $('#speak').css('background-color','#18758D');
         $('#speakTriangle').addClass('left_triangle2');
     }
-    for(var i=0;i < arr7.length;i++){
+    var i =0;
+    for( i=0;i < arr7.length;i++){
         $('.top_triangle').before(
             "<div>"
             + "<div  class=\"day\">第"+ (i+1) + "天</div>"
@@ -168,7 +175,7 @@ $("#kill").after(
     + ( arr3[(arr3.length-1)] +1 )
     + "号被杀死,"
     +" 其真实身份是"
-    +(arr4[i].name));
+    +(arr4[arr4.length - 1].name));
 
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）

@@ -157,8 +157,8 @@ var fsm = new StateMachine({
     }
 
 });
-
-// fsm.start(); //这个方法调用很重要，如果没有clear ，start事件点击就必须先触发这个方法,但是会先运行onEnterA。
+// fsm.Melt();             //状态都是初始状态
+// fsm.onstart(); //这个方法调用很重要，如果没有clear ，start事件点击就必须先触发这个方法,但是会先运行onEnterA。
 
 document.getElementById("bbbb").onclick = function () {
     fsm.clear();
@@ -211,7 +211,7 @@ document.getElementById("ee").onclick = function () {
     // 首先（执行事件melt，离开 A 状态,当前状态 A），
     // 接着（执行事件Vaporize，进入C，当前状态 C）。
 };
-// 自动执行方法
+// // 自动执行方法
 // fsm.onMelt();             //状态都是初始状态
 // fsm.onFreeze();           //状态都是初始状态
 // fsm.onVaporize();         //状态都是初始状态

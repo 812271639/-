@@ -73,6 +73,7 @@ var fsm = new StateMachine({
 
 });
 
+
 document.getElementById("aa").onclick = function () {
     fsm.melt('小姐姐', '另一个小姐姐');
 };
@@ -124,53 +125,53 @@ document.getElementById("dd").onclick = function () {
 //
 
 //
-///////////////////////////////////////     另一个例子    ////////////////////////////////////////////
-$(document).ready(function () {
-var fsm = new StateMachine({
-    init: 'menu',
-
-    transitions: [
-        { name: 'play1', from: 'menu', to: 'game' },
-        { name: 'quit', from: 'game', to: 'menu' }
-],
-
-    methods: {
-        onLeaveMenu: function() {
-            return new Promise(function(resolve, reject) {
-                $('#menu').fadeOut(3000, resolve);
-                console.log('1离开Menu,当前状态 ' + fsm.state + '隐藏 小姐姐');
-            })
-
-        },
-        onEnterGame: function() {
-            return new Promise(function(resolve, reject) {
-                $('#game').fadeIn(2000, resolve);
-                // alert('小姐姐不见了');
-                console.log('2进入Game,当前状态 '+fsm.state + '显示 小姐姐不见了');
-
-            })
-        },
-        onLeaveGame: function() {
-            return new Promise(function(resolve, reject) {
-                $('#game').fadeOut(2000, resolve);
-                console.log('3离开Game,当前状态 '+fsm.state + '隐藏 另一个小姐姐');
-            })
-        },
-        onEnterMenu: function() {
-            return new Promise(function(resolve, reject) {
-                $('#menu').fadeIn(2000, resolve);
-                console.log('4进入Menu,当前状态 '+ '显示 小姐姐');
-            })
-        }
-    }
-});
-
-
-document.getElementById("ff").onclick = function () {
-    fsm.play1();
-
-};
-document.getElementById("gg").onclick = function () {
-    fsm.quit();
-};
-});
+// ///////////////////////////////////////     另一个例子    ////////////////////////////////////////////
+// $(document).ready(function () {
+// var fsm = new StateMachine({
+//     init: 'menu',
+//
+//     transitions: [
+//         { name: 'play1', from: 'menu', to: 'game' },
+//         { name: 'quit', from: 'game', to: 'menu' }
+// ],
+//
+//     methods: {
+//         onLeaveMenu: function() {
+//             return new Promise(function(resolve, reject) {
+//                 $('#menu').fadeOut(3000, resolve);
+//                 console.log('1离开Menu,当前状态 ' + fsm.state + '隐藏 小姐姐');
+//             })
+//
+//         },
+//         onEnterGame: function() {
+//             return new Promise(function(resolve, reject) {
+//                 $('#game').fadeIn(2000, resolve);
+//                 // alert('小姐姐不见了');
+//                 console.log('2进入Game,当前状态 '+fsm.state + '显示 小姐姐不见了');
+//
+//             })
+//         },
+//         onLeaveGame: function() {
+//             return new Promise(function(resolve, reject) {
+//                 $('#game').fadeOut(2000, resolve);
+//                 console.log('3离开Game,当前状态 '+fsm.state + '隐藏 另一个小姐姐');
+//             })
+//         },
+//         onEnterMenu: function() {
+//             return new Promise(function(resolve, reject) {
+//                 $('#menu').fadeIn(2000, resolve);
+//                 console.log('4进入Menu,当前状态 '+ '显示 小姐姐');
+//             })
+//         }
+//     }
+// });
+//
+//
+// document.getElementById("ff").onclick = function () {
+//     fsm.play1();
+//
+// };
+// document.getElementById("gg").onclick = function () {
+//     fsm.quit();
+// };
+// });

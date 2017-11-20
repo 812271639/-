@@ -15,7 +15,8 @@ $(document).ready(function () {
         init:      'living',
         transitions:[
             {name:'start',from:'living',to:'died'},
-            {name:'end',from:'died',to:'living'}
+            {name:'end',from:'died',to:'living'},
+            {name: 'goto', from: '*', to: function (a) {return a}}
         ],
         methods:{
             onLeaveLiving:function () {
@@ -63,6 +64,10 @@ $(document).ready(function () {
         $(this).prev().addClass('b');                     //添加一个class 改变颜色作为死亡状态
         $(this).css('opacity','0');                       //点击后隐藏图标
         $('.card, .killKnife').off('click');              //点击一次后移除所有点击事件
+        $('.card').on("click",function () {
+                alert("请不要重复投票")
+            }
+        );
         if(condition[position].name === "杀手"){
             arr5.pop();                                   //保存杀手的数组长度，用于判断游戏结束
             localStorage.setItem('arr5',JSON.stringify(arr5));
@@ -72,9 +77,11 @@ $(document).ready(function () {
         }
         arr7.push(condition[position]);  //arr7 用来保存被投死玩家
         localStorage.setItem('arr7',JSON.stringify(arr7));  //用localStorage 以JSON 格式保存 数组arr7
-
+        var q= "q";
+        localStorage.setItem('q',q); //用于刷新后不能再杀人
             return false;                                     //防止返回执行第一个点击事件（事件冒泡）。
     });
+
     var died2 = localStorage.getItem('died2');                //使用变量保存在localStorage中的死亡状态 Died
     if(died2 === 'died'){
         for(i=0;i<arr3.length;i++){
@@ -84,7 +91,20 @@ $(document).ready(function () {
                 .next().off('click')
         }
     }
+    var q = localStorage.getItem('q');   //用于刷新后不能再杀人
+    if(q === 'q'){
+        $('.card') .off('click').next().off('click');
+        $('.card').on("click",function () {
+                alert("请不要重复投票")
+            }
+
+        );
+
+        fsm.goto('died');
+    }
+
     $('#sureVote').click(function () {
+        localStorage.removeItem("q");
         arr5 = JSON.parse(localStorage.getItem('arr5'));        // 保存在main.js页面
         arr6 = JSON.parse(localStorage.getItem('arr6'));        // 保存在main.js页面
         console.log(arr5.length);

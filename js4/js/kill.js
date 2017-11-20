@@ -16,7 +16,8 @@ $(document).ready(function () {
         init:      'living',
         transitions:[
             {name:'start',from:'living',to:'died'},
-            {name:'end',from:'died',to:'living'}
+            {name:'end',from:'died',to:'living'},
+            {name: 'goto', from: '*', to: function (a) {return a}}
         ],
         methods:{
             onLeaveLiving:function () {
@@ -28,7 +29,7 @@ $(document).ready(function () {
            }
         }
     });
-    var none = localStorage.getItem('none');                              //开始状态 （取出状态）
+                                 //开始状态 （取出状态）
     var stateDie = localStorage.getItem('stateDie');                      //死亡状态
     var stateLast = localStorage.getItem('stateLast');                    //遗言状态
     var stateDiscuss = localStorage.getItem('stateDiscuss');              //讨论状态
@@ -75,6 +76,13 @@ $(document).ready(function () {
             $(this).prev().addClass('b');                     //添加一个class 改变颜色作为死亡状态
             $(this).css('opacity','0');                       //点击后隐藏图标
             $('.card, .killKnife').off('click');              //点击一次后移除所有点击事件
+            $('.card').on("click",function () {
+                    alert("请不要重复杀人")
+                }
+
+            );
+            var refresh = "refresh";
+            localStorage.setItem('refresh',refresh);//用于刷新后不能再杀人
 
             return false;                                     //防止返回执行第一个点击事件（事件冒泡）。
         }
@@ -89,11 +97,21 @@ $(document).ready(function () {
         }
     }
 
+
+    var refresh = localStorage.getItem('refresh');//用于刷新后不能再杀人
+    if(refresh === 'refresh'){
+        $('.card') .off('click').next().off('click');
+        $('.card').on("click",function () {
+                alert("请不要重复杀人")
+            }
+        );
+        fsm.goto('died');
+    }
+
     $('#sureKill').click(function () {
+        localStorage.removeItem("refresh");
         arr6 = JSON.parse(localStorage.getItem('arr6'));
         arr5 = JSON.parse(localStorage.getItem('arr5'));
-        console.log(arr5.length);
-        console.log(arr6.length);
         if( (arr5.length === 0)  || (arr5.length >= arr6.length) ){   //当杀手为0，或者杀手等于平民时，结束游戏
             location.href = 'result.html';
         }else if(fsm.can('end')  ){

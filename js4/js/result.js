@@ -35,6 +35,9 @@ $(document).ready(function () {
     $(".again").click(function () {
         localStorage.clear();
         location.href = "edition.html"
+    });
+    $(".share").click(function () {
+        localStorage.clear();
     })
 });
 $(document).ready(function () {
