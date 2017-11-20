@@ -19,9 +19,9 @@ var fsm = new StateMachine({
         {name: 'Melt', from: 'solid', to: 'liquid'},
         {name: 'Vaporize', from: 'liquid', to: 'gas'},
         {name: 'Condense', from: 'gas', to: 'liquid'},
-        {name: 'Freeze', from: 'liquid', to: 'solid'}
+        {name: 'Freeze', from: 'liquid', to: 'solid'},
         // {name:'clear',from:'solid',to:'none'}
-        //{name: 'goto', from: '*', to: function (a) {return a}} //q 可以是任何字符,数字不可以
+        {name: 'goto', from: '*', to: function (a) {return a}} //q 可以是任何字符,数字不可以
     ],
     // data: {              //添加数据
     //     color: 'red',
@@ -197,7 +197,7 @@ document.getElementById("dd").onclick = function () {
 };
 document.getElementById("ee").onclick = function () {
     console.log('goto前的状态 ' + fsm.state);
-    fsm.goto('C');
+    fsm.goto('gas');
     console.log('goto后的状态 ' + fsm.state);
     // console.log(fsm.color);
     // console.log(fsm.girl);

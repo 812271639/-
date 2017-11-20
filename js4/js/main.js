@@ -66,7 +66,6 @@ function number_add() {
         ++valueNumber.value;
     }
 }
-
 //点击进度条减
 function number_reduce() {
     var number_slid = document.getElementById("number_slid");
