@@ -27,6 +27,8 @@ main {
 }
 .inside input {
   line-height: 20px;
+  font-size: 18px;
+  color: #31221d;
   border: none;
   outline: none;
   border-left: 1px solid #cec8c8;
@@ -38,12 +40,18 @@ main {
   color: #dedede;
 }
 .verification {
-  height: 20px;
+  height: 30px;
   margin-top: 10px;
+  text-align: left;
+  color: #ff0000cc;
+  font-size: 18px;
 }
-.btn {
+.log {
   width: 100%;
+  padding: 6px 12px;
   line-height: 33px;
+  font-weight: 400;
+  font-size: 20px;
   border-radius: 4px;
   outline: none;
   border: none;
