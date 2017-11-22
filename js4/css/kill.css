@@ -3,7 +3,7 @@ html {
 }
 body {
   padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 9rem;
   max-width: 6.4rem;
   margin: 0 auto;
   background-color: #29bde0;
@@ -86,11 +86,11 @@ main .player .identity-main {
   float: left;
   text-align: center;
   cursor: pointer;
+  margin-left: 9%;
 }
 main .player .identity-main .card {
   float: left;
   width: 1.36rem;
-  margin: .2rem .35rem .1rem .35rem;
   border: white solid 5px;
   background-color: #f5c97b;
 }
@@ -116,13 +116,9 @@ main .player .identity-main .killKnife2 {
   clear: both;
   opacity: 1;
 }
-@media screen and (max-width: 480px) {
-  main .identity {
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+@media screen and (max-width: 321px) {
+  main .player .identity-main {
+    margin-left: 7%;
   }
 }
 footer {

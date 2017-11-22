@@ -103,17 +103,18 @@ $(document).ready(function () {
     }
 
     $('#speak').click(function () {
+        var stateDie = localStorage.getItem('stateDie');                      //死亡状态
+        var stateLast = localStorage.getItem('stateLast');                    //遗言状态
         console.log(fsm.state);
-        if((fsm.state === 'lastSpeak') || (fsm.state === 'discuss' ) ){
-              false;
-        }else {
-
+        if( (stateDie  !== 'die' ) ){
             alert('小姐姐请先杀人' );
         }
+        else if((stateDie  === 'die' ) && (stateLast !== 'lastSpeak') ){
+              alert("请亡灵发表遗言");
+        }
         fsm.speak();                                              //触发AfterSpeak事件
-
         if(fsm.state === 'discuss' ){
-            alert('请玩家发言讨论');
+            alert('请玩家依次发言讨论');
             $('#speak').css('background-color','#18758D');
             $('#speakTriangle').addClass('left_triangle2');
         }
@@ -125,17 +126,25 @@ $(document).ready(function () {
         fsm.goto('discuss');
     }
     $('#vote').click(function () {
+        var stateDie = localStorage.getItem('stateDie');        //死亡状态
+        var stateLast = localStorage.getItem('stateLast');                    //遗言状态
         console.log(fsm.state);
-        if(fsm.state === 'none' || (fsm.state === 'lastSpeak') || (fsm.state === 'die')){
+        if( stateDie !== 'die'){
             alert('小姐姐请先杀人' );
+        }else if(fsm.state === "die"){
+            alert("请亡灵发表遗言")
+        }else if(( stateDie === 'die') && (stateLast === "lastSpeak") && (fsm.state === "lastSpeak")){
+            alert("请玩家依次发言讨论")
         }
-        fsm.vote();                                                  //触发AfterVote事件
+        else {
+            fsm.vote();
+        }                                        //触发AfterVote事件
 
     });
 
     var none = localStorage.getItem('none');                              //开始状态 （取出状态数据）
     var stateDie = localStorage.getItem('stateDie');                      //死亡状态
-    var stateLast = localStorage.getItem('stateLast');                    //遗言状态
+
     var stateDiscuss = localStorage.getItem('stateDiscuss');              //讨论状态
     var stateNone = localStorage.getItem('stateNone');                    //当前状态
     if(stateDie === 'die'){
@@ -170,13 +179,14 @@ $(document).ready(function () {
     $(".day").click(function () {
        $(this).next().toggle();
     });
-$("#kill").after(
-    "<div style='padding-left:.5rem;'>"
-    + ( arr3[(arr3.length-1)] +1 )
-    + "号被杀死,"
-    +" 其真实身份是"
-    +(arr4[arr4.length - 1].name));
-
+    if(stateDie === 'die') {
+        $("#kill").after(
+            "<div style='padding-left:.5rem;'>"
+            + ( arr3[(arr3.length - 1)] + 1 )
+            + "号被杀死,"
+            + " 其真实身份是"
+            + (arr4[arr4.length - 1].name) + "</div>");
+    }
 $('#to-judge-seeing').click(function () {
     location.href = 'judge-seeing.html';                                   //返回法官日志页面（顶部返回图标）
 });

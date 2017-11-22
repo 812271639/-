@@ -22,7 +22,7 @@ body {
   cursor: pointer;
 }
 .navbar-fixed-top .huose img {
-  max-width: .5rem;
+  max-width: .2rem;
 }
 .navbar-fixed-top .i {
   float: right;
@@ -186,8 +186,8 @@ main .bottom_btn {
   outline: none;
   text-decoration: none;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 640px) {
   html {
-    font-size: 500%;
+    font-size: 350%;
   }
 }

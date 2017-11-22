@@ -32,7 +32,7 @@ $(document).ready(function () {
     for (var i = 0; i < arr2.length; i++) {                     //生成玩家
         $(".player").append("<div class=\"identity-main\">\n" +
             "<div class=\"card\">\n" +
-            "<div class=\"farmer\">"+ arr2[i] +"</div>\n" +
+            "<div class=\"farmer\">"+ "哈哈" +"</div>\n" +
             "<div class=\"number\">" + (i + 1) + "号</div>\n" +
             "</div>\n" +
             "<div class=\"killKnife \"><img src=\"../picture/knife.png\"></div>\n" +

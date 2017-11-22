@@ -1,50 +1,49 @@
-*{
-  padding:0;
-  margin:0;
+html {
+  //font-size: 625%;
+  background-color: white;
 }
-html{font-size: 500%;}
-header{
-  position: fixed;
-  top:0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  margin: auto;
+
+body {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
   max-width: 6.4rem;
-  background-color: #29bde0;
-}
-.head{
-
-  line-height: .8rem;
-  text-align: center;
-  font-size: .3rem;
-}
-
-.list{
-  float: left;
-  margin-left:.1rem;
-}
-.list img{width:.3rem;}
-.close1{
-  float: right;
-  margin-right:.1rem;
-}
-.close1 img{width:.3rem;}
-main{
   margin: 0 auto;
-  max-width:6.4rem;
-  padding-bottom: 1rem;
   background-color: #29bde0;
 }
-.container{
+
+.navbar-fixed-top {
+  margin: 0 auto;
   max-width: 6.4rem;
+  text-align: center;
+  font-size: .34rem;
   background-color: #29bde0;
+  color: white;
+  .huose {
+    float: left;
+    margin: .1rem;
+    width: .4rem;
+    cursor: pointer;
+    img {
+      max-width: .5rem;
+    }
+  }
+  .i {
+    float: right;
+    margin: .1rem;
+  }
+  .i img {
+    max-width: .4rem;
+  }
+  .gain {
+    display: inline-block;
+    line-height: .8rem;
+  }
 }
+
 .top{
   font-size: .3rem;
   line-height: .8rem;
   background-color: #b9e9f5;
-  padding-top: .8rem;
   padding-left: .2rem;
   color:#464646;
 }
@@ -52,6 +51,7 @@ main{
   position: relative;
   float: right;
   margin-right: .3rem;
+  cursor: pointer;
 }
 .music img{width:.3rem;}
 audio{
@@ -63,6 +63,7 @@ audio{
   opacity: 0;
   width:1.8rem;
   transform:rotate(180deg);
+  cursor: pointer;
 }
 .triangle{
   width: 0;
@@ -77,71 +78,58 @@ audio{
   font-size: .2rem;
   color: rgba(225,225,225,0.5);
 }
-
-.card{
-  width:1.36rem;
-  margin:.2rem auto;
-  border: white solid 5px;
-  background-color: #f5c97b;
-}
-.b{
-  background-color: #77623C;
-}
-.farmer{
-  text-align: center;
-  line-height:1rem;
-  font-size: .3rem;
-}
-.number{
-  text-align: center;
-  line-height:.26rem;
-  font-size: .22rem;
-  background: rgba(131,176,154,.5);
-}
-.box{overflow: hidden;
-}
-.col-xs-12{text-align: center;
-}
-.sprite{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width:1.36rem;
-  margin: 0 auto;
-  opacity:0;
-}
-.col-xs-4:hover .sprite { opacity: 1;  }
-.knife{
-  display: inline-block;
-  height:.3rem;
-  width: .312rem;
-  background: url("../picture/img.png") 0 0;
-  background-size: 1.34rem;
-}
-
-.glass{
-  display: inline-block;
-  height:.3rem;
-  width: .312rem;
-  background:url("../picture/img.png") -.68rem 0;
-  background-size: 1.34rem;
-}
-.turn{
-  display: inline-block;
-  height: .3rem;
-  width: .312rem;
-  background: url("../picture/img.png") -.34rem 0;
-  background-size: 1.34rem;
-}
-.help {
-  display: inline-block;
-  height:.3rem;
-  width: .3rem;
-  background:url("../picture/img.png") -1.04rem 0;
-  background-size: 1.34rem;
+//.rowHide{
+//  display: none;
+//}
+main {
+  overflow: hidden;
+  .player {
+    overflow: hidden;
+    .identity-main {
+      float: left;
+      text-align: center;
+      cursor: pointer;
+      margin-left: 9%;
+      .card {
+        float: left;
+        width: 1.36rem;
+        border: white solid 5px;
+        background-color: #f5c97b;
+        //color:#f5c97b;
+      }
+      .b{
+        background-color: #77623C;
+        //color:#f5c97b;
+      }
+      .farmer {
+        text-align: center;
+        line-height: 1rem;
+        font-size: .3rem;
+      }
+      .number {
+        text-align: center;
+        line-height: .26rem;
+        font-size: .22rem;
+        background: rgba(131, 176, 154, .5);
+      }
+      .killKnife{
+        opacity: 0;
+        clear:both;
+      }
+      .killKnife2{
+        clear:both;
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: 321px) {
+      .identity-main {
+        margin-left: 7%;}
+    }
+  }
 }
 
 footer{
+  text-align: center;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -153,36 +141,9 @@ footer{
   background-color: #29bde0;
 }
 .foot{
-  text-align: center;
-  margin:0 auto;
   line-height:.6rem;
   width:70%;
   background-color:#fbb435;
   color:white;
   font-size: .36rem;
 }
-
-
-
-@media screen and (max-width: 768px){
-  html{font-size: 700%;}
-
-}
-
-
-@media screen and (max-width: 425px){
-  html{font-size: 450%;}
-
-}
-@media screen and (max-width: 376px){
-  html{font-size: 400%;}
-
-}
-@media screen and (max-width: 360px){
-  html{font-size: 350%;}
-}
-@media screen and (max-width: 320px){
-  html{font-size: 310%;}
-}
-
-

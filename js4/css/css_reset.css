@@ -16,7 +16,12 @@
   border: 0;
 }
 html {
-  font-size: 500%;
+  font-size: 625%;
+}
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 350%;
+  }
 }
 /*重置样式*/
 body,

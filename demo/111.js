@@ -73,10 +73,29 @@ var fsm = new StateMachine({
 
 
 document.getElementById("aa").onclick = function () {
+
+    console.log(fsm.transitions());
+
+    if (fsm.can('Melt')) {
+        console.log('can、  true  ');
+    } else {
+        console.log('can、 false');
+    }
+    if (fsm.cannot('Melt')) {
+        console.log('cannot、  true  ');
+    } else {
+        console.log('cannot、 false');
+    }
+    if (fsm.is('gas')) {
+        console.log('is、 true');
+    } else {
+        console.log('is、 false');
+    }
     fsm.melt('小姐姐', '另一个小姐姐');
 };
 document.getElementById("bb").onclick = function () {
-    fsm.vaporize();
+    console.log(fsm.transitions());
+    // fsm.vaporize();
     console.log('$、 ' + fsm.state);
 
     console.log(fsm.transitions());
@@ -99,6 +118,7 @@ document.getElementById("bb").onclick = function () {
 
 };
 document.getElementById("cc").onclick = function () {
+    alert("hello")
     fsm.condense();
 };
 document.getElementById("dd").onclick = function () {
