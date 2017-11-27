@@ -1,6 +1,9 @@
 body {
-  background: url("3.jpeg") no-repeat;
-  background-size: cover;
+  font-family: "华文细黑";
+  width: 100%;
+  height: auto;
+  background: url("3.jpeg");
+  background-size: 100%;
 }
 main {
   position: absolute;
@@ -27,6 +30,7 @@ main {
 }
 .inside input {
   line-height: 20px;
+  vertical-align: middle;
   font-size: 18px;
   color: #31221d;
   border: none;
