@@ -149,15 +149,15 @@
             requestAnimationFrame(animateDots);
         }
 
-//        $('canvas').on('mousemove', function(e){
-//            mousePosition.x = e.pageX;
-//            mousePosition.y = e.pageY;
-//        });
+        $('canvas').on('mousemove', function(e){
+            mousePosition.x = e.pageX;
+            mousePosition.y = e.pageY;
+        });
 
-//        $('canvas').on('mouseleave', function(e){
-//            mousePosition.x = canvas.width / 2;
-//            mousePosition.y = canvas.height / 2;
-//        });
+        $('canvas').on('mouseleave', function(e){
+            mousePosition.x = canvas.width / 2;
+            mousePosition.y = canvas.height / 2;
+        });
 
         createDots();
         requestAnimationFrame(animateDots);
