@@ -1,16 +1,9 @@
-//
-//
-//
-//
-//
-//
+
 $(document).ready(function () {
-
-
     $("body").keydown(function () {
-        if (event.keyCode==13) {
-            $(".log").click();
-        }
+        // if (event.keyCode==13) {
+        //     $(".log").click();
+        // }
     });
     $("#account, #password").mousedown(function () {
         $(".verification").text("");
@@ -23,15 +16,6 @@ $(document).ready(function () {
             $(".verification").text("无效的账号");
         }
     });
-    // $("#password").mouseleave(function () {
-    // var password = $("#password").val();
-    // var c = password.length;
-    //     if( b >11 ){
-    //         $(".verification").text("无效的密码");
-    //     }
-    // });
-
-
     $(".log").click(function () {
         var account =  $("#account").val();
         var password = $("#password").val();
@@ -39,7 +23,6 @@ $(document).ready(function () {
             name: account,
             pwd: password
         };
-        // var a = JSON.stringify(d); //使用这个形式请求不到数据
         $.ajax({
             type: 'post',
             url: '/carrots-admin-ajax/a/login',
@@ -53,24 +36,6 @@ $(document).ready(function () {
                 alert("数据: \n" + data + "\n状态: " + status);
             }
         });
-
-        // $.post("/carrots-admin-ajax/a/login",
-        //     d ,
-        //     function(data,status){
-        //     alert("数据: \n" + data + "\n状态: " + status);
-        // }
-        // );
-        // $http({
-        //     method: 'post',
-        //     url: '/carrots-admin-ajax/a/login',
-        //     data:d
-        // }).then(function successCallback(response) {
-        //     alert("成功")// 请求成功执行代码
-        // }, function errorCallback(response) {
-        //    alert("失败") // 请求失败执行代码
-        // });
-
-
         var b = account.length;
         var c = password.length;
 
@@ -80,6 +45,22 @@ $(document).ready(function () {
         else if( c <1 ){
             $(".verification").text("无效的密码");
         }
+    });
+});
 
+$(document).ready(function () {
+
+    $("#leftTOP").click(function () {
+        $("#firstDown").toggleClass("glyphicon-chevron-down");
+        $("#firstUl").toggle();
+        $("#secondUl").hide();
+    });
+    $("#leftBottom").click(function () {
+        $("#secondDown").toggleClass("glyphicon-chevron-down");
+        $("#secondUl").toggle();
+        $("#firstUl").hide();
+    });
+    $("#topButton").click(function () {
+        $(".mainLeft").toggle();
     });
 });

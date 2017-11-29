@@ -1,25 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/css_reset.css">
-    <link rel="stylesheet" href="css/index.css">
-    <linK rel="stylesheet" href="css/login.css">
-    <meta name="viewport" content="width=device-width initial-scale=1 user-scale=0">
-</head>
-<body ng-app="myApp" ng-controller="myCtrl">
-
-
-<div ui-view=""></div>
-
-
-<script src="../dist/jquery-3.2.1.js"></script>
-<script src="../dist/js/bootstrap.min.js"></script>
-<script src="../dist/angular.min.js"></script>
-<script SRC="../dist/angular-ui-router.min.js"></script>
-<script src="app.js"></script>
-<script src="login.js"></script>
-</body>
-</html>
+<div ng-controller="myCtrl">
+<header>
+    <div class="headLeft">
+        萝卜多后台管理系统
+        <button id="topButton"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+    </div>
+    <div class=" headRight ">
+        <div class="li">|<span class="verticalLine glyphicon glyphicon-off"></span></div>
+        <div class="li">|<span class="verticalLine">admin</span></div>
+    </div>
+</header>
+<main>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="mainLeft">
+                <div class=" col-sm-12  col-md-12 ">
+                    <div id="leftTOP" class="leftList">
+                        <span class="glyphicon glyphicon-pencil pencil"></span>信息管理系统 <span id="firstDown" class="glyphicon glyphicon-chevron-left left "></span>
+                    </div>
+                    <ul id="firstUl">
+                        <li>公司列表</li>
+                        <li>职位列表</li>
+                    </ul>
+                    <div id="leftBottom" class="leftList">
+                        <span class="glyphicon glyphicon-pencil pencil"></span>Article管理 <span id="secondDown"
+                                                                                               class="glyphicon glyphicon-chevron-left left "></span>
+                    </div>
+                    <ul id="secondUl">
+                        <li ui-sref="index.page1"><a href="" >Article列表</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mainRight">
+                <h1>hello word!</h1>
+                <div ui-view=""></div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
