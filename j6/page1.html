@@ -1,0 +1,183 @@
+
+<div class=" col-sm-12 col-md-12 ">
+    <div class="topContent ">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12 vertical"> 发布时间</div>
+                    <div class="col-md-8 col-sm-12 marginBottom"><input type="text" class="form-control"
+                                                                        placeholder=""></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12  vertical">
+                        <span class="glyphicon glyphicon-minus line"></span>
+                    </div>
+                    <div class="col-md-8 col-sm-12 marginBottom">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12  vertical"> 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
+                    <div class="col-md-8 col-sm-12 marginBottom">
+                        <select class="form-control" ng-init="initName = types[0]" ng-model="initName"
+                                ng-options="x for x in types"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
+                    <div class="col-md-8 col-sm-12 marginBottom">
+                        <select class="form-control" ng-init="initName = states[0]" ng-model="initName"
+                                ng-options="x for x in states"></select></div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-12">
+                <button class="btn btn-danger clear">清空</button>
+                <button class="btn btn-success search">搜索</button>
+            </div>
+        </div>
+    </div>
+    <div class="middleContent">
+        <div class="middleContentTop">
+            Article列表
+            <button class="btn btn-success search add" ui-sref="index.page2" ><a href="">+新增</a> </button>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>发布时间</th>
+                        <th>修改时间</th>
+                        <th>发布者</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>测试ng-if</td>
+                        <td>找职位Banner</td>
+                        <td> 2017-11-28
+                            00:54:06
+                        </td>
+                        <td> 2017-11-28
+                            20:43:26
+                        </td>
+                        <td>admin</td>
+                        <td>上线</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>下线</td>
+                                    <td class="tdMargin">编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>111</td>
+                        <td>找职位Banner</td>
+                        <td> 2017-11-28
+                            00:54:06
+                        </td>
+                        <td> 2017-11-28
+                            20:43:26
+                        </td>
+                        <td>admin</td>
+                        <td>上线</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>下线</td>
+                                    <td class="tdMargin">编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>222</td>
+                        <td>找职位Banner</td>
+                        <td> 2017-11-28
+                            00:54:06
+                        </td>
+                        <td> 2017-11-28
+                            20:43:26
+                        </td>
+                        <td>admin</td>
+                        <td>上线</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>下线</td>
+                                    <td class="tdMargin">编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>333</td>
+                        <td>找职位Banner</td>
+                        <td> 2017-11-28
+                            00:54:06
+                        </td>
+                        <td> 2017-11-28
+                            20:43:26
+                        </td>
+                        <td>admin</td>
+                        <td>上线</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>下线</td>
+                                    <td class="tdMargin">编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>444</td>
+                        <td>找职位Banner</td>
+                        <td> 2017-11-28
+                            00:54:06
+                        </td>
+                        <td> 2017-11-28
+                            20:43:26
+                        </td>
+                        <td>admin</td>
+                        <td>上线</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>下线</td>
+                                    <td class="tdMargin">编辑</td>
+                                    <td>删除</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

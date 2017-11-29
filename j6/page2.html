@@ -1,0 +1,61 @@
+<div class=" col-sm-12 col-md-12 topContent ">
+    <div class="middleContentTop marginBottom">
+        新增Article
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3 vertical">标题名称</div>
+        <div class="col-md-8">
+            <input type="text" class="form-control"  placeholder="">
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
+        <div class="col-md-4">
+            <select class="form-control" ng-init="initName = pageTypes[0]" ng-model="initName"
+                    ng-options="x for x in pageTypes"></select>
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3 vertical">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</div>
+        <div class="col-md-8">
+            <input type="text" class="form-control"  placeholder="">
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3 vertical">跳转链接</div>
+        <div class="col-md-8">
+            <input type="text" class="form-control"  placeholder="">
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3 vertical">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</div>
+        <div class="col-md-3">
+            <button type="button"  class="btn btn-primary">选择文件</button>
+            <br>配图预览
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3"></div>
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>图片名</th>
+                    <th>文件大小</th>
+                    <th>进度</th>
+                    <th>操作</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div class="row marginBottom">
+        <div class="col-md-3"></div>
+        <div class="col-md-8">
+            <button class="btn btn-success">立即上线</button>
+            <button class="btn btn-success">存为草稿</button>
+            <button class="btn btn-default cancel">取消</button>
+        </div>
+    </div>
+</div>
