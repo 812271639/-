@@ -1,5 +1,5 @@
-// var a = angular.module("my",["ui.router"]);
-// a.controller("login",function ($sccope) {
+
+// app.controller("login",function ($sccope) {
     $(document).ready(function () {
         $("body").keydown(function () {
             if (event.keyCode==13) {
@@ -59,7 +59,6 @@ app.controller("index",function ($scope) {
 
 app.controller("home",function ($scope) {
     $(document).ready(function () {
-
         $("#leftTOP").click(function () {
             $("#firstDown").toggleClass("glyphicon-chevron-down");
             $("#firstUl").toggle();
@@ -92,19 +91,19 @@ app.config(function ($stateProvider,$urlRouterProvider) {
             url:"/login",
             templateUrl:"login.html"
         })
-        .state("index",{
-            url:"/index",
+        .state("home",{
+            url:"/home",
             templateUrl:"home.html"
         })
-        .state("hello",{
-            url:"hello",
-            template:"<h1>hello word!</h1>"
+        .state("home.hello",{
+            url:"/hello",
+            templateUrl:"hello.html"
         })
-        .state("index.page1",{
+        .state("home.page1",{
             url:"/page1",
             templateUrl:"page1.html"
         })
-        .state("index.page2",{
+        .state("home.page2",{
             url:"/page2",
             templateUrl:"page2.html"
         })
