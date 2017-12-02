@@ -1,60 +1,29 @@
 
-// app.controller("login",function ($sccope) {
-    $(document).ready(function () {
-        $("body").keydown(function () {
-            if (event.keyCode==13) {
-                $(".log").click();
-            }
-        });
-        $("#account, #password").mousedown(function () {
-            $(".verification").text("");
-        });
-        $("#account").mouseleave(function () {
-            var account =  $("#account").val();
-            var b = account.length;
-
-            if(b<1 || b >11 ){
-                $(".verification").text("无效的账号");
-            }
-        });
-        $(".log").click(function () {
-            var account =  $("#account").val();
-            var password = $("#password").val();
-            var d = {
-                name: account,
-                pwd: password
-            };
-            $.ajax({
-                type: 'post',
-                url: '/carrots-admin-ajax/a/login',
-                // contentType: 'application/json;charset=utf-8', //加上这行请求不到数据
-                contentType:"application/x-www-form-urlencoded",  //加上这行有数据
-                // dataType: 'json',//加上这行出问题，状态为success，但是没数据
-                // data: "name="+account+"&pwd="+password,    //方式一
-                // data:{"name":account,"pwd":password},      //方式二
-                data:d,                                    //方式三
-                success: function (data,status) {
-                    alert("数据: \n" + data + "\n状态: " + status);
-                }
-            });
-            var b = account.length;
-            var c = password.length;
-
-            if(b < 1 || b >11 ){
-                $(".verification").text("无效的账号");
-            }
-            else if( c <1 ){
-                $(".verification").text("无效的密码");
-            }
-        });
-    });
-
-// });
-
-///////////////////////////////////////////
 var app = angular.module("myApp",["ui.router"]);
-app.controller("index",function ($scope) {
-
+    app.controller('login', function($scope,$http,$state) {
+        $scope.login = function() {
+           $http({
+               method:"POST",
+               url: '/carrots-admin-ajax/a/login',
+               // data:$.param({name:$scope.name,pwd:$scope.password}),
+               params:{
+                   name:$scope.name,
+                   pwd:$scope.password
+               },
+               // headers:{"Content-Type":"application/x-www-form-urlencoded"}  //data方法header要加 s .
+               header:{"Content-Type":"application/x-www-form-urlencoded"}      //params方法header不用加 s .
+           }).then(function (response) {
+               if(response.data.code ===0){
+                   $scope.messages = "success";
+                   $state.go('home.hello',{},{reload:true})
+               }else if($scope.name !== "admin") {
+                   $scope.messages = "无效账号";
+               }else if($scope.password !== "123456"){
+                   $scope.messages = "密码错误";
+               }
+           }).catch(function(response) {
+           })
+        };
 });
 
 app.controller("home",function ($scope) {
@@ -87,7 +56,7 @@ app.controller("page2",function ($scope) {
 app.config(function ($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.when("","/login");
     $stateProvider
-        .state("login",{
+        .state("login",{              //state后面的参数login，用以区分这部分路由对哪一个命令进行响应。
             url:"/login",
             templateUrl:"login.html"
         })

@@ -1,21 +1,45 @@
+<div class="back" ng-controller="login">
+    <div class="main">
+        <div class="top">后台登录</div>
+        <div class="content">
+            <form action="" name="userForm">
+                <div class="inside">
+                    <img src="iphone.png">
+                    <input
+                            type="text"
+                            name="names"
+                            placeholder="请输入账号"
+                            ng-model="name"
+                            ng-minlength="5"
+                            ng-maxlength="11"
+                            required>
+                </div>
+                <div class="inside">
+                    <img src="locked.png">
+                    <input
+                            type="password"
+                            name="password"
+                            placeholder="请输入密码"
+                            ng-model="password"
+                            ng-minlength="5"
+                            ng-maxlength="11"
+                            required>
+                </div>
 
-<div class="main"  >
-    <div class="top">后台登录</div>
-    <div class="content">
-        <form action="">
-            <div class="inside">
-                <img src="iphone.png">
-                <input  id="account" type="text" placeholder="请输入账号">
-            </div>
+                <div class="verification">
+                <!--{{messages}}-->
+                <!--<span ng-show="userForm.names.$error.minlength">账号最短为5字符</span>-->
+                <!--<span ng-show="userForm.names.$error.maxlength">账号最长为11字符</span>-->
+                <!--&lt;!&ndash;<p ng-show="userForm.names.$error.required">必须</p>&ndash;&gt;-->
+                <!--<span ng-show="userForm.password.$error.minlength">密码最短为5字符</span>-->
+                <!--<span ng-show="userForm.password.$error.maxlength">密码最长为11字符</span>-->
+                </div>
+                <button class="log" type="submit" ng-click="login()"><a href="">登录</a></button>
 
-            <div class="inside">
-                <img src="locked.png">
-                <input id="password" type="password" placeholder="请输入密码">
-            </div>
-        </form>
-        <div class="verification"></div>
-        <button class="log" type="button" ui-sref="home.hello" ><a href="">登录</a> </button>
+            </form>
+        </div>
+        <div id="test"></div>
+
     </div>
-    <div id="test" ></div>
-</div>
 
+</div>
