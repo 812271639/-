@@ -65,106 +65,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>测试ng-if</td>
-                        <td>找职位Banner</td>
-                        <td> 2017-11-28
-                            00:54:06
-                        </td>
-                        <td> 2017-11-28
-                            20:43:26
-                        </td>
-                        <td>admin</td>
-                        <td>上线</td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>下线</td>
-                                    <td class="tdMargin">编辑</td>
-                                    <td>删除</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>111</td>
-                        <td>找职位Banner</td>
-                        <td> 2017-11-28
-                            00:54:06
-                        </td>
-                        <td> 2017-11-28
-                            20:43:26
-                        </td>
-                        <td>admin</td>
-                        <td>上线</td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>下线</td>
-                                    <td class="tdMargin">编辑</td>
-                                    <td>删除</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>222</td>
-                        <td>找职位Banner</td>
-                        <td> 2017-11-28
-                            00:54:06
-                        </td>
-                        <td> 2017-11-28
-                            20:43:26
-                        </td>
-                        <td>admin</td>
-                        <td>上线</td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>下线</td>
-                                    <td class="tdMargin">编辑</td>
-                                    <td>删除</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>333</td>
-                        <td>找职位Banner</td>
-                        <td> 2017-11-28
-                            00:54:06
-                        </td>
-                        <td> 2017-11-28
-                            20:43:26
-                        </td>
-                        <td>admin</td>
-                        <td>上线</td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>下线</td>
-                                    <td class="tdMargin">编辑</td>
-                                    <td>删除</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>444</td>
-                        <td>找职位Banner</td>
-                        <td> 2017-11-28
-                            00:54:06
-                        </td>
-                        <td> 2017-11-28
-                            20:43:26
-                        </td>
-                        <td>admin</td>
-                        <td>上线</td>
+                    <tr ng-repeat="x in articleList">
+                        <td >{{x.id}}</td>
+                        <td >{{x.title}}</td>
+                        <td >{{x.type}}</td>
+                        <td >{{x.createAt |  date:"yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td >{{x.updateAt |  date:"yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td >{{x.author}}</td>
+                        <td >{{x.status}}</td>
                         <td>
                             <table>
                                 <tr>

@@ -1,10 +1,10 @@
-<div class="back" ng-controller="login">
+<div class="back"  ng-controller="login">
     <div class="main">
         <div class="top">后台登录</div>
         <div class="content">
             <form action="" name="userForm">
                 <div class="inside">
-                    <img src="iphone.png">
+                    <img src="picture/iphone.png">
                     <input
                             type="text"
                             name="names"
@@ -15,7 +15,7 @@
                             required>
                 </div>
                 <div class="inside">
-                    <img src="locked.png">
+                    <img src="picture/locked.png">
                     <input
                             type="password"
                             name="password"
@@ -25,17 +25,19 @@
                             ng-maxlength="11"
                             required>
                 </div>
-
-                <div class="verification">
-                <!--{{messages}}-->
-                <!--<span ng-show="userForm.names.$error.minlength">账号最短为5字符</span>-->
-                <!--<span ng-show="userForm.names.$error.maxlength">账号最长为11字符</span>-->
-                <!--&lt;!&ndash;<p ng-show="userForm.names.$error.required">必须</p>&ndash;&gt;-->
-                <!--<span ng-show="userForm.password.$error.minlength">密码最短为5字符</span>-->
-                <!--<span ng-show="userForm.password.$error.maxlength">密码最长为11字符</span>-->
+                <div class="verification" >
+                {{messages}}
+                    <!--<div ng-messages="userForm.names.$error" ng-if="userForm.names.$touched"></div>-->
+                    <!--<span ng-message="minlength">账号最短为5字符</span>-->
+                    <!--<span ng-message="maxlength">账号最长为11字符</span>-->
+                    <!--<span ng-message="required">必须</span>-->
+                <span ng-show="userForm.names.$error.minlength">账号最短为5字符</span>
+                <span ng-show="userForm.names.$error.maxlength">账号最长为11字符</span>
+                <p ng-show="userForm.names.$error.required">必须</p>
+                <span ng-show="userForm.password.$error.minlength">密码最短为5字符</span>
+                <span ng-show="userForm.password.$error.maxlength">密码最长为11字符</span>
                 </div>
                 <button class="log" type="submit" ng-click="login()"><a href="">登录</a></button>
-
             </form>
         </div>
         <div id="test"></div>
