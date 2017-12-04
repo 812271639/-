@@ -18,7 +18,7 @@ app.config(function ($stateProvider,$urlRouterProvider) {
         })
         .state(".page1",{
             url:"/page1",
-            templateUrl:"page1.html"
+            templateUrl:"123.html"
         })
         .state(".page2",{
             url:"/page2",

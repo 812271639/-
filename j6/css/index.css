@@ -100,63 +100,6 @@ main .mainRight h1 {
   padding: .3rem .2rem;
   background-color: #f5f5f5;
 }
-main .mainRight .clear,
-main .mainRight .search {
-  float: right;
-  margin-right: .1rem;
-}
-main .mainRight .topContent {
-  overflow: hidden;
-  padding: .15rem;
-  border: solid 1px #ddd;
-  border-radius: 3px;
-  background-color: white;
-}
-main .mainRight .topContent .marginBottom {
-  margin-bottom: .2rem;
-}
-main .mainRight .topContent .cancel {
-  float: right;
-}
-main .mainRight .topContent .vertical {
-  text-align: center;
-  padding: 0;
-  line-height: 2.428571;
-}
-main .mainRight .middleContent {
-  padding: 0 .15rem;
-  margin-top: .2rem;
-  border: solid 1px #ddd;
-  border-radius: 3px;
-  background-color: white;
-}
-main .mainRight .middleContent .table {
-  border: solid 1px #ddd;
-  margin-top: .15rem;
-}
-main .mainRight .middleContent th {
-  text-align: center;
-}
-main .mainRight .middleContent td {
-  text-align: -webkit-center;
-}
-main .mainRight .middleContent .tdMargin {
-  padding: 0 .1rem;
-}
-main .mainRight .middleContentTop {
-  margin: -0.2rem -0.15rem 0 -0.15rem;
-  padding: .1rem .15rem;
-  background-color: whitesmoke;
-}
-main .mainRight .middleContentTop button {
-  padding: 0 .02rem;
-}
-@media screen and (max-width: 992px) {
-  main .mainRight .topContent .vertical {
-    text-align: left;
-    padding-left: .2rem;
-  }
-}
 @media screen and (min-width: 768px) {
   main .mainLeft {
     padding-bottom: 3000px;

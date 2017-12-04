@@ -46,7 +46,7 @@
 //         })
 //         .state("home.page1",{
 //             url:"/page1",
-//             templateUrl:"page1.html"
+//             templateUrl:"123.html"
 //         })
 //         .state("home.page2",{
 //             url:"/page2",
