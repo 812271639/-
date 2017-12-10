@@ -1,5 +1,5 @@
-.clear,
-.search {
+.search,
+.btnClear {
   float: right;
   margin-right: .1rem;
 }
@@ -49,10 +49,16 @@
 .firstMiddleContentTop button {
   padding: 0 .02rem;
 }
-.firstBottom {
-  float: right;
+.firstBottomOut {
+  overflow: hidden;
 }
-.firstBottom .bottomInput {
+.firstBottomOut .firstBottom {
+  float: right;
+  padding: .1rem 0;
+}
+.firstBottomOut .firstBottom .bottomInput {
+  padding: 0;
+  text-align: center;
   display: inline;
   width: 6%;
 }

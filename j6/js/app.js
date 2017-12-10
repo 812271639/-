@@ -4,7 +4,6 @@
 // var app=angular.module("myApp",["ui.router"]);
 
     app.config(function ($stateProvider,$urlRouterProvider) {
-
     $urlRouterProvider.when("","/login");
     $stateProvider
         .state("login",{              //state后面的参数login，用以区分这部分路由对哪一个命令进行响应。
@@ -13,14 +12,14 @@
         })
         .state("home",{
             url:"/home",
-            templateUrl:"home.html"
+            templateUrl:"pageB.html"
         })
         .state("home.hello",{
             url:"/hello",
             templateUrl:"hello.html"
         })
         .state("home.page1",{
-            url:"/page1",
+            url:'/?page&size&startAt&endAt&type&status',
             templateUrl:"page1.html"
         })
         .state("home.page2",{
@@ -38,7 +37,7 @@
 //         })
 //         .state("home",{
 //             url:"/home",
-//             templateUrl:"home.html"
+//             templateUrl:"pageB.html"
 //         })
 //         .state("home.hello",{
 //             url:"/hello",
@@ -46,7 +45,7 @@
 //         })
 //         .state("home.page1",{
 //             url:"/page1",
-//             templateUrl:"123.html"
+//             templateUrl:"pageA.html"
 //         })
 //         .state("home.page2",{
 //             url:"/page2",

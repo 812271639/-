@@ -1,6 +1,5 @@
 
 
-
 var app = angular.module("myApp",["ui.router"]);
     app.controller('login',function($scope,$http,$state) {
         $scope.login = function() {
@@ -18,11 +17,12 @@ var app = angular.module("myApp",["ui.router"]);
                 if(response.data.code === 0){
                     $scope.messages = "success";
                     $state.go('home.hello',{},{reload:true})
-                }else if($scope.name !== "admin") {
-                    $scope.messages = "无效账号";
-                }else if($scope.password !== "123456"){
-                    $scope.messages = "密码错误";
                 }
+                // else if($scope.name !== "admin") {
+                //     $scope.messages = "无效账号";
+                // }else if($scope.password !== "123456"){
+                //     $scope.messages = "密码错误";
+                // }
             })
         };
     });

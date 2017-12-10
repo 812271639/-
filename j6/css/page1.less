@@ -1,4 +1,6 @@
-.clear, .search {
+
+
+.search,.btnClear {
   float: right;
   margin-right: .1rem;
 }
@@ -50,13 +52,21 @@
     padding: 0 .02rem;
   }
 }
-.firstBottom{
-  float: right;
-  .bottomInput{
-    display: inline;
-    width: 6%;
+.firstBottomOut{
+  overflow: hidden;
+  .firstBottom{
+    float: right;
+    padding: .1rem 0;
+    .bottomInput{
+      padding: 0;
+      text-align: center;
+      display: inline;
+      width: 6%;
+    }
   }
 }
+
+
 @media screen and (max-width: 992px) {
     .firstTopContent {
       .vertical {

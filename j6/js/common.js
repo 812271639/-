@@ -14,11 +14,11 @@ app.config(function ($stateProvider,$urlRouterProvider) {
         })
         .state("index",{
             url:"/index",
-            templateUrl:"home.html"
+            templateUrl:"pageB.html"
         })
         .state(".page1",{
             url:"/page1",
-            templateUrl:"123.html"
+            templateUrl:"pageA.html"
         })
         .state(".page2",{
             url:"/page2",

@@ -1,4 +1,4 @@
-app.controller("page1", function ($scope, $http, $stateParams, $state) {
+app.controller("page1", function ($scope, $http, $stateParams, $state,$filter) {
     $("#a,#b").datetimepicker({    //时间插件
         language: 'zh-CN',
         format: 'yyyy-mm-dd',
@@ -19,25 +19,14 @@ app.controller("page1", function ($scope, $http, $stateParams, $state) {
         "上线": 2,
         "草稿": 1
     };
-    console.log($stateParams.page);
-    console.log($stateParams.size);
-    console.log($stateParams.startAt);
-    console.log($stateParams.endAt);
-    console.log($stateParams.type);
-    console.log($stateParams.status);
-    //
-    // $scope.size = 10;               //默认的初始值，显示在页面上，并且双向绑定页面输入
-    // $scope.page = 1;
-
-    $scope.startTime = $stateParams.startAt;
-    $scope.endTime = $stateParams.endAt;
-
+    $scope.startTime =   $filter('date')($stateParams.startAt, 'yyyy-MM-dd HH:mm:ss');
+    $scope.endTime = $filter('date')( $stateParams.endAt, 'yyyy-MM-dd HH:mm:ss');
     $scope.typed = $stateParams.type;
     $scope.stated = $stateParams.status;
+    $scope.page = ($stateParams.page != undefined ) ? $stateParams.page : 1 ;//添加默认值
+    $scope.size = ($stateParams.size != undefined) ? $stateParams.size : 10 ;
 
-    $scope.page = $stateParams.page;
-    $scope.size = $stateParams.size;
-    $http({                                     //默认请求，初次加载页面获取数据
+    $http({                                     //请求加载页面获取数据
         method: "GET",
         url: '/carrots-admin-ajax/a/article/search',
         params: {
@@ -61,8 +50,8 @@ app.controller("page1", function ($scope, $http, $stateParams, $state) {
     $scope.search = function () {  //搜索点击事件
         $state.go('home.page1',
             {
-                startAt: $scope.startTime,   //传递参数到路由页面，保存在url里
-                endAt: $scope.endTime,
+                startAt: Date.parse($scope.startTime),   //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
+                endAt:  Date.parse($scope.endTime)+( 16*60 * 60 * 999.99),
                 type: $scope.typed,
                 status: $scope.stated
             });
