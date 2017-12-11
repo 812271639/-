@@ -1,4 +1,4 @@
-app.controller("page1", function ($scope, $http, $stateParams, $state,$filter) {
+app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, types, state) {
     $("#a,#b").datetimepicker({    //时间插件
         language: 'zh-CN',
         format: 'yyyy-mm-dd',
@@ -9,22 +9,18 @@ app.controller("page1", function ($scope, $http, $stateParams, $state,$filter) {
         minView: 2,
         forceParse: 0
     });
-    $scope.types = {
-        "首页banner": 0,
-        "找职位banner": 1,
-        "找精英banner": 2,
-        "行业大图": 3
-    };
-    $scope.state = {
-        "上线": 2,
-        "草稿": 1
-    };
-    $scope.startTime =   $filter('date')($stateParams.startAt, 'yyyy-MM-dd HH:mm:ss');
-    $scope.endTime = $filter('date')( $stateParams.endAt, 'yyyy-MM-dd HH:mm:ss');
-    $scope.typed = $stateParams.type;
-    $scope.stated = $stateParams.status;
-    $scope.page = ($stateParams.page != undefined ) ? $stateParams.page : 1 ;//添加默认值
-    $scope.size = ($stateParams.size != undefined) ? $stateParams.size : 10 ;
+
+    $scope.types = types;  //获取常量表types数据 ，应该是绑定作用域吧
+    $scope.state = state;
+    $scope.typed = $scope.types[0];  //初始化下拉列表
+    $scope.stated = $scope.state[0];  //初始化下拉列表
+
+    $scope.startTime = $filter('date')($stateParams.startAt, 'yyyy-MM-dd HH:mm:ss');
+    $scope.endTime = $filter('date')($stateParams.endAt, 'yyyy-MM-dd HH:mm:ss');
+    // $scope.typed = $stateParams.type;
+    // $scope.stated = $stateParams.status;
+    $scope.page = ($stateParams.page != undefined ) ? $stateParams.page : 1;//添加默认值
+    $scope.size = ($stateParams.size != undefined) ? $stateParams.size : 10;
 
     $http({                                     //请求加载页面获取数据
         method: "GET",
@@ -51,14 +47,9 @@ app.controller("page1", function ($scope, $http, $stateParams, $state,$filter) {
         $state.go('home.page1',
             {
                 startAt: Date.parse($scope.startTime),   //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
-                endAt:  Date.parse($scope.endTime)+( 16*60 * 60 * 999.99),
-                type: $scope.typed,
-                status: $scope.stated
+                endAt: Date.parse($scope.endTime) + ( 16 * 60 * 60 * 999.99),
+                type: $scope.typed.typeNum,
+                status: $scope.stated.stateNum
             });
     }
 });
-// app.filter("myFilter",function () {
-//     return function (text) {
-//         return text.replace("2","找精英banner")
-//     }
-// });

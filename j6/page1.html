@@ -24,10 +24,10 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="typed" ng-options="x for (x,y) in types">
-                                <!--<option value="">全部</option>-->
+                            <select class="form-control" ng-model="typed" ng-options="x.typeName for x in types">
+                            <!--<option value="">全部</option>-->
                             </select>
-                            {{typed}}
+                            {{typed.typeNum}}
                         </div>
                     </div>
                 </div>
@@ -35,10 +35,10 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="stated" ng-options="x for (x,y) in state">
+                            <select class="form-control" ng-model="stated" ng-options="x.stateName for x in state">
                                 <!--<option value="">全部</option>-->
                             </select>
-                            {{stated}}
+                            {{stated.stateNum}}
                         </div>
                     </div>
                 </div>
