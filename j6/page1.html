@@ -1,12 +1,12 @@
-<div class=" col-sm-12 col-md-12 " ng-controller="page1">
+<div class=" col-sm-12 col-md-12 " >
     <div class="firstTopContent ">
-        <form action="">
+        <form >
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="row">
                         <div class="col-md-4 col-sm-12 vertical"> 发布时间</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <input id='a' name='a' type="text" class="form-control" ng-model="startTime " placeholder="">
+                            <input id='a' type="text" class="form-control" ng-model="startTime " placeholder="">
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                             <span class="glyphicon glyphicon-minus line"></span>
                         </div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <input id='b' name='b' type="text" class="form-control" ng-model="endTime" placeholder="">
+                            <input id='b'  type="text" class="form-control" ng-model="endTime" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -24,10 +24,14 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="typed" ng-options="x.typeName for x in types">
-                            <!--<option value="">全部</option>-->
+                            <select
+                                    class="form-control"
+                                    ng-model="typeNum"
+                                    ng-options="x.typeNum as x.typeName for x in types">
+
+                            <option value=''>全部</option>
                             </select>
-                            {{typed.typeNum}}
+                            {{typeNum}}
                         </div>
                     </div>
                 </div>
@@ -35,10 +39,10 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="stated" ng-options="x.stateName for x in state">
-                                <!--<option value="">全部</option>-->
+                            <select class="form-control" ng-model="stateNum" ng-options="x.stateNum as x.stateName for x in state">
+                                <option value=''>全部</option>
                             </select>
-                            {{stated.stateNum}}
+                            {{stateNum}}
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,7 @@
             <div class="row ">
                 <div class="col-sm-12">
                     <button class="btn btn-success search" ng-click="search()">搜索</button>
-                    <button class="btn btn-danger btnClear" type="reset">清空</button>
+                    <button class="btn btn-danger btnClear" type="reset" ng-click="clear()">清空</button>
                 </div>
             </div>
         </form>
@@ -75,11 +79,11 @@
                     <tr ng-repeat="x in articleList | orderBy:'createAt '">
                         <td>{{x.id}}</td>
                         <td>{{x.title}}</td>
-                        <td>{{x.type}}</td>
-                        <td>{{x.createAt | date:"yyyy-MM-dd HH:mm:ss"}}</td>
-                        <td>{{x.updateAt | date:"yyyy-MM-dd HH:mm:ss"}}</td>
+                        <td>{{x.type | typesFilter }}</td>
+                        <td>{{x.createAt | date:"yyyy-MM-dd "}}</td>
+                        <td>{{x.updateAt | date:"yyyy-MM-dd"}}</td>
                         <td>{{x.author}}</td>
-                        <td>{{x.status}}</td>
+                        <td>{{x.status | statusFilter}}</td>
                         <td>
                             <table>
                                 <tr>

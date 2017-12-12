@@ -9,26 +9,24 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         minView: 2,
         forceParse: 0
     });
-
-    $scope.types = types;  //获取常量表types数据 ，应该是绑定作用域吧
+    $scope.params = $state.params;
+    $scope.types = types;                                               //获取常量表types数据 ，应该是绑定作用域吧
     $scope.state = state;
     //
-    // = $filter('date')($stateParams.startAt, 'yyyy-MM-dd ');//保存状态
-    //   $filter('date')(, 'yyyy-MM-dd ')  ;
+    //  $scope.start= $filter('date')($stateParams.startAt, 'yyyy-MM-dd ');//保存状态
+    //  $scope.end =  $filter('date')(, 'yyyy-MM-dd ')  ;
     $scope.start = Date.parse($stateParams.startAt);
     $scope.end = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
-    $scope.start = ($scope.start) ? $scope.start : "";
+    $scope.start = ($scope.start) ? $scope.start : "";             //添加默认值
     $scope.end = ( $scope.end ) ? $scope.end : "";
-
-    $scope.typed = ($stateParams.type ) ? $stateParams.type : "";
-    //通过获取数组对象下标方法保存状态
-
-    $scope.stateNum = ($stateParams.status) ? $stateParams.status : "";
-    $scope.page = ($stateParams.page ) ? $stateParams.page : 1;    //添加默认值
+    $scope.page = ($stateParams.page ) ? $stateParams.page : 1;     //添加默认值
     $scope.size = ($stateParams.size) ? $stateParams.size : 10;
     $scope.startTime = $stateParams.startAt;                        //保存状态
     $scope.endTime = $stateParams.endAt;
-    $http({                //请求加载页面获取数据
+    $scope.typeNum =$stateParams.type ;                             //保存状态
+    $scope.stateNum =  $stateParams.status;
+
+    $http({                                                         //请求加载页面获取数据
         method: "GET",
         url: '/carrots-admin-ajax/a/article/search',
         params: {
@@ -36,31 +34,32 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
             size: $stateParams.size,
             // startAt: Date.parse($stateParams.startAt),   //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
             // endAt:   Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99),
-            startAt: $scope.start,   //传递参数到路由页面，保存在url里
+            startAt: $scope.start,                                    //传递参数到路由页面，保存在url里
             endAt: $scope.end,
             type: $stateParams.type,
             status: $stateParams.status
         }
     }).then(function (response) {
-        $scope.articleList = response.data.data.articleList;
+        $scope.articleList = response.data.data.articleList;          // 返回的数据
 
     });
 
-    $scope.sure = function () {       //分页点击事件
+    $scope.sure = function () {                                       //分页点击事件
         $state.go('home.page1',
             {
-                page: $scope.page,   //传递参数到路由页面，保存在url里
+                page: $scope.page,                                     //传递参数到路由页面，保存在url里
                 size: $scope.size
             }, {reload: true});
     };
-    $scope.search = function () {  //搜索点击事件
+    $scope.search = function () {                                      //搜索点击事件
         $state.go('home.page1',
             {
-                // startAt: Date.parse($scope.startTime),   //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
+                // startAt: Date.parse($scope.startTime),  //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
                 // endAt:   Date.parse($scope.endTime) + ( 16 * 60 * 60 * 999.99),
                 startAt: $scope.startTime,
                 endAt: $scope.endTime,
-                type: $scope.typed,
+
+                type: $scope.typeNum,
                 status: $scope.stateNum
             }, {reload: true});
     };
