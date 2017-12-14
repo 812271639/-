@@ -1,6 +1,6 @@
-<div class=" col-sm-12 col-md-12 " >
+<div class=" col-sm-12 col-md-12 ">
     <div class="firstTopContent ">
-        <form >
+        <form>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="row">
@@ -16,7 +16,7 @@
                             <span class="glyphicon glyphicon-minus line"></span>
                         </div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <input id='b'  type="text" class="form-control" ng-model="endTime" placeholder="">
+                            <input id='b' type="text" class="form-control" ng-model="endTime" placeholder="">
                         </div>
                     </div>
                 </div>
@@ -29,9 +29,8 @@
                                     ng-model="typeNum"
                                     ng-options="x.typeNum as x.typeName for x in types">
 
-                            <option value=''>全部</option>
+                                <option value=''>全部</option>
                             </select>
-                            {{typeNum}}
                         </div>
                     </div>
                 </div>
@@ -39,10 +38,10 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="stateNum" ng-options="x.stateNum as x.stateName for x in state">
+                            <select class="form-control" ng-model="stateNum"
+                                    ng-options="x.stateNum as x.stateName for x in state">
                                 <option value=''>全部</option>
                             </select>
-                            {{stateNum}}
                         </div>
                     </div>
                 </div>
@@ -83,13 +82,13 @@
                         <td>{{x.createAt | date:"yyyy-MM-dd "}}</td>
                         <td>{{x.updateAt | date:"yyyy-MM-dd"}}</td>
                         <td>{{x.author}}</td>
-                        <td>{{x.status | statusFilter}}</td>
+                        <td>{{x.status | stateFilter}}</td>
                         <td>
                             <table>
                                 <tr>
-                                    <td>下线</td>
-                                    <td class="tdMargin">编辑</td>
-                                    <td>删除</td>
+                                    <td ng-click="statuses(x.id,x.status)"><a href="">{{x.status | statusFilter}}</a></td>
+                                    <td class="tdMargin"><a href="">编辑</a></td>
+                                    <td ng-click="delete()"><a href="">删除</a></td>
                                 </tr>
                             </table>
                         </td>

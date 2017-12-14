@@ -11,8 +11,9 @@
     <div class="row marginBottom">
         <div class="col-md-3 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
         <div class="col-md-4">
-            <select class="form-control" ng-init="initName = pageTypes[0]" ng-model="initName"
-                    ng-options="x for x in pageTypes"></select>
+            <select class="form-control" ng-model="stateNum" ng-options="x.stateNum as x.stateName for x in state">
+                <option value=''>全部</option>
+            </select>
         </div>
     </div>
     <div class="row marginBottom">
@@ -30,7 +31,8 @@
     <div class="row marginBottom">
         <div class="col-md-3 vertical">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</div>
         <div class="col-md-3">
-            <button type="button"  class="btn btn-primary">选择文件</button>
+            <!--<button type="button"  class="btn btn-primary">选择文件</button>-->
+            <input type="file" >
             <br>配图预览
         </div>
     </div>

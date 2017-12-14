@@ -5,10 +5,26 @@ app.filter('typesFilter', function (types) {
         }
     }
 });
-app.filter('statusFilter', function (state) {
+app.filter('stateFilter', function (state) {
     return function (input) {
         // if (input !== "" && input !== undefined) {      //if 语句可以没有
             return state[input-1].stateName;      //返回输入所在对象的typeName
         // }
+    }
+});
+// app.filter("statusFilter",function (status) {
+//     return function (input) {
+//         console.log(input);
+//         console.log(status[input]);
+//         return status[input];
+//     }
+// });
+app.filter("statusFilter",function (status) {
+    return function (input) {
+        // console.log(input);
+        // console.log(status[input]);
+        // // console.log(status[input].statusName);
+        // console.log(status[input-1].statusName);
+        return status[input-1].statusName;
     }
 });

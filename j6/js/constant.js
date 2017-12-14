@@ -9,4 +9,14 @@ angular.module("myApp")
     .constant('state', [
         {stateName: "草稿", stateNum: "1"},
         {stateName: "上线", stateNum: "2"}
+    ])
+    .constant('status', [
+        {statusName: "上线", statusNum: 2},
+        {statusName: "下线", statusNum: 1}
     ]);
+    // .constant('status',
+    //     {
+    //         1: "上线",
+    //         2:"下线"
+    //     }
+    // );
