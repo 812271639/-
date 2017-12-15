@@ -1,4 +1,7 @@
-var app = angular.module("myApp",["ui.router"]);
+
+
+var app =  angular.module("myApp", ["ui.router","angularFileUpload"]);
+
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/login");
     $stateProvider
@@ -13,16 +16,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: "home"
         })
         .state("home.hello", {
-            url: "/hello",
+            url: "",
             templateUrl: "hello.html"
         })
         .state("home.page1", {
-            url: '/?page&size&startAt&endAt&type&status',
+            url: '1?page&size&startAt&endAt&type&status',
             templateUrl: "page1.html",
             controller: "page1"
         })
         .state("home.page2", {
-            url: "/page2",
+            url: "2?id",
             templateUrl: "page2.html",
             controller: "page2"
         })

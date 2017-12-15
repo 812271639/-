@@ -1,4 +1,5 @@
-// var app = angular.module("myApp",["ui.router"]);
+//-----------------------------------------------------------home主页控制器------------------------------------------
+
 app.controller("home", function ($scope, $http, $state) {
     // $(document).ready(function () {
     $("#leftTOP").click(function () {
@@ -102,8 +103,7 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     });
 
     $scope.sure = function () {                                       //分页点击事件
-        $state.go('home.page1',
-            {
+        $state.go('home.page1', {
                 page: $scope.page,                                     //传递参数到路由页面，保存在url里
                 size: $scope.size
             }, {reload: true});
@@ -130,9 +130,9 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
                 size: ""
             }, {reload: true});
     };
-
+//---------------------------------------------------------上下线---------------------------------------------
     $scope.statuses = function (x, y) {
-       var z = (y == 1) ? 2 : 1;
+        var z = (y == 1) ? 2 : 1;
         $http({
             method: "PUT",
             url: '/carrots-admin-ajax/a/u/article/status',
@@ -145,15 +145,113 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
             $state.go('home.page1', {}, {reload: true});
         })
     };
-    $scope.delete = function () {
-        $state.go('home.page1',
-            {})
+    //-------------------------------------------编辑-保存数据到page2url-------------------------------------
+    $scope.compile = function (id) {
+        $state.go('home.page2', {id:id}, {reload: true});
+    };
+//---------------------------------------------------------删除--------------------------------------------
+    $scope.delete = function (id) {
+        $http({
+            method: "DELETE",
+            url: " /carrots-admin-ajax/a/u/article/" + id
+        }).then(function (response) {
+            $state.go('home.page1', {}, {reload: true});
+            alert("成功" + response.data.code + response.data.message);
+        })
     };
 
-
 });
+
 //---------------------------------------------------page2控制器----------------------------------------
-app.controller("page2", function ($scope, state) {
-    $scope.state = state;
+
+app.controller("page2", function ($scope, $http, $state,$stateParams, FileUploader, redactTypes, industries ) {
+    $scope.redactTypes = redactTypes;     //绑定常量
+    $scope.industries  = industries;
+    //------------------------------------------------------------上传图片--------------------------------------------
+    var uploader = $scope.uploader = new FileUploader({
+        method: "POST",
+        url: '/carrots-admin-ajax/a/u/img/task',
+        formData: [{}],                            //与文件一起发送的表单数据
+        queueLimit: 1
+        // removeAfterUpload: true                 //上传后删除文件
+    });
+    //重新选择文件时，清空队列，达到覆盖文件的效果
+    $scope.clearItems = function () {
+        uploader.clearQueue();
+        console.log("clear");
+    };
+                                                             //图片预览的回调函数
+    uploader.onSuccessItem = function (fileItem, response) {
+        $scope.responseUrl = response.data.url;              //获取返回的url地址，作为$http的img参数传入
+        // var reader = new FileReader();
+        // reader.addEventListener("load", function (e) {
+        //     $scope.$apply(function () {
+        //         $scope.iconUrl = e.target.result;
+        //     });
+        // }, false);
+        // reader.readAsDataURL(fileItem._file);
+    };
+//----------------------------------------------------------立即上线-------------------------------------------
+    if($stateParams.id){
+        $http({
+            method:"GET",
+            url:" /carrots-admin-ajax/a/article/"+ $stateParams.id
+        }).then(function (response) {
+            $scope.article = response.data.data.article;
+            $scope.headline = $scope.article.title;
+            $scope.typeNum = $scope.article.type;
+            $scope.industriesNum = $scope.article.industry;
+            $scope.explain = $scope.article.content;
+            $scope.links = $scope.article.url;
+            $scope.responseUrl = $scope.article.img; //预览图片
+            $scope.createAt = $scope.article.createAt;
+        });
+    }
+//-------------------------------------------------------新增和编辑------------------------------------------
+    $scope.immediately = function (status) {
+        if($stateParams.id){
+                $http({
+                    method:"PUT",
+                    url:" /carrots-admin-ajax/a/u/article/"+ $stateParams.id,
+                    params: {
+                        type:$scope.typeNum,
+                        title: $scope.headline,
+                        status: status,
+                        img: $scope.responseUrl,
+                        content: $scope.explain,
+                        url: $scope.links,
+                        industry: $scope.industriesNum,
+                        createAt:$scope.createAt
+                    },
+                    header: {"Content-Type": "application/x-www-form-urlencoded"}
+                }).then(function (response) {
+                    alert( "编辑成功"+ response.data.code + response.data.message);
+                    $state.go('home.page1', {}, {reload: true});
+                });
+        }else {
+            $http({
+                method: "POST",
+                url: " /carrots-admin-ajax/a/u/article",
+                params: {
+                    title: $scope.headline,
+                    type: $scope.typeNum,
+                    status: status,
+                    img: $scope.responseUrl,
+                    content: $scope.explain,
+                    url: $scope.links,
+                    industry: $scope.industriesNum
+                },
+                header: {"Content-Type": "application/x-www-form-urlencoded"}
+            }).then(function (response) {
+                alert( "上线成功"+ response.data.code + response.data.message);
+                $state.go('home.page1', {}, {reload: true});
+            });
+        }
+
+    };
+    //------------------------------------------------------------取消上传----------------------------------------
+    $scope.canceled = function () {
+        $state.go('home.page1', {}, {reload: true});
+    };
 });
 
