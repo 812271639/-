@@ -1,4 +1,5 @@
 <div class=" col-sm-12 col-md-12 twoTopContent ">
+
     <div class="middleContentTop marginBottom ">
         新增Article
     </div>
@@ -16,15 +17,25 @@
             </select>
         </div>
         <div class="col-md-2" ng-if="typeNum == 3">
-            <select class="form-control" ng-model="industriesNum" ng-options="x.industriesNum as x.industriesName for x in industries ">
+            <select class="form-control" ng-model="industriesNum"
+                    ng-options="x.industriesNum as x.industriesName for x in industries ">
                 <option value=''>请选择</option>
             </select>
+            {{industriesNum}}
         </div>
     </div>
     <div class="row marginBottom">
         <div class="col-md-3 vertical">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</div>
         <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="" ng-model="explain ">
+            <div type="text/html"
+                 class="myEditor"
+                 ng-if="condition"
+                 ng-model="CompleteModel.text"
+                 meta-umeditor
+                 meta-umeditor-config='config'>
+            </div>
+            <!--<script type="text/plain" id="myEditor"  ></script>-->
+            <!--<input type="text" class="form-control" placeholder="" ng-model="explain ">-->
         </div>
     </div>
     <div class="row marginBottom">

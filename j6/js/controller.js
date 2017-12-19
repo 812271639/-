@@ -66,19 +66,38 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         minView: 2,
         forceParse: 0
     });
+    //---------------------------------------------------------分页---------------------------------------------------
+    $scope.maxSize = 3;         //显示的数字
+    // $scope.items = 10;  //每页多少条
+    $scope.bigTotalItems =  100000; //分页总数/给一个初始值，在http请求时再赋值覆盖掉，需要大于数据总数。
+    $scope.bigCurrentPage = 1;  //当前页
+    $scope.pageChanged = function() {
+        $state.go('home.page1', {
+            page: $scope.bigCurrentPage,                                     //传递参数到路由页面，保存在url里
+            size: $scope.size
+        }, {reload: true});
+    };
+    //
+    $scope.sure = function () {                                       //页面跳转点击事件
+        $state.go('home.page1', {
+            page: $scope.toPage ,                                     //传递参数到路由页面，保存在url里
+            size: $scope.size
+        }, {reload: true});
+    };
+//-------------------------------------------------------------------------------------------------------
     $scope.params = $state.params;
     $scope.types = types;                                               //获取常量表types数据 ，应该是绑定作用域吧
     $scope.state = state;
     $scope.status = status;
-    //
     //  $scope.start= $filter('date')($stateParams.startAt, 'yyyy-MM-dd ');//保存状态
     //  $scope.end =  $filter('date')(, 'yyyy-MM-dd ')  ;
     $scope.start = Date.parse($stateParams.startAt);
     $scope.end = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
     $scope.start = ($scope.start) ? $scope.start : "";             //添加默认值
     $scope.end = ( $scope.end ) ? $scope.end : "";
-    $scope.page = ($stateParams.page ) ? $stateParams.page : 1;     //添加默认值
+    $scope.bigCurrentPage = ($stateParams.page ) ? $stateParams.page : 1;     //添加默认值'
     $scope.size = ($stateParams.size) ? $stateParams.size : 10;
+    $scope.items = ($stateParams.size) ? $stateParams.size : 10;
     $scope.startTime = $stateParams.startAt;                        //保存状态
     $scope.endTime = $stateParams.endAt;
     $scope.typeNum = $stateParams.type;                             //保存状态
@@ -99,15 +118,10 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         }
     }).then(function (response) {
         $scope.articleList = response.data.data.articleList;          // 返回的数据
-
+        $scope.total = response.data.data.total;          // 返回的数据
+        $scope.bigTotalItems =  $scope.total; //总数
     });
-
-    $scope.sure = function () {                                       //分页点击事件
-        $state.go('home.page1', {
-                page: $scope.page,                                     //传递参数到路由页面，保存在url里
-                size: $scope.size
-            }, {reload: true});
-    };
+//--------------------------------------------------------------------------------------------------
     $scope.search = function () {                                      //搜索点击事件
         $state.go('home.page1',
             {
@@ -131,19 +145,33 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
             }, {reload: true});
     };
 //---------------------------------------------------------上下线---------------------------------------------
+
     $scope.statuses = function (x, y) {
         var z = (y == 1) ? 2 : 1;
-        $http({
-            method: "PUT",
-            url: '/carrots-admin-ajax/a/u/article/status',
-            params: {
-                id: x,
-                status: z
-            }
-        }).then(function (response) {
-            alert(response.data.code + response.data.message);
-            $state.go('home.page1', {}, {reload: true});
-        })
+        var q ;
+        var p;
+        if(z ==1){
+            q = "确定要下线吗";
+            p= "下线成功"
+        }else if(z ==2){
+            q="确定要上线吗";
+            p= "上线成功"
+        }
+        if(confirm(q)){
+            $http({
+                method: "PUT",
+                url: '/carrots-admin-ajax/a/u/article/status',
+                params: {
+                    id: x,
+                    status: z
+                }
+            }).then(function () {
+                alert(p);
+                $state.go('home.page1', {}, {reload: true});
+
+            })
+        }
+
     };
     //-------------------------------------------编辑-保存数据到page2url-------------------------------------
     $scope.compile = function (id) {
@@ -161,10 +189,9 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     };
 
 });
-
 //---------------------------------------------------page2控制器----------------------------------------
 
-app.controller("page2", function ($scope, $http, $state,$stateParams, FileUploader, redactTypes, industries ) {
+app.controller("page2", function ($scope, $http, $state,$stateParams, FileUploader, redactTypes, industries ,$timeout) {
     $scope.redactTypes = redactTypes;     //绑定常量
     $scope.industries  = industries;
     //------------------------------------------------------------上传图片--------------------------------------------
@@ -191,43 +218,56 @@ app.controller("page2", function ($scope, $http, $state,$stateParams, FileUpload
         // }, false);
         // reader.readAsDataURL(fileItem._file);
     };
-//----------------------------------------------------------立即上线-------------------------------------------
+//---------------------------------------------------新增和编辑------------------------------------------------
+    $scope.config = {};
+    $scope.CompleteModel = {
+        text:''
+    };
+    $timeout(function () {
+        $scope.condition = true;
+    },0);                          //百度编辑器获取内容
+
     if($stateParams.id){
         $http({
             method:"GET",
             url:" /carrots-admin-ajax/a/article/"+ $stateParams.id
         }).then(function (response) {
-            $scope.article = response.data.data.article;
-            $scope.headline = $scope.article.title;
-            $scope.typeNum = $scope.article.type;
+            $scope.article =       response.data.data.article;
+            $scope.headline =      $scope.article.title;
+            $scope.typeNum =       $scope.article.type;
             $scope.industriesNum = $scope.article.industry;
-            $scope.explain = $scope.article.content;
-            $scope.links = $scope.article.url;
-            $scope.responseUrl = $scope.article.img; //预览图片
-            $scope.createAt = $scope.article.createAt;
+            $scope.CompleteModel.text =       $scope.article.content;
+            $scope.links =         $scope.article.url;
+            $scope.responseUrl =   $scope.article.img; //预览图片
+            $scope.createAt =      $scope.article.createAt;
+
         });
     }
-//-------------------------------------------------------新增和编辑------------------------------------------
+
     $scope.immediately = function (status) {
-        if($stateParams.id){
-                $http({
-                    method:"PUT",
-                    url:" /carrots-admin-ajax/a/u/article/"+ $stateParams.id,
-                    params: {
-                        type:$scope.typeNum,
-                        title: $scope.headline,
-                        status: status,
-                        img: $scope.responseUrl,
-                        content: $scope.explain,
-                        url: $scope.links,
-                        industry: $scope.industriesNum,
-                        createAt:$scope.createAt
-                    },
-                    header: {"Content-Type": "application/x-www-form-urlencoded"}
-                }).then(function (response) {
-                    alert( "编辑成功"+ response.data.code + response.data.message);
-                    $state.go('home.page1', {}, {reload: true});
-                });
+            if($stateParams.id){
+            $http({
+                method:"PUT",
+                url:" /carrots-admin-ajax/a/u/article/"+ $stateParams.id,
+                params: {
+                    type:$scope.typeNum,
+                    title: $scope.headline,
+                    status: status,
+                    img: $scope.responseUrl,
+                    content: $scope.CompleteModel.text,
+                    url: $scope.links,
+                    industry: $scope.industriesNum,
+                    createAt:$scope.createAt
+                },
+                header: {"Content-Type": "application/x-www-form-urlencoded"}
+            }).then(function () {
+                if(status==1){
+                    alert( "编辑成功,已存为草稿");
+                }else {
+                    alert( "编辑成功,已成功上线");
+                }
+                $state.go('home.page1', {}, {reload: true});
+            });
         }else {
             $http({
                 method: "POST",
@@ -237,21 +277,36 @@ app.controller("page2", function ($scope, $http, $state,$stateParams, FileUpload
                     type: $scope.typeNum,
                     status: status,
                     img: $scope.responseUrl,
-                    content: $scope.explain,
+                    content: $scope.CompleteModel.text,
                     url: $scope.links,
                     industry: $scope.industriesNum
                 },
                 header: {"Content-Type": "application/x-www-form-urlencoded"}
-            }).then(function (response) {
-                alert( "上线成功"+ response.data.code + response.data.message);
+            }).then(function () {
+                if(status==1){
+                    alert( "已存为草稿");
+                }else {
+                    alert( "上线成功");
+                }
+
                 $state.go('home.page1', {}, {reload: true});
             });
         }
 
     };
+
     //------------------------------------------------------------取消上传----------------------------------------
     $scope.canceled = function () {
         $state.go('home.page1', {}, {reload: true});
     };
+
+
+    var um = UM.getEditor('myEditor');
+    um.addListener('blur',function(){
+        $('#focush2').html('编辑器失去焦点了')
+    });
+    um.addListener('focus',function(){
+        $('#focush2').html('')
+    });
 });
 

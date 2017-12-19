@@ -85,7 +85,8 @@
                         <td>
                             <table>
                                 <tr>
-                                    <td ng-click="statuses(x.id,x.status)"><a href="">{{x.status | statusFilter}}</a></td>
+                                    <td ng-click="statuses(x.id,x.status)"><a href="">{{x.status | statusFilter}}</a>
+                                    </td>
                                     <td class="tdMargin"><a href="" ng-click="compile(x.id )">编辑</a></td>
                                     <td ng-click="delete(x.id)"><a href="">删除</a></td>
                                 </tr>
@@ -96,15 +97,26 @@
                 </table>
             </div>
         </div>
-    </div>
-    <div class="firstBottomOut">
-        <div class="firstBottom">
-            每页显示 <input type="text" class="form-control bottomInput" ng-model="size"> 条
-            <button class="btn btn-default cancel">首页</button>
-            <button type="button" class="btn btn-primary disabled">{{page}}</button>
-            <button class="btn btn-default cancel">末页</button>
-            去第 <input type="text" class="form-control bottomInput" ng-model="page"> 页
-            <button class="btn btn-default cancel" ng-click="sure()">确定</button>
+        <div class="firstBottomOut ">
+            <div class="firstBottom" >
+                每页显示 <input type="text" class="form-control bottomInput" ng-model="size"> 条
+                <ul uib-pagination
+                    total-items="bigTotalItems"
+                    ng-model="bigCurrentPage"
+                    items-per-page="items"
+                    ng-click="pageChanged()"
+                    max-size="maxSize"
+                    class="pagination-sm"
+                    first-text="首页"
+                    previous-text="<"
+                    next-text=">"
+                    last-text="尾页"
+                    boundary-links="true"
+                    force-ellipses="true"></ul>
+                第 <input type="text" class="form-control bottomInput" ng-model="toPage"> 页
+                <button class="btn btn-default cancel" ng-click="sure()">确定</button>
+            </div>
         </div>
     </div>
+
 </div>

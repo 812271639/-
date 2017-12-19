@@ -59,8 +59,12 @@
 .firstBottomOut .firstBottom .bottomInput {
   padding: 0;
   text-align: center;
-  display: inline;
-  width: 6%;
+  vertical-align: middle;
+  display: inline-block;
+  width: .3rem;
+}
+.firstBottomOut .firstBottom .pagination {
+  vertical-align: middle;
 }
 @media screen and (max-width: 992px) {
   .firstTopContent .vertical {

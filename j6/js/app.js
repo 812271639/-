@@ -1,6 +1,5 @@
 
-
-var app =  angular.module("myApp", ["ui.router","angularFileUpload"]);
+var app =  angular.module("myApp", ["ui.router", "ui.bootstrap","angularFileUpload","meta.umeditor"]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.when("", "/login");

@@ -22,7 +22,7 @@ angular.module("myApp")
         {typeName: "行业大图", typeNum: 3}])
 
     .constant('industries', [
-        {industriesName: "移动互联网", industriesNum:0},
+        {industriesName: "移动互联网", industriesNum: 0},
         {industriesName: "电子商务",  industriesNum: 1},
         {industriesName: "企业服务",  industriesNum: 2},
         {industriesName: "O2O",      industriesNum: 3},
