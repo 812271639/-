@@ -99,7 +99,11 @@
         </div>
         <div class="firstBottomOut ">
             <div class="firstBottom" >
-                每页显示 <input type="text" class="form-control bottomInput" ng-model="size"> 条
+                每页显示
+                <input type="text"
+                       class="form-control bottomInput"
+                       ng-model="size"
+                       ng-pattern="/^[1-9]\d{0,2}$/" required> 条
                 <ul uib-pagination
                     total-items="bigTotalItems"
                     ng-model="bigCurrentPage"
@@ -112,9 +116,13 @@
                     next-text=">"
                     last-text="尾页"
                     boundary-links="true"
-                    force-ellipses="true"></ul>
-                第 <input type="text" class="form-control bottomInput" ng-model="toPage"> 页
-                <button class="btn btn-default cancel" ng-click="sure()">确定</button>
+                    force-ellipses="true">
+                </ul>
+                第 <input type="text"
+                         class="form-control bottomInput"
+                         ng-pattern="/^[1-9]\d{0,2}$/"
+                         ng-model="toPage"> 页
+                <button class="btn btn-default cancel"  ng-click="sure()">确定</button>
             </div>
         </div>
     </div>

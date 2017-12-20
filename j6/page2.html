@@ -4,28 +4,46 @@
         新增Article
     </div>
     <div class="row marginBottom">
-        <div class="col-md-3 vertical">标题名称</div>
+        <div class="col-md-2 vertical">标题名称 <span class="remind" ng-hide="headline">*</span></div>
         <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="" ng-model="headline">
+            <form name="formHead">
+                <input type="text"
+                       name="head"
+                       class="form-control"
+                       ng-model="headline"
+                       ng-blur="count=1"
+                       ng-minlength="2"
+                       ng-maxlength="10"
+                       required>
+                <span class="remind" ng-show="count && formHead.head.$invalid">请输入标题名称</span>
+                <span class="remind" ng-show="formHead.head.$error.minlength">字符最短为2</span>
+                <span class="remind" ng-show="formHead.head.$error.maxlength">字符最长为10</span>
+            </form>
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-3 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
-        <div class="col-md-2">
-            <select class="form-control" ng-model="typeNum" ng-options="x.typeNum as x.typeName for x in redactTypes">
+        <div class="col-md-2 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型 <span class="remind" ng-hide="typeNum != undefined">*</span>
+        </div>
+        <div class="col-md-3">
+            <select class="form-control"
+                    ng-blur="blur=1"
+                    ng-model="typeNum"
+                    ng-options="x.typeNum as x.typeName for x in redactTypes">
                 <option value=''>全部</option>
             </select>
         </div>
-        <div class="col-md-2" ng-if="typeNum == 3">
+        <div class="col-md-3" ng-show="typeNum == 3">
             <select class="form-control" ng-model="industriesNum"
                     ng-options="x.industriesNum as x.industriesName for x in industries ">
                 <option value=''>请选择</option>
             </select>
-            {{industriesNum}}
+        </div>
+        <div class="col-md-3" ng-show="typeNum == 3 ||(blur && (typeNum == undefined ))">
+            <span class="remind" ng-hide="industriesNum != undefined">请选择行业</span>
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-3 vertical">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</div>
+        <div class="col-md-2 vertical">说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明</div>
         <div class="col-md-8">
             <div type="text/html"
                  class="myEditor"
@@ -39,24 +57,35 @@
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-3 vertical">跳转链接</div>
+        <div class="col-md-2 vertical">跳转链接 <span class="remind" ng-hide="links">*</span></div>
         <div class="col-md-8">
-            <input type="text" class="form-control" placeholder="" ng-model="links">
+            <form name="formLink">
+                <input type="text"
+                       name="link"
+                       class="form-control"
+                       placeholder=""
+                       ng-model="links"
+                       ng-pattern="/(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/">
+            </form>
+            {{formLink.link.$valid}}
         </div>
     </div>
     <div nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
         <div class="row marginBottom">
-            <div class="col-md-3 vertical">配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图</div>
+            <div class="col-md-2 vertical">
+                配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图
+                <span class="remind" ng-hide ="uploader.queue[0].isSuccess ">*</span>
+            </div>
             <div class="col-md-3">
                 <a href="javascript:;" class="file"><!--a标签用来改默认样式-->
-                    <input type="file" nv-file-select="" uploader="uploader" multiple/>选择文件
+                    <input type="file" nv-file-select="" uploader="uploader"  multiple/>选择文件
                 </a>
                 <p>配图预览</p>
                 <img id="img-preview" ng-src="{{responseUrl}}">
             </div>
         </div>
         <div class="row marginBottom">
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
             <div class="col-md-8">
                 <table class="table">
                     <thead>
@@ -83,14 +112,19 @@
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
                         </td>
                         <td nowrap>
-                            <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()"
-                                    ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                            <button type="button"
+                                    class="btn btn-success btn-xs"
+                                    ng-click="item.upload()"
+                                    ng-disabled="item.isReady || item.isUploading || item.isSuccess" >
                                 <span class="glyphicon glyphicon-upload"></span> 上传
                             </button>
-                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                            <button type="button"
+                                    class="btn btn-danger btn-xs"
+                                    ng-click="item.remove();removeResponseUrl()">
                                 <span class="glyphicon glyphicon-trash"></span> 删除
                             </button>
                         </td>
+
                     </tr>
                     </tbody>
                 </table>
@@ -98,10 +132,24 @@
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
         <div class="col-md-8">
-            <button class="btn btn-success" ng-click="immediately(2)">立即上线</button>
-            <button class="btn btn-success" ng-click="immediately(1)">存为草稿</button>
+            <button class="btn btn-success"
+                    ng-click="immediately(2)"
+                    ng-disabled=
+                            "(headline == undefined)
+                            ||(typeNum == undefined)
+                            ||(typeNum == 3)&&(industriesNum == undefined)
+                            ||(responseUrl == undefined)
+                            || (links == undefined)">立即上线</button>
+            <button class="btn btn-success"
+                    ng-click="immediately(1)"
+                    ng-disabled=
+                            "(headline == undefined)
+                            ||(typeNum == undefined)
+                            ||(typeNum == 3)&&(industriesNum == undefined)
+                            ||(responseUrl == undefined)
+                            ||!links">存为草稿</button>
             <button class="btn btn-default cancel" ng-click="canceled()">取消</button>
         </div>
     </div>

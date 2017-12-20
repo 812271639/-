@@ -18,6 +18,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "",
             templateUrl: "hello.html"
         })
+        .state("home.hello1", {
+            url: "",
+            templateUrl: "hello1.html"
+        })
         .state("home.page1", {
             url: '1?page&size&startAt&endAt&type&status',
             templateUrl: "page1.html",
