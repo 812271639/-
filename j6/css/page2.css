@@ -44,6 +44,9 @@
 .twoTopContent .marginBottom {
   margin-bottom: .2rem;
 }
+.twoTopContent .marginBottom img {
+  max-width: 100%;
+}
 .twoTopContent .marginBottom .myEditor {
   width: 100%;
   min-height: 1.2rem;

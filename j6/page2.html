@@ -1,7 +1,6 @@
 <div class=" col-sm-12 col-md-12 twoTopContent ">
-
     <div class="middleContentTop marginBottom ">
-      {{newArticle}}
+        {{newArticle}}
     </div>
     <div class="row marginBottom">
         <div class="col-md-2 vertical">标题名称 <span class="remind" ng-hide="headline">*</span></div>
@@ -22,7 +21,8 @@
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-2 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型 <span class="remind" ng-hide="typeNum != undefined">*</span>
+        <div class="col-md-2 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型
+            <span class="remind" ng-hide="typeNum != undefined">*</span>
         </div>
         <div class="col-md-3">
             <select class="form-control"
@@ -55,7 +55,8 @@
         </div>
     </div>
     <div class="row marginBottom">
-        <div class="col-md-2 vertical">跳转链接 <span class="remind" ng-hide="links">*</span></div>
+        <div class="col-md-2 vertical">跳转链接
+            <span class="remind" ng-hide="links">*</span></div>
         <div class="col-md-8">
             <form name="formLink">
                 <input type="text"
@@ -71,19 +72,18 @@
         <div class="row marginBottom">
             <div class="col-md-2 vertical">
                 配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图
-                <span class="remind" ng-hide ="responseUrl">*</span>
+                <span class="remind" ng-hide="responseUrl">*</span>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-8">
                 <a href="javascript:;" class="file"><!--a标签用来改默认样式-->
-                    <input type="file" nv-file-select="" uploader="uploader"  multiple/>选择文件
+                    <input type="file" nv-file-select="" uploader="uploader" multiple/>选择文件
                 </a>
                 <p>配图预览</p>
                 <img id="img-preview" ng-src="{{responseUrl}}">
             </div>
         </div>
         <div class="row marginBottom">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-8 col-md-push-2">
                 <table class="table">
                     <thead>
                     <tr>
@@ -112,7 +112,7 @@
                             <button type="button"
                                     class="btn btn-success btn-xs"
                                     ng-click="item.upload()"
-                                    ng-disabled="item.isReady || item.isUploading || item.isSuccess" >
+                                    ng-disabled="item.isReady || item.isUploading || item.isSuccess">
                                 <span class="glyphicon glyphicon-upload"></span> 上传
                             </button>
                             <button type="button"
@@ -138,7 +138,8 @@
                             ||(typeNum == undefined)
                             ||(typeNum == 3)&&(industriesNum == undefined)
                             ||(responseUrl == undefined)
-                            || (links == undefined)">立即上线</button>
+                            || (links == undefined)">立即上线
+            </button>
             <button class="btn btn-success"
                     ng-click="immediately(1)"
                     ng-disabled=
@@ -146,7 +147,8 @@
                             ||(typeNum == undefined)
                             ||(typeNum == 3)&&(industriesNum == undefined)
                             ||(responseUrl == undefined)
-                            ||!links">存为草稿</button>
+                            ||!links">存为草稿
+            </button>
             <button class="btn btn-default cancel" ng-click="canceled()">取消</button>
         </div>
     </div>

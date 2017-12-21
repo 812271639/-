@@ -90,7 +90,6 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
                 $state.go('home.page1', {}, {reload: true});
             });
         }
-
     };
     $scope.canceled = function () {
         $state.go('home.page1', {}, {reload: true});    //-取消上传-
