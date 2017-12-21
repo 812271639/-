@@ -73,6 +73,9 @@ main {
     width: 250px;
     color: white;
     background-color: rgb(35, 42, 58);
+    .color{
+      background-color: #1596c7;
+    }
     .leftList {
       padding: .1rem 0 .1rem 15%;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -87,12 +90,12 @@ main {
       }
     }
     ul {
-      display: none;
       li {
         text-align: center;
         padding: .1rem 0;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 14px;
+        cursor: pointer;
       }
     }
 
@@ -172,17 +175,23 @@ main {
 
 @media screen and (min-width: 768px) {
   .mainLeft {
-    padding-bottom: 3000px;
+    padding-bottom: 10000px;
     overflow: visible!important;
-    margin-bottom: -3000px;
+    margin-bottom: -10000px;
   }
 }
 
 @media screen and (max-width: 767px) {
+  .full{
+    background-color: #e9e5f3;
+  }
   .mainLeft {
     float: left;
     width: 100%;
     display: none;
+  }
+  .mainLeftShow{
+    display: block;
   }
 
   .mainRight {

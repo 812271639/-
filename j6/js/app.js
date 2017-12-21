@@ -14,12 +14,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "home.html",
             controller: "home"
         })
+        .state("home.welcome", {
+            url: "welcome",
+            templateUrl: "welcome.html"
+        })
         .state("home.hello", {
-            url: "",
+            url: "hello",
             templateUrl: "hello.html"
         })
         .state("home.hello1", {
-            url: "",
+            url: "hello1",
             templateUrl: "hello1.html"
         })
         .state("home.page1", {

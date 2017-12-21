@@ -1,7 +1,7 @@
 <div class=" col-sm-12 col-md-12 twoTopContent ">
 
     <div class="middleContentTop marginBottom ">
-        新增Article
+      {{newArticle}}
     </div>
     <div class="row marginBottom">
         <div class="col-md-2 vertical">标题名称 <span class="remind" ng-hide="headline">*</span></div>
@@ -52,8 +52,6 @@
                  meta-umeditor
                  meta-umeditor-config='config'>
             </div>
-            <!--<script type="text/plain" id="myEditor"  ></script>-->
-            <!--<input type="text" class="form-control" placeholder="" ng-model="explain ">-->
         </div>
     </div>
     <div class="row marginBottom">
@@ -65,16 +63,15 @@
                        class="form-control"
                        placeholder=""
                        ng-model="links"
-                       ng-pattern="/(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/">
+                       ng-pattern="/^((ht|f)tps?):\/\/([\w-]+(\.[\w-]+)*\/?)+(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?$/">
             </form>
-            {{formLink.link.$valid}}
         </div>
     </div>
     <div nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter">
         <div class="row marginBottom">
             <div class="col-md-2 vertical">
                 配&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;图
-                <span class="remind" ng-hide ="uploader.queue[0].isSuccess ">*</span>
+                <span class="remind" ng-hide ="responseUrl">*</span>
             </div>
             <div class="col-md-3">
                 <a href="javascript:;" class="file"><!--a标签用来改默认样式-->

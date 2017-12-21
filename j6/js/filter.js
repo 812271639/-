@@ -12,12 +12,15 @@ app.filter('stateFilter', function (state) {
         // }
     }
 });
-// app.filter("statusFilter",function (status) {
-//     return function (input) {
-//         console.log(input);
-//         console.log(status[input]);
-//         return status[input];
-//     }
+
+// app.filter("id",function () {
+
+
+    // var input =0;
+    // return function () {
+    //    input +=1;
+    //     return input;
+    // }
 // });
 app.filter("statusFilter",function (status) {
     return function (input) {

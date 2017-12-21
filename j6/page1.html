@@ -74,8 +74,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="x in articleList | orderBy:'createAt '">
-                        <td>{{x.id}}</td>
+                    <tr ng-repeat="x in articleList | orderBy:'updateAt '">
+                        <td>{{ $index+1}}</td>
                         <td>{{x.title}}</td>
                         <td>{{x.type | typesFilter }}</td>
                         <td>{{x.createAt | date:"yyyy-MM-dd "}}</td>

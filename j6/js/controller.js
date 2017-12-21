@@ -1,22 +1,36 @@
 //-----------------------------------------------------------home主页控制器------------------------------------------
 
 app.controller("home", function ($scope, $http, $state) {
-    $("#leftTOP").click(function () {
-        $("#firstDown").toggleClass("glyphicon-chevron-down");
-        $("#firstUl").toggle();
-        $("#secondUl").hide();
-    });
-    $("#leftBottom").click(function () {
-        $("#secondDown").toggleClass("glyphicon-chevron-down");
-        $("#secondUl").toggle();
-        $("#firstUl").hide();
-    });
-    $("#topButton").click(function () {
-        $(".mainLeft").toggle();
-    });
+    $scope.state = $state;
+    $scope.hello = $state.includes('home.hello');
+    $scope.hello1 = $state.includes('home.hello1');
+    $scope.page1 = $state.includes('home.page1');
+    if ($scope.hello || $scope.hello1) {
+        $scope.firstUl = true;
+    }
+    $scope.firstFn = function () {
+        $scope.firstUl = !$scope.firstUl;
+        $scope.hello = false;
+        $scope.hello1 = false;
+        $scope.page1 = false;
+        $scope.secondUl = false;
+    };
+    if ($scope.page1) {
+        $scope.secondUl = true;
+    }
+    $scope.secondFn = function () {
+        $scope.secondUl = !$scope.secondUl;
+        $scope.firstUl = false;
+        $scope.page1 = false;
+    };
+    $scope.mainLeft = false;
+    $scope.topButton = function () {
+        $scope.mainLeft = !$scope.mainLeft;
+    };
+
 //------------------------------------------------------------退出-------------------------------------
     $scope.logout = function () {
-        if (confirm("确定退出吗？")){
+        if (confirm("确定退出吗？")) {
             $http({
                 method: "POST",
                 url: "/carrots-admin-ajax/a/logout"
@@ -43,19 +57,17 @@ app.controller('login', function ($scope, $http, $state) {
             header: {"Content-Type": "application/x-www-form-urlencoded"}      //params方法header不用加 s .
         }).then(function (response) {
             if (response.data.code === 0) {
-                $scope.messages = "success";
-                $state.go('home.hello', {}, {reload: true})
+                $state.go('home.welcome', {}, {reload: true})
+            }else if (response.data.code !== 0) {
+                $scope.messages = "无效的账号密码";
             }
-            // else if($scope.name !== "admin") {
-            //     $scope.messages = "无效账号";
-            // }else if($scope.password !== "123456"){
-            //     $scope.messages = "密码错误";
-            // }
+
         })
     };
 });
 //-----------------------------------------------page1控制器-----------------------------------------------
 app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, types, state) {
+
     $("#a,#b").datetimepicker({    //时间插件
         language: 'zh-CN',
         format: 'yyyy-mm-dd',
@@ -85,6 +97,7 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         }, {reload: true});
     };
 //-------------------------------------------------------------------------------------------------------
+    $scope.disc = 0;//id排序
     $scope.params = $state.params;
     $scope.types = types;                 //获取常量表types数据 ，应该是绑定作用域吧
     $scope.state = state;
@@ -176,7 +189,7 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     };
 //---------------------------------------------------------删除--------------------------------------------
     $scope.delete = function (id) {
-        if(confirm("确定删除吗？")){
+        if (confirm("确定删除吗？")) {
             $http({
                 method: "DELETE",
                 url: " /carrots-admin-ajax/a/u/article/" + id
@@ -192,6 +205,11 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
 app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploader, redactTypes, industries, $timeout) {
     $scope.redactTypes = redactTypes;     //绑定常量
     $scope.industries = industries;
+    if($stateParams.id){
+        $scope.newArticle = "编辑article"
+    }else {
+        $scope.newArticle = "新增article"
+    }
     //------------------------------------------------------------上传图片--------------------------------------------
     var uploader = $scope.uploader = new FileUploader({
         method: "POST",
@@ -243,8 +261,8 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
     }
 
     $scope.immediately = function (status) {
-            $scope.industriesNum = ( $scope.typeNum != 3)?$scope.industriesNum:"";
-     if ($stateParams.id) {
+        $scope.industriesNum = ( $scope.typeNum != 3) ? $scope.industriesNum : "";
+        if ($stateParams.id) {
             $http({
                 method: "PUT",
                 url: " /carrots-admin-ajax/a/u/article/" + $stateParams.id,

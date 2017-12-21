@@ -69,6 +69,9 @@ main .mainLeft {
   color: white;
   background-color: #232a3a;
 }
+main .mainLeft .color {
+  background-color: #1596c7;
+}
 main .mainLeft .leftList {
   padding: .1rem 0 .1rem 15%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -82,14 +85,12 @@ main .mainLeft .leftList .left {
   float: right;
   padding-right: 20%;
 }
-main .mainLeft ul {
-  display: none;
-}
 main .mainLeft ul li {
   text-align: center;
   padding: .1rem 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  cursor: pointer;
 }
 main .mainRight {
   float: left;
@@ -102,16 +103,22 @@ main .mainRight h1 {
 }
 @media screen and (min-width: 768px) {
   main .mainLeft {
-    padding-bottom: 3000px;
+    padding-bottom: 10000px;
     overflow: visible!important;
-    margin-bottom: -3000px;
+    margin-bottom: -10000px;
   }
 }
 @media screen and (max-width: 767px) {
+  main .full {
+    background-color: #e9e5f3;
+  }
   main .mainLeft {
     float: left;
     width: 100%;
     display: none;
+  }
+  main .mainLeftShow {
+    display: block;
   }
   main .mainRight {
     padding: 0;
