@@ -1,6 +1,6 @@
 app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, types, state) {
 
-    $("#a,#b").datetimepicker({    //时间插件
+    $("#BeginTime").datetimepicker({    //时间插件
         language: 'zh-CN',
         format: 'yyyy-mm-dd',
         weekStart: 1,
@@ -8,7 +8,25 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         todayHighlight: 1,
         startView: 2,
         minView: 2,
-        forceParse: 0
+        forceParse: 0,
+        endDate:new Date()
+    }).on('changeDate',function(e){
+        var startTime = e.date;
+        $('#EndTime').datetimepicker('setStartDate',startTime);
+    });
+    $("#EndTime").datetimepicker({    //时间插件
+        language: 'zh-CN',
+        format: 'yyyy-mm-dd',
+        weekStart: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        endDate:new Date()
+    }).on('changeDate',function(e){
+        var endTime = e.date;
+        $('#BeginTime').datetimepicker('setEndDate',endTime);
     });
     //---------------------------------------------------------分页---------------------------------------------------
     $scope.maxSize = 3;            //显示的数字
@@ -29,18 +47,17 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         }, {reload: true});
     };
 //-------------------------------------------------------------------------------------------------------
-    $scope.disc = 0;//id排序
     $scope.params = $state.params;
-    $scope.types = types;                 //获取常量表types数据 ，应该是绑定作用域吧
-    $scope.state = state;
+    $scope.types  = types;                 //获取常量表types数据 ，应该是绑定作用域吧
+    $scope.state  = state;
     $scope.status = status;
-    $scope.start = Date.parse($stateParams.startAt);
-    $scope.end = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
-    $scope.start = ($scope.start) ? $scope.start : "";             //添加默认值
-    $scope.end = ( $scope.end ) ? $scope.end : "";
+    $scope.start  = Date.parse($stateParams.startAt);
+    $scope.end    = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
+    $scope.start  = ($scope.start) ? $scope.start : "";             //添加默认值
+    $scope.end    = ( $scope.end ) ? $scope.end : "";
     $scope.bigCurrentPage = ($stateParams.page ) ? $stateParams.page : 1;     //添加默认值'
-    $scope.size = ($stateParams.size) ? $stateParams.size : 10;
-    $scope.items = ($stateParams.size) ? $stateParams.size : 10;
+    $scope.size   = ($stateParams.size) ? $stateParams.size : 10;
+    $scope.items  = ($stateParams.size) ? $stateParams.size : 10;
     $scope.startTime = $stateParams.startAt;                        //保存状态
     $scope.endTime = $stateParams.endAt;
     $scope.typeNum = $stateParams.type;                             //保存状态

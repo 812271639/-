@@ -11,14 +11,11 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
     var uploader = $scope.uploader = new FileUploader({
         method: "POST",
         url: '/carrots-admin-ajax/a/u/img/task',
-        formData: [{}],                            //与文件一起发送的表单数据
         queueLimit: 1
-        // removeAfterUpload: true                 //上传后删除文件
     });
     //重新选择文件时，清空队列，达到覆盖文件的效果
     $scope.clearItems = function () {
         uploader.clearQueue();
-        console.log("clear");
     };
     //图片预览的回调函数
     uploader.onSuccessItem = function (fileItem, response) {
@@ -28,13 +25,13 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
         $scope.responseUrl = null;
     };
 //---------------------------------------------------新增和编辑------------------------------------------------
-    $scope.config = {};
+    $scope.config = {}; //百度编辑器获取内容
     $scope.CompleteModel = {
         text: ''
     };
     $timeout(function () {
         $scope.condition = true;
-    }, 0);                          //百度编辑器获取内容
+    }, 0);
 
     if ($stateParams.id) {
         $http({
@@ -54,20 +51,21 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
 
     $scope.immediately = function (status) {
         $scope.industriesNum = ( $scope.typeNum == 3) ? $scope.industriesNum : "";
+        $scope.paramData = {
+            type: $scope.typeNum,
+            title: $scope.headline,
+            status: status,
+            img: $scope.responseUrl,
+            content: $scope.CompleteModel.text,
+            url: $scope.links,
+            industry: $scope.industriesNum,
+            createAt: $scope.createAt
+        };
         if ($stateParams.id) {
             $http({
                 method: "PUT",
                 url: " /carrots-admin-ajax/a/u/article/" + $stateParams.id,
-                params: {
-                    type: $scope.typeNum,
-                    title: $scope.headline,
-                    status: status,
-                    img: $scope.responseUrl,
-                    content: $scope.CompleteModel.text,
-                    url: $scope.links,
-                    industry: $scope.industriesNum,
-                    createAt: $scope.createAt
-                },
+                params:  $scope.paramData,
                 header: {"Content-Type": "application/x-www-form-urlencoded"}
             }).then(function () {
                 if (status == 1) {
@@ -81,15 +79,7 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
             $http({
                 method: "POST",
                 url: " /carrots-admin-ajax/a/u/article",
-                params: {
-                    title: $scope.headline,
-                    type: $scope.typeNum,
-                    status: status,
-                    img: $scope.responseUrl,
-                    content: $scope.CompleteModel.text,
-                    url: $scope.links,
-                    industry: $scope.industriesNum
-                },
+                params:$scope.paramData,
                 header: {"Content-Type": "application/x-www-form-urlencoded"}
             }).then(function () {
                 if (status == 1) {
@@ -97,7 +87,6 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
                 } else {
                     alert("上线成功");
                 }
-
                 $state.go('home.page1', {}, {reload: true});
             });
         }
