@@ -1,4 +1,4 @@
-
+// angular.module("myApp", ["ui.router", "ui.bootstrap","angularFileUpload","meta.umeditor"])
 var app =  angular.module("myApp", ["ui.router", "ui.bootstrap","angularFileUpload","meta.umeditor"]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
