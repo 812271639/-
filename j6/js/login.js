@@ -8,7 +8,7 @@ app.controller('login', function ($scope, $http, $state) {
                 name: $scope.name,
                 pwd: $scope.password
             },
-            // headers:{"Content-Type":"application/x-www-form-urlencoded"}  //data方法header要加 s .
+            // headers:{"Content-Type":"application/x-www-form-urlencoded"}    //data方法header要加 s .
             header: {"Content-Type": "application/x-www-form-urlencoded"}      //params方法header不用加 s .
         }).then(function (response) {
             if (response.data.code === 0) {
@@ -16,7 +16,6 @@ app.controller('login', function ($scope, $http, $state) {
             }else if (response.data.code !== 0) {
                 $scope.messages =response.data.message;
             }
-
         })
     };
 });

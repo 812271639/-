@@ -92,10 +92,8 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
         }
 
     };
-
-    //------------------------------------------------------------取消上传----------------------------------------
     $scope.canceled = function () {
-        $state.go('home.page1', {}, {reload: true});
+        $state.go('home.page1', {}, {reload: true});    //-取消上传-
     };
 });
 

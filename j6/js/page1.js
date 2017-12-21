@@ -9,10 +9,10 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         startView: 2,
         minView: 2,
         forceParse: 0,
-        endDate:new Date()
-    }).on('changeDate',function(e){
+        endDate: new Date()
+    }).on('changeDate', function (e) {
         var startTime = e.date;
-        $('#EndTime').datetimepicker('setStartDate',startTime);
+        $('#EndTime').datetimepicker('setStartDate', startTime);
     });
     $("#EndTime").datetimepicker({    //时间插件
         language: 'zh-CN',
@@ -23,10 +23,10 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         startView: 2,
         minView: 2,
         forceParse: 0,
-        endDate:new Date()
-    }).on('changeDate',function(e){
+        endDate: new Date()
+    }).on('changeDate', function (e) {
         var endTime = e.date;
-        $('#BeginTime').datetimepicker('setEndDate',endTime);
+        $('#BeginTime').datetimepicker('setEndDate', endTime);
     });
     //---------------------------------------------------------分页---------------------------------------------------
     $scope.maxSize = 3;            //显示的数字
@@ -48,16 +48,16 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     };
 //-------------------------------------------------------------------------------------------------------
     $scope.params = $state.params;
-    $scope.types  = types;                 //获取常量表types数据 ，应该是绑定作用域吧
-    $scope.state  = state;
+    $scope.types = types;                                          //获取常量表types数据 ，应该是绑定作用域吧
+    $scope.state = state;
     $scope.status = status;
-    $scope.start  = Date.parse($stateParams.startAt);
-    $scope.end    = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
-    $scope.start  = ($scope.start) ? $scope.start : "";             //添加默认值
-    $scope.end    = ( $scope.end ) ? $scope.end : "";
-    $scope.bigCurrentPage = ($stateParams.page ) ? $stateParams.page : 1;     //添加默认值'
-    $scope.size   = ($stateParams.size) ? $stateParams.size : 10;
-    $scope.items  = ($stateParams.size) ? $stateParams.size : 10;
+    $scope.start = Date.parse($stateParams.startAt);
+    $scope.end = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
+    $scope.start = ($scope.start) ? $scope.start : "";                         //添加默认值
+    $scope.end = ( $scope.end ) ? $scope.end : "";
+    $scope.bigCurrentPage = ($stateParams.page ) ? $stateParams.page : 1;      //添加默认值'
+    $scope.size = ($stateParams.size) ? $stateParams.size : 10;
+    $scope.items = ($stateParams.size) ? $stateParams.size : 10;
     $scope.startTime = $stateParams.startAt;                        //保存状态
     $scope.endTime = $stateParams.endAt;
     $scope.typeNum = $stateParams.type;                             //保存状态
@@ -76,11 +76,11 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         }
     }).then(function (response) {
         $scope.articleList = response.data.data.articleList;          // 返回的数据
-        $scope.total = response.data.data.total;          // 返回的数据
-        $scope.bigTotalItems = $scope.total; //总数
+        $scope.total = response.data.data.total;                      // 返回的数据用于分页插件
+        $scope.bigTotalItems = $scope.total;                          //分页插件的总数
     });
-//--------------------------------------------------------------------------------------------------
-    $scope.search = function () {                                      //搜索点击事件
+//--------------------------------------------------------------------搜索点击事件
+    $scope.search = function () {
         $state.go('home.page1',
             {
                 startAt: $scope.startTime,
@@ -100,7 +100,7 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
                 size: ""
             }, {reload: true});
     };
-//---------------------------------------------------------上下线---------------------------------------------
+//---------------------------------------------------------上下线-
     $scope.statuses = function (x, y) {
         var z = (y == 1) ? 2 : 1;
         var q;
@@ -126,11 +126,11 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
             })
         }
     };
-//-------------------------------------------编辑-保存数据到page2-url-------------------------------------
+//---------------------------------------------------------编辑-保存数据到page2-url
     $scope.compile = function (id) {
         $state.go('home.page2', {id: id}, {reload: true});
     };
-//---------------------------------------------------------删除--------------------------------------------
+//---------------------------------------------------------删除
     $scope.delete = function (id) {
         if (confirm("确定删除吗？")) {
             $http({
