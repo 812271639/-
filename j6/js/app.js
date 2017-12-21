@@ -1,4 +1,4 @@
-// angular.module("myApp", ["ui.router", "ui.bootstrap","angularFileUpload","meta.umeditor"])
+
 var app =  angular.module("myApp", ["ui.router", "ui.bootstrap","angularFileUpload","meta.umeditor"]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -38,27 +38,3 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
 });
 
-// app.config(['$stateProvider','$urlRouterProvider',function ($stateProvider,$urlRouterProvider) {
-//     $urlRouterProvider.when("","/login");
-//     $stateProvider
-//         .state("login",{              //state后面的参数login，用以区分这部分路由对哪一个命令进行响应。
-//             url:"/login",
-//             templateUrl:"login.html"
-//         })
-//         .state("home",{
-//             url:"/home",
-//             templateUrl:"pageB.html"
-//         })
-//         .state("home.hello",{
-//             url:"/hello",
-//             templateUrl:"hello.html"
-//         })
-//         .state("home.page1",{
-//             url:"/page1",
-//             templateUrl:"pageA.html"
-//         })
-//         .state("home.page2",{
-//             url:"/page2",
-//             templateUrl:"page2.html"
-//         })
-// }]);

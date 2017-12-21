@@ -22,11 +22,6 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
     };
     //图片预览的回调函数
     uploader.onSuccessItem = function (fileItem, response) {
-        console.log(fileItem);
-        console.log(fileItem.uploader);
-        console.log(fileItem.uploader.queue);
-        console.log(fileItem.uploader.queue[0].isSuccess);
-        console.log(fileItem.uploader.queue[0].remove);
         $scope.responseUrl = response.data.url;              //获取返回的url地址，作为$http的img参数传入
     };
     $scope.removeResponseUrl = function () {
@@ -45,7 +40,7 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
         $http({
             method: "GET",
             url: " /carrots-admin-ajax/a/article/" + $stateParams.id
-        }).then(function (response) {
+        }).then(function (response) {                                 //编辑页面渲染数据
             $scope.article = response.data.data.article;
             $scope.headline = $scope.article.title;
             $scope.typeNum = $scope.article.type;
@@ -113,12 +108,5 @@ app.controller("page2", function ($scope, $http, $state, $stateParams, FileUploa
     $scope.canceled = function () {
         $state.go('home.page1', {}, {reload: true});
     };
-    var um = UM.getEditor('myEditor');
-    um.addListener('blur', function () {
-        $('#focush2').html('编辑器失去焦点了')
-    });
-    um.addListener('focus', function () {
-        $('#focush2').html('')
-    });
 });
 

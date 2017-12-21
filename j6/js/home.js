@@ -33,9 +33,8 @@ app.controller("home", function ($scope, $http, $state) {
             $http({
                 method: "POST",
                 url: "/carrots-admin-ajax/a/logout"
-            }).then(function (response) {
+            }).then(function () {
                 $state.go('login', {}, {reload: true});
-                // alert(response.data.code + response.data.message);
             })
         }
     }

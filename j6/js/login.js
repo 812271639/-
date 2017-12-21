@@ -1,5 +1,3 @@
-
-
 app.controller('login', function ($scope, $http, $state) {
     $scope.login = function () {
         $http({

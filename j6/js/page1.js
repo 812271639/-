@@ -34,8 +34,6 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     $scope.types = types;                 //获取常量表types数据 ，应该是绑定作用域吧
     $scope.state = state;
     $scope.status = status;
-    //  $scope.start= $filter('date')($stateParams.startAt, 'yyyy-MM-dd ');//保存状态
-    //  $scope.end =  $filter('date')(, 'yyyy-MM-dd ')  ;
     $scope.start = Date.parse($stateParams.startAt);
     $scope.end = Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99);
     $scope.start = ($scope.start) ? $scope.start : "";             //添加默认值
@@ -54,8 +52,6 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
         params: {
             page: $stateParams.page,
             size: $stateParams.size,
-            // startAt: Date.parse($stateParams.startAt),   //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
-            // endAt:   Date.parse($stateParams.endAt) + ( 16 * 60 * 60 * 999.99),
             startAt: $scope.start,                                    //传递参数到路由页面，保存在url里
             endAt: $scope.end,
             type: $stateParams.type,
@@ -70,8 +66,6 @@ app.controller("page1", function ($scope, $http, $stateParams, $state, $filter, 
     $scope.search = function () {                                      //搜索点击事件
         $state.go('home.page1',
             {
-                // startAt: Date.parse($scope.startTime),  //传递参数到路由页面，保存在url里// -(8 *60 * 60 *1000 )
-                // endAt:   Date.parse($scope.endTime) + ( 16 * 60 * 60 * 999.99),
                 startAt: $scope.startTime,
                 endAt: $scope.endTime,
                 type: $scope.typeNum,
