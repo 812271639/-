@@ -1,0 +1,43 @@
+<div class="back" >
+    <div class="main">
+        <div class="top">后台登录</div>
+        <div class="content">
+            <form  name="userForm">
+                <div class="inside">
+                    <img src="../picture/iphone.png">
+                    <input
+                            type="text"
+                            name="names"
+                            placeholder="请输入账号"
+                            ng-model="name"
+                            ng-minlength="5"
+                            ng-maxlength="11"
+                            required>
+                </div>
+                <div class="inside">
+                    <img src="../picture/locked.png">
+                    <input
+                            type="password"
+                            name="password"
+                            placeholder="请输入密码"
+                            ng-model="password"
+                            ng-minlength="5"
+                            ng-maxlength="11"
+                            required>
+                </div>
+                <div class="verification" >
+                {{messages}}
+                <span ng-show="userForm.names.$error.minlength">账号最短为5字符</span>
+                <span ng-show="userForm.names.$error.maxlength">账号最长为11字符</span>
+                <!--<p ng-show="userForm.names.$error.required">必须</p>-->
+                <span ng-show="userForm.password.$error.minlength">密码最短为5字符</span>
+                <span ng-show="userForm.password.$error.maxlength">密码最长为11字符</span>
+                </div>
+                <button class="log" type="submit" ng-click="login()">登录</button>
+            </form>
+        </div>
+        <div id="test"></div>
+
+    </div>
+
+</div>
