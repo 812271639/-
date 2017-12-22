@@ -1,0 +1,130 @@
+<div class=" col-sm-12 col-md-12 ">
+    <div class="firstTopContent ">
+        <form>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 vertical"> 发布时间</div>
+                        <div class="col-md-8 col-sm-12 marginBottom">
+                            <input id='BeginTime' type="text" class="form-control" ng-model="startTime " placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12  vertical">
+                            <span class="glyphicon glyphicon-minus line"></span>
+                        </div>
+                        <div class="col-md-8 col-sm-12 marginBottom">
+                            <input id='EndTime' type="text" class="form-control" ng-model="endTime" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12  vertical"> 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
+                        <div class="col-md-8 col-sm-12 marginBottom">
+                            <select
+                                    class="form-control"
+                                    ng-model="typeNum"
+                                    ng-options="x.typeNum as x.typeName for x in types">
+                                <option value=''>全部</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
+                        <div class="col-md-8 col-sm-12 marginBottom">
+                            <select class="form-control" ng-model="stateNum"
+                                    ng-options="x.stateNum as x.stateName for x in state">
+                                <option value=''>全部</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-sm-12">
+                    <button class="btn btn-success search" ng-click="search()">搜索</button>
+                    <button class="btn btn-danger btnClear" type="reset" ng-click="clear()">清空</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="firstMiddleContent">
+        <div class="firstMiddleContentTop">
+            Article列表
+            <button class="btn btn-success search add" ui-sref="home.page2">+新增</button>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>发布时间</th>
+                        <th>修改时间</th>
+                        <th>发布者</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="x in articleList | orderBy:'updateAt '">
+                        <td>{{ $index+1}}</td>
+                        <td>{{x.title}}</td>
+                        <td>{{x.type | typesFilter }}</td>
+                        <td>{{x.createAt | date:"yyyy-MM-dd "}}</td>
+                        <td>{{x.updateAt | date:"yyyy-MM-dd"}}</td>
+                        <td>{{x.author}}</td>
+                        <td>{{x.status | stateFilter}}</td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td ng-click="statuses(x.id,x.status)"><a href="">{{x.status | statusFilter}}</a>
+                                    </td>
+                                    <td class="tdMargin"><a href="" ng-click="compile(x.id )">编辑</a></td>
+                                    <td ng-click="delete(x.id)"><a href="">删除</a></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="firstBottomOut ">
+            <div class="firstBottom">
+                每页显示
+                <input type="text"
+                       class="form-control bottomInput"
+                       ng-model="size"
+                       ng-pattern="/^[1-9]\d{0,2}$/" required> 条
+                <ul uib-pagination
+                    total-items="bigTotalItems"
+                    ng-model="bigCurrentPage"
+                    items-per-page="items"
+                    ng-click="pageChanged()"
+                    max-size="maxSize"
+                    class="pagination-sm"
+                    first-text="首页"
+                    previous-text="<"
+                    next-text=">"
+                    last-text="尾页"
+                    boundary-links="true"
+                    force-ellipses="true">
+                </ul>
+                第 <input type="text"
+                         class="form-control bottomInput"
+                         ng-pattern="/^[1-9]\d{0,2}$/"
+                         ng-model="toPage"> 页
+                <button class="btn btn-default cancel" ng-click="sure()">确定</button>
+            </div>
+        </div>
+    </div>
+
+</div>

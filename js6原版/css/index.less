@@ -1,0 +1,218 @@
+html {
+  font-size: 625%;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-color: rgb(35, 42, 58);
+  }
+}
+
+header {
+  overflow: hidden;
+  .headLeft {
+    float: left;
+    padding: .1rem;
+    width: 250px;
+    line-height: .32rem;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #ffffff45;
+    color: white;
+    background-color: #232a3a;
+    button {
+      display: none;
+      float: right;
+      font-size: 20px;
+      padding: 0 .07rem;
+      background-color: transparent;
+      border: solid 1px;
+      border-radius: 3px;
+    }
+  }
+  .headRight {
+    float: left;
+    width: calc(~"100% - 250px");
+    background-color: white;
+    overflow: hidden;
+
+    .li {
+      float: right;
+      padding: .15rem 0;
+  .glyphicon-off{
+    color: #1596c7;
+    cursor: pointer;
+  }
+    }
+    .verticalLine {
+      margin: 0 .15rem;
+      vertical-align: middle;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .header{
+      background-color: #e9e5f3;
+      padding: 0 15px 15px 15px;
+      overflow: hidden;
+    }
+    .headLeft {
+      float: left;
+      width: 100%;
+      button {
+        display: inline-block;
+      }
+    }
+
+    .headRight {
+      float: left;
+      width: 100%;
+    }
+  }
+}
+
+main {
+  overflow: hidden;
+  min-height: 100vh;
+  .mainLeft {
+    float: left;
+    width: 250px;
+    color: white;
+    background-color: rgb(35, 42, 58);
+    .color{
+      background-color: #1596c7;
+    }
+    .leftList {
+      padding: .1rem 0 .1rem 15%;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+      .pencil {
+        margin-right: .2rem;
+      }
+      .left {
+        float: right;
+        padding-right: 20%;
+      }
+    }
+    ul {
+      li {
+        text-align: center;
+        padding: .1rem 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+
+  }
+  .mainRight {
+    float: left;
+    padding: .3rem .15rem;
+    width: calc(~"100% - 250px");
+    h1 {
+      padding: .3rem .2rem;
+      background-color: #f5f5f5;
+    }
+    //.clear, .search {
+    //  float: right;
+    //  margin-right: .1rem;
+    //}
+    //.topContent {
+    //  overflow: hidden;
+    //  padding:.15rem;
+    //  border: solid 1px #ddd;
+    //  border-radius: 3px;
+    //  background-color: white;
+    //  .marginBottom {
+    //    margin-bottom: .2rem;
+    //  }
+    //  .cancel{
+    //    float: right;
+    //  }
+    //  .vertical {
+    //    text-align: center;
+    //    padding: 0;
+    //    line-height: 2.428571;
+    //  }
+    //
+    //}
+    //.middleContent{
+    //  padding: 0 .15rem;
+    //  margin-top:.2rem;
+    //  border: solid 1px #ddd;
+    //  border-radius: 3px;
+    //  background-color: white;
+    //
+    //  .table{
+    //    border: solid 1px #ddd;
+    //    margin-top: .15rem;
+    //  }
+    //  th{
+    //    text-align: center;
+    //  }
+    //  td{
+    //    text-align: -webkit-center;
+    //  }
+    //  .tdMargin{
+    //    padding:0 .1rem;
+    //  }
+    //}
+    //.middleContentTop{
+    //  margin: -.2rem  -.15rem 0 -.15rem;
+    //  padding: .1rem .15rem;
+    //  background-color: whitesmoke;
+    //  button{
+    //    padding: 0 .02rem;
+    //  }
+    //}
+  }
+//  @media screen and (max-width: 992px) {
+//    .mainRight {
+//      .topContent {
+//        .vertical {
+//          text-align: left;
+//          padding-left: .2rem;
+//        }
+//
+//      }
+//    }
+//}
+
+@media screen and (min-width: 768px) {
+  .mainLeft {
+    padding-bottom: 10000px;
+    overflow: visible!important;
+    margin-bottom: -10000px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .full{
+    background-color: #e9e5f3;
+  }
+  .mainLeft {
+    float: left;
+    width: 100%;
+    display: none;
+  }
+  .mainLeftShow{
+    display: block;
+  }
+
+  .mainRight {
+    padding: 0;
+    float: left;
+    width: 100%;
+    h1 {
+      padding: .2rem;
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+}
+
