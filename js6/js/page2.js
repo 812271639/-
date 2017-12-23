@@ -70,19 +70,19 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
             url: '/carrots-admin-ajax/a/u/img/task',
             queueLimit: 1
         });
-        //重新选择文件时，清空队列，达到覆盖文件的效果
+                                                                 //重新选择文件时，清空队列，达到覆盖文件的效果
         $scope.clearItems = function () {
             uploader.clearQueue();
         };
-        //图片预览的回调函数
+                                                                 //图片预览的回调函数
         uploader.onSuccessItem = function (fileItem, response) {
             $scope.responseUrl = response.data.url;              //获取返回的url地址，作为$http的img参数传入
         };
-        $scope.removeResponseUrl = function () {//点击删除清空responseUrl，用于按钮disable判断
+        $scope.removeResponseUrl = function () {                 //点击删除清空responseUrl，用于按钮disable判断
             $scope.responseUrl = null;
         };
         //----------------------------------------------------
-        $scope.config = {}; //百度编辑器获取内容
+        $scope.config = {};                                      //百度编辑器获取内容
         $scope.CompleteModel = {
             text: ''
         };

@@ -12,6 +12,7 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
         }).then(function (response) {
             if (response.data.code === 0) {
                 $scope.articleList = response.data.data.articleList;       // 返回的数据
+                $scope.articleList.status = "";
                 $scope.total = response.data.data.total;                      // 返回的数据用于分页插件
                 $scope.bigTotalItems = $scope.total;                          //分页插件的总数
             } else {
