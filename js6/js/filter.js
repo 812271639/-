@@ -1,16 +1,16 @@
 var app = angular.module("myApp");
 app.filter('typesFilter', function (types) {
     return function (input) {
-            return types[input];      //返回输入所在对象的typeName
-        }
+        return types[input];
+    }
 });
 app.filter('stateFilter', function (states) {
     return function (input) {
-            return states[input];      //返回输入所在对象的typeName
+        return states[input];
     }
 });
-app.filter("statusFilter",function (status) {
+app.filter("putAwayFilter", function (putAway) {
     return function (input) {
-        return status[input];
+        return putAway[input];
     }
 });

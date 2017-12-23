@@ -3,7 +3,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
         $scope.types = types;     //绑定常量
         $scope.industries = industries;
         console.log($scope);
-        console.log($scope.article );
+        console.log($scope.article);
 //---------------------------------------------------新增和编辑------------------------------------------------
         if ($stateParams.id) {
             $http({
@@ -28,7 +28,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
                 title: $scope.article.title,
                 status: status,
                 img: $scope.responseUrl,
-                content:  $scope.CompleteModel.text,
+                content: $scope.CompleteModel.text,
                 url: $scope.article.url,
                 industry: $scope.article.industry,
                 createAt: $scope.createAt
@@ -91,7 +91,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
         $scope.removeResponseUrl = function () {//点击删除清空responseUrl，用于按钮disable判断
             $scope.responseUrl = null;
         };
- //----------------------------------------------------
+        //----------------------------------------------------
         $scope.config = {}; //百度编辑器获取内容
         $scope.CompleteModel = {
             text: ''

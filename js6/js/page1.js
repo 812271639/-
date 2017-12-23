@@ -1,7 +1,6 @@
 angular.module("myApp", ["ui.router", "ui.bootstrap"])
     .controller("page1", function ($scope, $http, $stateParams, $state, $filter, types,states) {
         $scope.params = $state.params;
-        console.log($scope.params);
         $scope.states = states;
         $scope.types = types;                                          //获取常量表types数据 ，应该是绑定作用域吧
         $scope.startAt = ($scope.params.startAt) ? ( Date.parse($scope.params.startAt) - ( 8 * 60 * 60 * 1000)) : "";
@@ -37,12 +36,12 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
         };
 //-------------------------------------------------------------------上下线-
         $scope.statuses = function (id, status) {
-            var status = (status === 1) ? 2 : 1;
+            var state = (status === 1) ? 2 : 1;
             var putaway, soldOut;
-            if (status === 1) {
+            if (state === 1) {
                 putaway = "确定要下线吗";
                 soldOut = "下线成功"
-            } else if (status === 2) {
+            } else if (state === 2) {
                 putaway = "确定要上线吗";
                 soldOut = "上线成功"
             }
@@ -52,7 +51,7 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
                     url: '/carrots-admin-ajax/a/u/article/status',
                     params: {
                         id: id,
-                        status: status
+                        status: state
                     }
                 }).then(function (response) {
                     if (response.data.code === 0) {
@@ -64,7 +63,7 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
                 })
             }
         };
-//---------------------------------------------------------编辑-保存数据到page2-url
+//---------------------------------------------------------编辑-传递id到page2-url
         $scope.compile = function (id) {
             $state.go('home.page2', {id: id}, {reload: true});
         };
@@ -93,38 +92,8 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
         $scope.items = ($stateParams.size) ? $stateParams.size : 10;
         $scope.pageChanged = function (page) {
             $state.go('home.page1', {
-                page: page,  //传递参数到路由页面，保存在url里
+                page: page,        //传递参数到路由页面，保存在url里
                 size: $scope.size
             }, {reload: true});
         };
-//-------------------------------------------------------------------------------------------
-// //
-//         $("#BeginTime").datetimepicker({    //时间插件开始时间
-//             language: 'zh-CN',
-//             format: 'yyyy-mm-dd',
-//             weekStart: 1,
-//             autoclose: 1,
-//             todayHighlight: 1,
-//             startView: 2,
-//             minView: 2,
-//             forceParse: 0,
-//             endDate: new Date()
-//         }).on('changeDate', function (e) {
-//             var startTime = e.date;
-//             $('#EndTime').datetimepicker('setStartDate', startTime);
-//         });
-//         $("#EndTime").datetimepicker({    //时间插件结束时间
-//             language: 'zh-CN',
-//             format: 'yyyy-mm-dd',
-//             weekStart: 1,
-//             autoclose: 1,
-//             todayHighlight: 1,
-//             startView: 2,
-//             minView: 2,
-//             forceParse: 0,
-//             endDate: new Date()
-//         }).on('changeDate', function (e) {
-//             var endTime = e.date;
-//             $('#BeginTime').datetimepicker('setEndDate', endTime);
-//         });
     });
