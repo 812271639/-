@@ -50,9 +50,9 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
                 }).then(function (response) {
                     if (response.data.code === 0) {
                         if (status === articleState["onLine"]) {
-                            alert("已存为草稿");
-                        } else {
                             alert("上线成功");
+                        } else {
+                            alert("已存为草稿");
                         }
                         $state.go('home.page1', {}, {reload: true});
                     } else {

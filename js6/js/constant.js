@@ -25,5 +25,4 @@ angular.module("myApp")
     .constant('articleState', {
         "offLine": 1,
         "onLine": 2
-
     });
