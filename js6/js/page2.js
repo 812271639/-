@@ -1,10 +1,8 @@
 angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
-    .controller("page2", function ($scope, $http, $state, $stateParams, FileUploader, types, industries) {
-        $scope.types = types;     //绑定常量
+    .controller("page2", function ($scope, $http, $state, $stateParams, FileUploader, types, industries,articleState) {
+        $scope.types = types;                    //绑定常量
         $scope.industries = industries;
-        console.log($scope);
-        console.log($scope.article);
-//---------------------------------------------------新增和编辑------------------------------------------------
+//-----------------------------------------------新增和编辑------------------------------------------------
         if ($stateParams.id) {
             $http({
                 method: "GET",
@@ -12,39 +10,31 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
             }).then(function (response) {
                 if (response.data.code === 0) {
                     $scope.article = response.data.data.article;
-                    $scope.CompleteModel.text = $scope.article.content;
-                    $scope.responseUrl = $scope.article.img; //预览图片
-                    $scope.createAt = $scope.article.createAt;
+                    $scope.article.industry=String($scope.article.industry);//需要将返回的数据转成string，否则下拉列表出现空格
+                    $scope.CompleteModel.text = $scope.article.content;//文本编辑器必须使用CompleteModel.text，其他字符无法绑定
+                    $scope.responseUrl = $scope.article.img; //编辑时预览图片
                 } else {
                     alert(response.data.message)
                 }
-
             });
         }
         $scope.immediately = function (status) {
-            $scope.article.industry = ( $scope.article.type == 3) ? $scope.article.industry : "";
-            $scope.paramData = {
-                type: $scope.article.type,
-                title: $scope.article.title,
-                status: status,
-                img: $scope.responseUrl,
-                content: $scope.CompleteModel.text,
-                url: $scope.article.url,
-                industry: $scope.article.industry,
-                createAt: $scope.createAt
-            };
+            $scope.article.industry = ( $scope.article.type === 3) ? $scope.article.industry : "";
+            $scope.article.content = $scope.CompleteModel.text;
+            $scope.article.img = $scope.responseUrl;
+            $scope.article.status = status;
             if ($stateParams.id) {
                 $http({
                     method: "PUT",
                     url: " /carrots-admin-ajax/a/u/article/" + $stateParams.id,
-                    params: $scope.paramData,
+                    params: $scope.article,
                     header: {"Content-Type": "application/x-www-form-urlencoded"}
                 }).then(function (response) {
                     if (response.data.code === 0) {
-                        if (status == 1) {
-                            alert("编辑成功,已存为草稿");
-                        } else {
+                        if (status === articleState["onLine"]) {
                             alert("编辑成功,已成功上线");
+                        } else {
+                            alert("编辑成功,已存为草稿");
                         }
                         $state.go('home.page1', {}, {reload: true});
                     } else {
@@ -55,11 +45,11 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
                 $http({
                     method: "POST",
                     url: " /carrots-admin-ajax/a/u/article",
-                    params: $scope.paramData,
+                    params: $scope.article,
                     header: {"Content-Type": "application/x-www-form-urlencoded"}
                 }).then(function (response) {
                     if (response.data.code === 0) {
-                        if (status == 1) {
+                        if (status === articleState["onLine"]) {
                             alert("已存为草稿");
                         } else {
                             alert("上线成功");

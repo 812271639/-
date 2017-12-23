@@ -21,5 +21,9 @@ angular.module("myApp")
     .constant('putAway', {
         1: "上线",
         2: "下线"
+    })
+    .constant('articleState', {
+        "offLine": 1,
+        "onLine": 2
 
     });

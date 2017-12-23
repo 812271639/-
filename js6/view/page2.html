@@ -33,7 +33,7 @@
         <div class="col-md-3" ng-show="article.type == 3">
             <select class="form-control" ng-model="article.industry" >
                 <option value=''>请选择</option>
-                <option ng-repeat="(x,y) in industries" value="{{x}}" ng-selected="article.industry">{{y}}</option>
+                <option ng-repeat="(x,y) in industries" value="{{x}}" ng-selected="article.industry==x">{{y}}</option>
             </select>
         </div>
         <div class="col-md-3" ng-show="article.type == 3 ||(blur && (article.type == undefined ))">
@@ -60,7 +60,6 @@
                 <input type="text"
                        name="link"
                        class="form-control"
-                       placeholder=""
                        ng-model="article.url"
                        ng-pattern="/^((ht|f)tps?):\/\/([\w-]+(\.[\w-]+)*\/?)+(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?$/">
             </form>
