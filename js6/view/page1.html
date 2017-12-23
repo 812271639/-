@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12 vertical"> 发布时间</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <input id='BeginTime' type="text" class="form-control" ng-model="startTime " placeholder="">
+                            <start-picker></start-picker>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                             <span class="glyphicon glyphicon-minus line"></span>
                         </div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <input id='EndTime' type="text" class="form-control" ng-model="endTime" placeholder="">
+                            <end-picker></end-picker>
                         </div>
                     </div>
                 </div>
@@ -24,11 +24,9 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select
-                                    class="form-control"
-                                    ng-model="typeNum"
-                                    ng-options="x for (x,y) in type">
+                            <select class="form-control" ng-model="params.type">
                                 <option value=''>全部</option>
+                                <option ng-repeat="(x,y) in types" value="{{x}}">{{y}}</option>
                             </select>
                         </div>
                     </div>
@@ -37,9 +35,9 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12  vertical"> 状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</div>
                         <div class="col-md-8 col-sm-12 marginBottom">
-                            <select class="form-control" ng-model="stateNum"
-                                    ng-options="x for (x,y) in  state">
+                            <select class="form-control" ng-model="params.status">
                                 <option value=''>全部</option>
+                                <option ng-repeat=" (x,y) in  states" value="{{x}}">{{y}}</option>
                             </select>
                         </div>
                     </div>
@@ -47,7 +45,8 @@
             </div>
             <div class="row ">
                 <div class="col-sm-12">
-                    <button class="btn btn-success search" ng-click="clearSearch(startTime,endTime,typeNum,stateNum)">
+                    <button class="btn btn-success search"
+                            ng-click="clearSearch(params.startAt,params.endAt,params.type,params.status)">
                         搜索
                     </button>
                     <button class="btn btn-danger btnClear" type="reset" ng-click="clearSearch('','','','')">清空</button>

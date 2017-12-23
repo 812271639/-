@@ -3,13 +3,13 @@
         {{newArticle}}
     </div>
     <div class="row marginBottom">
-        <div class="col-md-2 vertical">标题名称 <span class="remind" ng-hide="headline">*</span></div>
+        <div class="col-md-2 vertical">标题名称 <span class="remind" ng-hide="article.title">*</span></div>
         <div class="col-md-8">
             <form name="formHead">
                 <input type="text"
                        name="head"
                        class="form-control"
-                       ng-model="headline"
+                       ng-model="article.title"
                        ng-blur="count=1"
                        ng-minlength="2"
                        ng-maxlength="10"
@@ -22,24 +22,22 @@
     </div>
     <div class="row marginBottom">
         <div class="col-md-2 vertical">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型
-            <span class="remind" ng-hide="typeNum != undefined">*</span>
+            <span class="remind" ng-hide="article.type != undefined">*</span>
         </div>
         <div class="col-md-3">
-            <select class="form-control"
-                    ng-blur="blur=1"
-                    ng-model="typeNum"
-                    ng-options="x for (x,y) in redactTypes">
+            <select class="form-control" ng-blur="blur=1" ng-model="article.type">
                 <option value=''>全部</option>
+                <option ng-repeat="(x,y) in types" value="{{x}}" ng-selected="article.type">{{y}}</option>
             </select>
         </div>
-        <div class="col-md-3" ng-show="typeNum == 3">
-            <select class="form-control" ng-model="industriesNum"
-                    ng-options="x for (x,y) in industries ">
+        <div class="col-md-3" ng-show="article.type == 3">
+            <select class="form-control" ng-model="article.industry" >
                 <option value=''>请选择</option>
+                <option ng-repeat="(x,y) in industries" value="{{x}}" ng-selected="article.industry">{{y}}</option>
             </select>
         </div>
-        <div class="col-md-3" ng-show="typeNum == 3 ||(blur && (typeNum == undefined ))">
-            <span class="remind" ng-hide="industriesNum != undefined ">请选择行业</span>
+        <div class="col-md-3" ng-show="article.type == 3 ||(blur && (article.type == undefined ))">
+            <span class="remind" ng-hide="article.industry != undefined ">请选择行业</span>
         </div>
     </div>
     <div class="row marginBottom">
@@ -56,14 +54,14 @@
     </div>
     <div class="row marginBottom">
         <div class="col-md-2 vertical">跳转链接
-            <span class="remind" ng-hide="links">*</span></div>
+            <span class="remind" ng-hide="article.url">*</span></div>
         <div class="col-md-8">
             <form name="formLink">
                 <input type="text"
                        name="link"
                        class="form-control"
                        placeholder=""
-                       ng-model="links"
+                       ng-model="article.url"
                        ng-pattern="/^((ht|f)tps?):\/\/([\w-]+(\.[\w-]+)*\/?)+(\?([\w\-\.,@?^=%&:\/~\+#]*)+)?$/">
             </form>
         </div>
@@ -133,20 +131,20 @@
             <button class="btn btn-success"
                     ng-click="immediately(2)"
                     ng-disabled=
-                            "(headline == undefined)
-                            ||(typeNum == undefined)
-                            ||(typeNum == 3)&&(industriesNum == undefined)
+                            "(article.title == undefined)
+                            ||(article.type == undefined)
+                            ||(article.type == 3)&&(article.industry == undefined)
                             ||(responseUrl == undefined)
-                            || (links == undefined)">立即上线
+                            || (article.url == undefined)">立即上线
             </button>
             <button class="btn btn-success"
                     ng-click="immediately(1)"
                     ng-disabled=
-                            "(headline == undefined)
-                            ||(typeNum == undefined)
-                            ||(typeNum == 3)&&(industriesNum == undefined)
+                            "(article.title == undefined)
+                            ||(article.type == undefined)
+                            ||(article.type == 3)&&(article.industry == undefined)
                             ||(responseUrl == undefined)
-                            ||!links">存为草稿
+                            ||!article.url">存为草稿
             </button>
             <button class="btn btn-default cancel" ng-click="canceled()">取消</button>
         </div>

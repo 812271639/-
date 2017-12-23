@@ -1,38 +1,10 @@
 angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
-    .controller("page2", function ($scope, $http, $state, $stateParams, FileUploader, redactTypes, industries, $timeout) {
-        $scope.redactTypes = redactTypes;     //绑定常量
+    .controller("page2", function ($scope, $http, $state, $stateParams, FileUploader, types, industries) {
+        $scope.types = types;     //绑定常量
         $scope.industries = industries;
-        if ($stateParams.id) {
-            $scope.newArticle = "编辑article"
-        } else {
-            $scope.newArticle = "新增article"
-        }
-        //------------------------------------------------------------上传图片--------------------------------------------
-        var uploader = $scope.uploader = new FileUploader({
-            method: "POST",
-            url: '/carrots-admin-ajax/a/u/img/task',
-            queueLimit: 1
-        });
-        //重新选择文件时，清空队列，达到覆盖文件的效果
-        $scope.clearItems = function () {
-            uploader.clearQueue();
-        };
-        //图片预览的回调函数
-        uploader.onSuccessItem = function (fileItem, response) {
-            $scope.responseUrl = response.data.url;              //获取返回的url地址，作为$http的img参数传入
-        };
-        $scope.removeResponseUrl = function () {
-            $scope.responseUrl = null;
-        };
+        console.log($scope);
+        console.log($scope.article );
 //---------------------------------------------------新增和编辑------------------------------------------------
-        $scope.config = {}; //百度编辑器获取内容
-        $scope.CompleteModel = {
-            text: ''
-        };
-        $timeout(function () {
-            $scope.condition = true;
-        }, 0);
-
         if ($stateParams.id) {
             $http({
                 method: "GET",
@@ -40,11 +12,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
             }).then(function (response) {
                 if (response.data.code === 0) {
                     $scope.article = response.data.data.article;
-                    $scope.headline = $scope.article.title;
-                    $scope.typeNum = $scope.article.type;
-                    $scope.industriesNum = $scope.article.industry;
                     $scope.CompleteModel.text = $scope.article.content;
-                    $scope.links = $scope.article.url;
                     $scope.responseUrl = $scope.article.img; //预览图片
                     $scope.createAt = $scope.article.createAt;
                 } else {
@@ -53,17 +21,16 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
 
             });
         }
-
         $scope.immediately = function (status) {
-            $scope.industriesNum = ( $scope.typeNum == 3) ? $scope.industriesNum : "";
+            $scope.article.industry = ( $scope.article.type == 3) ? $scope.article.industry : "";
             $scope.paramData = {
-                type: $scope.typeNum,
-                title: $scope.headline,
+                type: $scope.article.type,
+                title: $scope.article.title,
                 status: status,
                 img: $scope.responseUrl,
-                content: $scope.CompleteModel.text,
-                url: $scope.links,
-                industry: $scope.industriesNum,
+                content:  $scope.CompleteModel.text,
+                url: $scope.article.url,
+                industry: $scope.article.industry,
                 createAt: $scope.createAt
             };
             if ($stateParams.id) {
@@ -81,7 +48,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
                         }
                         $state.go('home.page1', {}, {reload: true});
                     } else {
-                        alert(response.data.message)
+                        alert(response.data.message);
                     }
                 });
             } else {
@@ -99,7 +66,7 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
                         }
                         $state.go('home.page1', {}, {reload: true});
                     } else {
-                        alert(response.data.message)
+                        alert(response.data.message);
                     }
                 });
             }
@@ -107,5 +74,35 @@ angular.module("myApp", ["ui.router", "angularFileUpload", "meta.umeditor"])
         $scope.canceled = function () {
             $state.go('home.page1', {}, {reload: true});    //-取消上传-
         };
+//------------------------------------------------------------上传图片--------------------------------------------
+        var uploader = $scope.uploader = new FileUploader({
+            method: "POST",
+            url: '/carrots-admin-ajax/a/u/img/task',
+            queueLimit: 1
+        });
+        //重新选择文件时，清空队列，达到覆盖文件的效果
+        $scope.clearItems = function () {
+            uploader.clearQueue();
+        };
+        //图片预览的回调函数
+        uploader.onSuccessItem = function (fileItem, response) {
+            $scope.responseUrl = response.data.url;              //获取返回的url地址，作为$http的img参数传入
+        };
+        $scope.removeResponseUrl = function () {//点击删除清空responseUrl，用于按钮disable判断
+            $scope.responseUrl = null;
+        };
+ //----------------------------------------------------
+        $scope.config = {}; //百度编辑器获取内容
+        $scope.CompleteModel = {
+            text: ''
+        };
+        $scope.condition = true;
+//---------------------------------------------------------
+        if ($stateParams.id) {
+            $scope.newArticle = "编辑article"
+        } else {
+            $scope.newArticle = "新增article"
+        }
+
     });
 
