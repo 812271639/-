@@ -3,12 +3,14 @@ angular.module("myApp", ["ui.router", "ui.bootstrap"])
         $scope.params = $state.params;
         $scope.states = states;
         $scope.types = types;
-        $scope.params.startAt = ($scope.params.startAt) ? ( Date.parse($scope.params.startAt) - ( 8 * 60 * 60 * 1000)) : "";
-        $scope.params.endAt = ($scope.params.endAt) ? ( Date.parse($scope.params.endAt) + ( 16 * 60 * 60 * 1000 - 1)) : "";
+        $scope.startAt = $scope.params.startAt; //渲染时间
+        $scope.endAt = $scope.params.endAt;
+        $scope.params.startAt = ($scope.startAt) ? ( Date.parse($scope.startAt) - ( 8 * 60 * 60 * 1000)) : "";
+        $scope.params.endAt = ($scope.endAt) ? ( Date.parse($scope.endAt) + ( 16 * 60 * 60 * 1000 - 1)) : "";
         $http({
             method: "GET",
             url: '/carrots-admin-ajax/a/article/search',
-            params: $scope.params
+            params:$scope.params
         }).then(function (response) {
             if (response.data.code === 0) {
                 $scope.articleList = response.data.data.articleList;       // 返回的数据

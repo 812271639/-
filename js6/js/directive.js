@@ -3,7 +3,7 @@ angular.module('myApp')
     .directive('startPicker', [ function(){
         return {
             restrict: 'AE',
-            template: "<input id='BeginTime' type=\"text\" class=\"form-control\" ng-model=\"params.startAt \" placeholder=\"\">",
+            template: "<input id='BeginTime' type=\"text\" class=\"form-control\" ng-model=\"startAt \" placeholder=\"\">",
             controller:function($scope){
                 console.log($scope);
                 $("#BeginTime").datetimepicker({    //时间插件开始时间
@@ -26,7 +26,7 @@ angular.module('myApp')
     .directive('endPicker', [ function(){
         return {
             restrict: 'AE',
-            template: "<input id='EndTime' type=\"text\" class=\"form-control\" ng-model=\"params.endAt\" placeholder=\"\">",
+            template: "<input id='EndTime' type=\"text\" class=\"form-control\" ng-model=\"endAt\" placeholder=\"\">",
             controller:function($scope){
                 console.log($scope);
                 $("#EndTime").datetimepicker({    //时间插件结束时间
